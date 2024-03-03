@@ -28,6 +28,8 @@ public class Laser : MonoBehaviour
     public void Ray(Vector2 startPosition, Vector2 endPosition, int index, Color color)
     {
 
+        //他的1 是我的3 他的 0 是我的 2
+        index^=2;
         //求出射时 哪个line render发射射线
         index ^= 3;
         //偏移值
@@ -37,8 +39,9 @@ public class Laser : MonoBehaviour
         Vector2 direction=new Vector2(dx[index],dy[index]).normalized;
         RaycastHit2D hit = Physics2D.Raycast(endPosition, direction, MAX_LENGTH, layerMasks);
 
-        
+        Physics.IgnoreCollision(transform.GetComponent<Collider>(),transform.GetComponent<Collider>());
 
+        
         if (hit.collider != null && hit.collider.GetComponent<Laser>())
         {
             Debug.Log(this.transform.name + "hit "+index);
