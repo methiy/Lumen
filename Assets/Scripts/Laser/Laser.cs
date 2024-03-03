@@ -39,15 +39,15 @@ public class Laser : MonoBehaviour
         Vector2 direction=new Vector2(dx[index],dy[index]).normalized;
         RaycastHit2D hit = Physics2D.Raycast(endPosition, direction, MAX_LENGTH, layerMasks);
 
-        Physics.IgnoreCollision(transform.GetComponent<Collider>(),transform.GetComponent<Collider>());
+        // Physics.IgnoreCollision(transform.GetComponent<Collider>(),transform.GetComponent<Collider>());
 
-        
-        if (hit.collider != null && hit.collider.GetComponent<Laser>())
+
+        if (hit.collider != null && hit.collider.GetComponent<Laser>()&&(endPosition!=(Vector2)hit.collider.transform.Position))
         {
             Debug.Log(this.transform.name + "hit "+index);
             lasersList[index].positionCount = 2;
             lasersList[index].SetPosition(0, endPosition);
-            lasersList[index].SetPosition(1, hit.collider.transform.position);
+            lasersList[index].SetPosition(1, hit.collider.transform.Position);
             //如果击中就通知被击中的物体去发射射线
             hit.collider.GetComponent<Laser>()?.Ray(
                 endPosition,
