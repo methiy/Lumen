@@ -57,7 +57,7 @@ public class Laser : MonoBehaviour
         }
         else
         {
-            Debug.Log(this.transform.name + "Dont hit");
+            Debug.Log("Don't hit");
             //没有击中
             lasersList[index].positionCount = 2;
             lasersList[index].SetPosition(0, transform.position);
