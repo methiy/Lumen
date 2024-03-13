@@ -69,8 +69,25 @@ public class LensMirror : BaseMirror
             lasersList[index].SetPosition(0, transform.position);
             lasersList[index].SetPosition(1,transform.position+(Vector3)direction*MAX_LENGTH);
         }
+
+        StartCoroutine(ClearLinePoints());
     }
 
+    private float clearInterval =0.1f;
+    private IEnumerator ClearLinePoints()  
+    {  
+        while (true) // 无限循环，直到停止Coroutine  
+        {  
+            yield return new WaitForSeconds(clearInterval); // 等待指定的时间间隔  
+            ClearLine(); // 清除LineRenderer中的点  
+        }  
+    }  
+  
+    private void ClearLine()  
+    {  
+        foreach(var lineRenderer in lasersList)
+            lineRenderer.positionCount = 0; // 将LineRenderer中的点数量设置为0，从而清除所有点  
+    }  
 
 
     // private void Ray(Vector2 startPosition,Vector2 endPosition){
