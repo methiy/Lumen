@@ -30,14 +30,14 @@ public class MainLaser : MonoBehaviour
         Vector2 direction = (endPosition - startPosition).normalized;
         RaycastHit2D hit = Physics2D.Raycast(startPosition, direction, MAX_LENGTH, layerMasks);
         
-        if (hit.collider!=null && hit.collider.GetComponent<Laser>())
+        if (hit.collider!=null && hit.collider.GetComponent<BaseMirror>())
         {
 
             lasersList[index].positionCount = 2;
             lasersList[index].SetPosition(0, startPosition);
             lasersList[index].SetPosition(1, hit.collider.transform.position);
             //如果击中就通知被击中的物体去发射射线
-            hit.collider.GetComponent<Laser>()?.Ray(
+            hit.collider.GetComponent<BaseMirror>()?.Ray(
                 startPosition,
                 hit.collider.transform.position,
                 index,

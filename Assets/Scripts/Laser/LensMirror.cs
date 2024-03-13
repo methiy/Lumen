@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-public class Laser : MonoBehaviour
+public class LensMirror : BaseMirror
 {
     [Header("需要检测的物体类别")]
     [SerializeField] private LayerMask layerMasks;
@@ -25,13 +25,12 @@ public class Laser : MonoBehaviour
     /// <param name="originposition"></param>
     /// <param name="direction"></param>
     /// <param name="color"></param>
-    public void Ray(Vector2 startPosition, Vector2 endPosition, int index, Color color)
+    public override void Ray(Vector2 startPosition, Vector2 endPosition, int index, Color color)
     {
 
         //他的1 是我的3 他的 0 是我的 2
-        index^=2;
-        //求出射时 哪个line render发射射线
-        index ^= 3;
+        // index^=2;
+
         //偏移值
         int[] dx = { 0, 1, 0, -1 };
         int[] dy = { 1, 0, -1, 0 };
@@ -49,14 +48,14 @@ public class Laser : MonoBehaviour
         //     Debug.Log(hit.rigidbody.name);
         
 
-        if (hit.collider != null && hit.collider.GetComponent<Laser>()&&(endPosition!=(Vector2)hit.collider.transform.position))
+        if (hit.collider != null && hit.collider.GetComponent<BaseMirror>()&&(endPosition!=(Vector2)hit.collider.transform.position))
         {
             // Debug.Log(this.transform.name + "hit "+index);
             lasersList[index].positionCount = 2;
             lasersList[index].SetPosition(0, endPosition);
             lasersList[index].SetPosition(1, hit.collider.transform.position);
             //如果击中就通知被击中的物体去发射射线
-            hit.collider.GetComponent<Laser>()?.Ray(
+            hit.collider.GetComponent<BaseMirror>()?.Ray(
                 endPosition,
                 hit.collider.transform.position,
                 index,
