@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class Laser : MonoBehaviour
@@ -18,7 +19,6 @@ public class Laser : MonoBehaviour
     [SerializeField] private const float MAX_LENGTH = 10.0f;
     // [SerializeField]private const int MAX_COUNT=10;
 
-
     /// <summary>
     /// 起点终点 index（设置为哪个line render出射0123 分别为上右左下） color为光线颜色
     /// </summary>
@@ -35,16 +35,23 @@ public class Laser : MonoBehaviour
         //偏移值
         int[] dx = { 0, 1, 0, -1 };
         int[] dy = { 1, 0, -1, 0 };
+
         //出射方向
         Vector2 direction=new Vector2(dx[index],dy[index]).normalized;
-        RaycastHit2D hit = Physics2D.Raycast(endPosition, direction, MAX_LENGTH, layerMasks);
-
-        // Physics.IgnoreCollision(transform.GetComponent<Collider>(),transform.GetComponent<Collider>());
-
+        
+        //! 放置出现自己打自己的情况 就是走一个半径
+        float lineOffset=1.1f;
+        RaycastHit2D hit = Physics2D.Raycast(endPosition+lineOffset*direction, direction, MAX_LENGTH, layerMasks);
+        // Debug.Log(endPosition+direction*1.1f);
+        // if(hit.collider==null)
+        //     Debug.Log("NULL");
+        // else
+        //     Debug.Log(hit.rigidbody.name);
+        
 
         if (hit.collider != null && hit.collider.GetComponent<Laser>()&&(endPosition!=(Vector2)hit.collider.transform.position))
         {
-            Debug.Log(this.transform.name + "hit "+index);
+            // Debug.Log(this.transform.name + "hit "+index);
             lasersList[index].positionCount = 2;
             lasersList[index].SetPosition(0, endPosition);
             lasersList[index].SetPosition(1, hit.collider.transform.position);
@@ -61,7 +68,7 @@ public class Laser : MonoBehaviour
             //没有击中
             lasersList[index].positionCount = 2;
             lasersList[index].SetPosition(0, transform.position);
-            lasersList[index].SetPosition(1,direction*MAX_LENGTH);
+            lasersList[index].SetPosition(1,transform.position+(Vector3)direction*MAX_LENGTH);
         }
     }
 
