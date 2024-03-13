@@ -16,6 +16,12 @@ public class MainLaser : MonoBehaviour
 
     private void Start()
     {
+
+        // Ray(transform.position,new Vector2(transform.position.x+1,transform.position.y),1,Color.white);
+    }
+
+    private void Update()
+    {
         Ray(transform.position,new Vector2(transform.position.x+1,transform.position.y),1,Color.white);
     }
 
