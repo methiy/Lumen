@@ -112,13 +112,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layerMasks:
     serializedVersion: 2
-    m_Bits: 384
+    m_Bits: 896
   mirrorLayerMask:
     serializedVersion: 2
     m_Bits: 128
   lensLayerMask:
     serializedVersion: 2
     m_Bits: 256
+  ClapboardLayerMask:
+    serializedVersion: 2
+    m_Bits: 512
   lasersList:
   - {fileID: 3045601118422897872}
   - {fileID: 5557811564949712928}

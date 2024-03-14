@@ -5,11 +5,6 @@ using UnityEngine;
 
 public class LensMirror : BaseMirror
 {
-    [Header("需要检测的物体类别")]
-    [SerializeField] private LayerMask layerMasks;
-    [SerializeField] private LayerMask mirrorLayerMask;
-    [SerializeField] private LayerMask lensLayerMask;
-
     //射线
     [SerializeField] private List<LineRenderer> lasersList = new List<LineRenderer>();
 
@@ -47,7 +42,7 @@ public class LensMirror : BaseMirror
         // else
         //     Debug.Log(hit.rigidbody.name);
         
-
+        lasersList[index].material.color=color;
         if (hit.collider != null && hit.collider.GetComponent<BaseMirror>()&&(endPosition!=(Vector2)hit.collider.transform.position))
         {
             // Debug.Log(this.transform.name + "hit "+index);
@@ -85,9 +80,11 @@ public class LensMirror : BaseMirror
   
     private void ClearLine()  
     {  
-        foreach(var lineRenderer in lasersList)
+        foreach(var lineRenderer in lasersList){
             lineRenderer.positionCount = 0; // 将LineRenderer中的点数量设置为0，从而清除所有点  
-    }  
+            lineRenderer.material.color=Color.white;
+        }
+    }    
 
 
     // private void Ray(Vector2 startPosition,Vector2 endPosition){

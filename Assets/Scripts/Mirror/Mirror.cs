@@ -6,11 +6,6 @@ using UnityEngine;
 public class Mirror : BaseMirror
 
 {
-    [Header("需要检测的物体类别")]
-    [SerializeField] private LayerMask layerMasks;
-    [SerializeField] private LayerMask mirrorLayerMask;
-    [SerializeField] private LayerMask lensLayerMask;
-
     //射线
     [SerializeField] private List<LineRenderer> lasersList = new List<LineRenderer>();
 
@@ -49,7 +44,7 @@ public class Mirror : BaseMirror
         // else
         //     Debug.Log(hit.rigidbody.name);
         
-
+        lasersList[index].material.color=color;
         if (hit.collider != null && hit.collider.GetComponent<BaseMirror>()&&(endPosition!=(Vector2)hit.collider.transform.position))
         {
             // Debug.Log(this.transform.name + "hit "+index);
@@ -57,11 +52,13 @@ public class Mirror : BaseMirror
             lasersList[index].SetPosition(0, endPosition);
             lasersList[index].SetPosition(1, hit.collider.transform.position);
             //如果击中就通知被击中的物体去发射射线
-            hit.collider.GetComponent<BaseMirror>()?.Ray(
-                endPosition,
-                hit.collider.transform.position,
-                index,
-                color);
+            if(hit.collider.gameObject.layer!=ClapboardLayerMask){
+                hit.collider.GetComponent<BaseMirror>()?.Ray(
+                    endPosition,
+                    hit.collider.transform.position,
+                    index,
+                    color);
+            }
         }
         else
         {
@@ -86,9 +83,11 @@ public class Mirror : BaseMirror
   
     private void ClearLine()  
     {  
-        foreach(var lineRenderer in lasersList)
+        foreach(var lineRenderer in lasersList){
             lineRenderer.positionCount = 0; // 将LineRenderer中的点数量设置为0，从而清除所有点  
-    }  
+            lineRenderer.material.color=Color.white;
+        }
+    }    
 
 
 

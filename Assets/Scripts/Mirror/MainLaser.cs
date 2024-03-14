@@ -8,6 +8,7 @@ public class MainLaser : MonoBehaviour
     [SerializeField] private LayerMask layerMasks;
     [SerializeField] private LayerMask mirrorLayerMask;
     [SerializeField] private LayerMask lensLayerMask;
+    [SerializeField] private LayerMask ClapboardLayerMask;
 
     //射线
     [SerializeField] private List<LineRenderer> lasersList = new List<LineRenderer>();
@@ -37,6 +38,7 @@ public class MainLaser : MonoBehaviour
             lasersList[index].SetPosition(0, startPosition);
             lasersList[index].SetPosition(1, hit.collider.transform.position);
             //如果击中就通知被击中的物体去发射射线
+            
             hit.collider.GetComponent<BaseMirror>()?.Ray(
                 startPosition,
                 hit.collider.transform.position,
@@ -65,7 +67,9 @@ public class MainLaser : MonoBehaviour
   
     private void ClearLine()  
     {  
-        foreach(var lineRenderer in lasersList)
+        foreach(var lineRenderer in lasersList){
             lineRenderer.positionCount = 0; // 将LineRenderer中的点数量设置为0，从而清除所有点  
-    }
+            lineRenderer.material.color=Color.white;
+        }
+    }  
 }
