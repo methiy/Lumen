@@ -9,11 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7635825046220067521}
-  - component: {fileID: 4274315180052890882}
   - component: {fileID: 6597375754611637153}
   - component: {fileID: -2673515251639091695}
   m_Layer: 7
-  m_Name: Mirror
+  m_Name: _BaseMirror
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39,35 +38,6 @@ Transform:
   - {fileID: 7071346569255784517}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4274315180052890882
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 336993069418054312}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29cf8449e30ffe049b66040973769583, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  layerMasks:
-    serializedVersion: 2
-    m_Bits: 896
-  mirrorLayerMask:
-    serializedVersion: 2
-    m_Bits: 128
-  lensLayerMask:
-    serializedVersion: 2
-    m_Bits: 256
-  ClapboardLayerMask:
-    serializedVersion: 2
-    m_Bits: 512
-  lasersList:
-  - {fileID: 835223788316730117}
-  - {fileID: 8401609845094356707}
-  - {fileID: 9198797928908423067}
-  - {fileID: 8564643858940988257}
 --- !u!61 &6597375754611637153
 BoxCollider2D:
   m_ObjectHideFlags: 0

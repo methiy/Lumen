@@ -64,7 +64,6 @@ public class PrismMirror : BaseMirror
         }
         else
         {
-            Debug.Log("Don't hit");
             //Ã»ÓÐ»÷ÖÐ
             lasersList[index].positionCount = 2;
             lasersList[index].SetPosition(0, transform.position);

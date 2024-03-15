@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-public class Mirror : BaseMirror
+public class ReflectMirror : BaseMirror
 
 {
     //射线
@@ -62,7 +62,6 @@ public class Mirror : BaseMirror
         }
         else
         {
-            Debug.Log("Don't hit");
             //没有击中
             lasersList[index].positionCount = 2;
             lasersList[index].SetPosition(0, transform.position);

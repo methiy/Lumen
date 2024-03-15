@@ -58,7 +58,6 @@ public class LensMirror : BaseMirror
         }
         else
         {
-            Debug.Log("Don't hit");
             //没有击中
             lasersList[index].positionCount = 2;
             lasersList[index].SetPosition(0, transform.position);
