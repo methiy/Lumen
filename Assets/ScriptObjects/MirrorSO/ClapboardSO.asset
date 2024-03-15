@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 123068964001efa43840a90352099df0, type: 3}
   m_Name: ClapboardSO
   m_EditorClassIdentifier: 
+  mirrorType: 4
+  mirrorPrefab: {fileID: 706477367829414608, guid: e976e91f72c5594428dfdfe012b6ccab, type: 3}

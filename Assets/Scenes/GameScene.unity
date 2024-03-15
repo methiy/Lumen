@@ -190,6 +190,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LensMirror
       objectReference: {fileID: 0}
+    - target: {fileID: 3278625786067120709, guid: 4d37b67cbaa8b8346bdf90d9e6fe9685, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4673293635002016300, guid: 4d37b67cbaa8b8346bdf90d9e6fe9685, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.82
@@ -606,6 +610,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PrismMirror
       objectReference: {fileID: 0}
+    - target: {fileID: 6515412696930845597, guid: 320650bfd0ce43846bc557999a47428f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -622,6 +630,10 @@ PrefabInstance:
     - target: {fileID: 706477367829414608, guid: e976e91f72c5594428dfdfe012b6ccab, type: 3}
       propertyPath: m_Name
       value: Clapboard
+      objectReference: {fileID: 0}
+    - target: {fileID: 706477367829414608, guid: e976e91f72c5594428dfdfe012b6ccab, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6306464506076446313, guid: e976e91f72c5594428dfdfe012b6ccab, type: 3}
       propertyPath: gameObject
@@ -728,6 +740,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ReflectMirror
       objectReference: {fileID: 0}
+    - target: {fileID: 6663660008784848552, guid: 81ab3cf20e3c7334eaba6649fee0522a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -789,6 +805,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: OriginLaser
       objectReference: {fileID: 0}
+    - target: {fileID: 4595589119629127522, guid: da66979bc2cbf5a4db93cf6d3f9735e8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8127509204316208030, guid: da66979bc2cbf5a4db93cf6d3f9735e8, type: 3}
       propertyPath: gameObject
       value: 
@@ -801,6 +821,68 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 178045707}
   m_SourcePrefab: {fileID: 100100000, guid: da66979bc2cbf5a4db93cf6d3f9735e8, type: 3}
+--- !u!1 &2084520505
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2084520506}
+  m_Layer: 0
+  m_Name: GameObject2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2084520506
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2084520505}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2088510805
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2088510806}
+  m_Layer: 0
+  m_Name: GameObject1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2088510806
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2088510805}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2128818477
 GameObject:
   m_ObjectHideFlags: 0
@@ -1038,6 +1120,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Panel
       objectReference: {fileID: 0}
+    - target: {fileID: 7895495595613377081, guid: 7745454ab973eff46bdbb821531d035a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7976474072326188052, guid: 7745454ab973eff46bdbb821531d035a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.13
@@ -1081,3 +1167,5 @@ SceneRoots:
   - {fileID: 454900731}
   - {fileID: 1087177003}
   - {fileID: 1476525146}
+  - {fileID: 2088510806}
+  - {fileID: 2084520506}

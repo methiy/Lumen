@@ -8,7 +8,6 @@ public class ReflectMirror : BaseMirror
 {
     //射线
     [SerializeField] private List<LineRenderer> lasersList = new List<LineRenderer>();
-
     //const
     [Header("常量")]
     // [SerializeField]private const float OFFSET=0.01f;

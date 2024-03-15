@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 123068964001efa43840a90352099df0, type: 3}
   m_Name: ReflectMirrorSO
   m_EditorClassIdentifier: 
+  mirrorType: 1
+  mirrorPrefab: {fileID: 6663660008784848552, guid: 81ab3cf20e3c7334eaba6649fee0522a, type: 3}

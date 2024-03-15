@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 123068964001efa43840a90352099df0, type: 3}
   m_Name: _BaseMirrorSO
   m_EditorClassIdentifier: 
+  mirrorType: 0
+  mirrorPrefab: {fileID: 336993069418054312, guid: f0392c228302ed148ad0813c89128d36, type: 3}
