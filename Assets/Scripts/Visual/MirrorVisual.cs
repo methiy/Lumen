@@ -4,8 +4,7 @@ using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class MirrorVisual : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler,IBeginDragHandler,IDragHandler,IEndDragHandler
-{
+public class MirrorVisual:MonoBehaviour{
     [SerializeField]private MirrorScriptableObject mirrorSO;
     [SerializeField]private int mirrorAmount;
     [SerializeField]private Transform icon;
@@ -18,21 +17,9 @@ public class MirrorVisual : MonoBehaviour,IPointerEnterHandler,IPointerExitHandl
     private void Start()
     {
         originLocalScale=icon.localScale;
-        prePosition=transform.position; 
         Detection[] detections=FindObjectsOfType<Detection>();
         detection=detections[0];
     }
-
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-        icon.localScale=originLocalScale*scaleFactort;
-    }
-
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        icon.localScale=originLocalScale;
-    }
-
     private Vector3 prePosition;
     [SerializeField]private Texture2D cursor;
 
@@ -45,33 +32,38 @@ public class MirrorVisual : MonoBehaviour,IPointerEnterHandler,IPointerExitHandl
         return mousePosition;
     }
 
-    public void OnBeginDrag(PointerEventData eventData)
+    public void OnMouseDown()
     {
+        Debug.Log("Hello");
         //cursor 
         cursor=mirrorSO.sprite.texture;
         Cursor.SetCursor(cursor,Vector2.zero,CursorMode.Auto);
-        
+
     }
 
-    public void OnDrag(PointerEventData eventData)
+    public void OnMouseDrag()
     {
         transform.position=GetMousePosition();
     }
 
-    public void OnEndDrag(PointerEventData eventData)
+    public void OnMouseUp()
     {
-        Vector3 targetPosition=GetMousePosition();
-
-        if(detection.PlayPositionPlaceable(targetPosition)){
-            
-            transform.position=targetPosition;
+       Vector3 targetPosition=GetMousePosition();
+       bool isPlay=false,isIcon=false;
+       Vector3 location; 
+        if(detection.PlayPositionPlaceable(targetPosition,out location)){
+            Debug.Log("Play");
+            isPlay=true;
+            transform.position=location;
             //! TODO 放置镜子生成实体
-            tryCreatMirror();
+            tryCreatMirror(location);
 
-        }else if(detection.IconPositionPlaceable(targetPosition)){
-            transform.position=targetPosition;
+        }else if(detection.IconPositionPlaceable(targetPosition,out location)){
+            Debug.Log("Icon");
+            isIcon=true;
+            transform.position=location;
             //! TODO  放回icon
-            tryRebackMirror();
+            tryRebackMirror(location);
 
         }else{
             transform.position=prePosition;
@@ -79,18 +71,21 @@ public class MirrorVisual : MonoBehaviour,IPointerEnterHandler,IPointerExitHandl
 
         prePosition=transform.position; 
         Cursor.SetCursor(null,Vector2.zero,CursorMode.Auto);
+        if(isPlay||isIcon){
+            Destroy(gameObject);
+        }
     }
 
 
-    private void tryCreatMirror(){
+    private void tryCreatMirror(Vector3 position){
         //! todo 判断
-        Instantiate(mirrorSO.mirrorPrefab);
+        Instantiate(mirrorSO.mirrorPrefab,position,Quaternion.identity);
     }
 
-    private void tryRebackMirror(){
+    private void tryRebackMirror(Vector3 position){
         //! todo 判断
-
-        //! 事件让他将sprite设置为mirrorSO.icon，并且数量+(1)
+        Instantiate(mirrorSO.mirrorIconPrefab,position,Quaternion.identity);
+        //! 事件让他将sprite,数量+(1)
 
 
 

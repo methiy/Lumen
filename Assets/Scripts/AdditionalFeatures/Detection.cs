@@ -27,12 +27,13 @@ public class Detection : MonoBehaviour
         }
 
     }
-    public bool PlayPositionPlaceable(Vector3 targetPosition){
+    public bool PlayPositionPlaceable(Vector3 targetPosition,out Vector3 location){
 
         bool canLocation=false;
+        location=Vector3.zero;
         foreach(Vector3 position in playPositionList){
             if(Mathf.Abs(position.x-targetPosition.x)<=OFFSET&&Mathf.Abs(position.y-targetPosition.y)<=OFFSET){
-                targetPosition=position;
+                location=position;
                 canLocation=true;
                 break;
             }
@@ -40,12 +41,13 @@ public class Detection : MonoBehaviour
         return canLocation;
     }
 
-    public bool IconPositionPlaceable(Vector3 targetPosition){
+    public bool IconPositionPlaceable(Vector3 targetPosition,out Vector3 location){
 
         bool canLocation=false;
+        location=Vector3.zero;
         foreach(Vector3 position in iconPositionList){
             if(Mathf.Abs(position.x-targetPosition.x)<=OFFSET&&Mathf.Abs(position.y-targetPosition.y)<=OFFSET){
-                targetPosition=position;
+                location=position;
                 canLocation=true;
                 break;
             }

@@ -10,7 +10,7 @@ public class MirrorScriptableObject : ScriptableObject
     public MirrorType mirrorType;
     public Sprite icon,sprite;
     public GameObject mirrorPrefab;
-
+    public GameObject mirrorIconPrefab;
 
 
 }
