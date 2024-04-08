@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: LensMirrorSO
   m_EditorClassIdentifier: 
   mirrorType: 2
+  icon: {fileID: 21300000, guid: b26f185bae8839740957037a22e514b4, type: 3}
+  sprite: {fileID: 21300000, guid: 3ef34e6c28bc9de49b8c21beba4bca62, type: 3}
   mirrorPrefab: {fileID: 3278625786067120709, guid: 4d37b67cbaa8b8346bdf90d9e6fe9685, type: 3}

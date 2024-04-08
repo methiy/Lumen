@@ -95,8 +95,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3716a772c00e62459c49eb254cd040a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameObject: {fileID: 7895495595613377081, guid: 7745454ab973eff46bdbb821531d035a, type: 3}
-  canLoadPositionList: []
+  mirrorSO: {fileID: 11400000, guid: 6d76d95a24cf6e34b8e39cf8bcc481eb, type: 2}
+  mirrorAmount: 0
+  icon: {fileID: 0}
+  originLocalScale: {x: 0, y: 0, z: 0}
+  scaleFactort: 1.2
+  detection: {fileID: 3599230729701061363, guid: d4e01b322c078e1418824e60dfd063c0, type: 3}
+  cursor: {fileID: 0}
 --- !u!1 &1666861066817763340
 GameObject:
   m_ObjectHideFlags: 0

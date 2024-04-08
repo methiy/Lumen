@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: ReflectMirrorSO
   m_EditorClassIdentifier: 
   mirrorType: 1
+  icon: {fileID: 21300000, guid: 9423326b708ea3e498bf533b5ad5ec85, type: 3}
+  sprite: {fileID: 21300000, guid: d8b9dbac0975c2a4093e0d2f87c4e59e, type: 3}
   mirrorPrefab: {fileID: 6663660008784848552, guid: 81ab3cf20e3c7334eaba6649fee0522a, type: 3}

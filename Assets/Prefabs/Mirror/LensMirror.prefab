@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2673515251639091695, guid: f0392c228302ed148ad0813c89128d36, type: 3}
+      propertyPath: mirrorSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 2e614ba3a86ce96449bc82c0e1f1a79c, type: 2}
     - target: {fileID: 336993069418054312, guid: f0392c228302ed148ad0813c89128d36, type: 3}
       propertyPath: m_Name
       value: LensMirror

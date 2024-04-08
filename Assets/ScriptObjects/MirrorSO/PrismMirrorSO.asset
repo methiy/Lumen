@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: PrismMirrorSO
   m_EditorClassIdentifier: 
   mirrorType: 3
+  icon: {fileID: 21300000, guid: 561c2d115a5398640bd402b192c0f83f, type: 3}
+  sprite: {fileID: 21300000, guid: 4bf111bc7808b05448e5345fc1eb049d, type: 3}
   mirrorPrefab: {fileID: 6515412696930845597, guid: 320650bfd0ce43846bc557999a47428f, type: 3}

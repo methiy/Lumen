@@ -6,20 +6,20 @@ using UnityEngine.EventSystems;
 
 public class Drag : MonoBehaviour
 {
-    private Vector3 prePosition;
-    [SerializeField]private GameObject gameObject;
-    [SerializeField]private List<Vector3> canLoadPositionList=new List<Vector3>();
 
-    private const float OFFSET=2.0f;
+    [SerializeField]private MirrorScriptableObject mirrorSO;
+
+    [SerializeField]private Detection detection;
 
     private void Start()
     {
         prePosition=transform.position; 
-        foreach(Transform child in gameObject.GetComponentInChildren<Transform>(true)){
-            if(child!=gameObject)
-                canLoadPositionList.Add(child.position);
-        }
+        Detection[] detections=FindObjectsOfType<Detection>();
+        detection=detections[0];
     }
+
+    private Vector3 prePosition;
+    [SerializeField]private Texture2D cursor;
 
     public Vector3 GetMousePosition()
     {
@@ -29,49 +29,115 @@ public class Drag : MonoBehaviour
 
         return mousePosition;
     }
+    public void OnMouseDown()
+    {
+        //cursor 
+        cursor=mirrorSO.sprite.texture;
+        Cursor.SetCursor(cursor,Vector2.zero,CursorMode.Auto);
 
-    private void OnMouseDrag()
+    }
+
+    public void OnMouseDrag()
     {
         transform.position=GetMousePosition();
     }
-    private void OnMouseUp()
+
+    public void OnMouseUp()
     {
-        Vector3 targetPosition=GetMousePosition();
+       Vector3 targetPosition=GetMousePosition();
+       bool flag=false;
 
-        bool canLocation=false;
-        foreach(Vector3 position in canLoadPositionList){
-            if(Mathf.Abs(position.x-targetPosition.x)<=OFFSET&&Mathf.Abs(position.y-targetPosition.y)<=OFFSET){
-                targetPosition=position;
-                canLocation=true;
-                break;
-            }
+        if(detection.PlayPositionPlaceable(targetPosition)){
+            Debug.Log("Play");
+            flag=true;
+            transform.position=targetPosition;
+            //! TODO 放置镜子生成实体
+            tryCreatMirror();
+
+        }else if(detection.IconPositionPlaceable(targetPosition)){
+            Debug.Log("Icon");
+            flag=true;
+            transform.position=targetPosition;
+            //! TODO  放回icon
+            tryRebackMirror();
+
+        }else{
+            transform.position=prePosition;
         }
-        if(!canLocation)   targetPosition=prePosition;
 
-        transform.position=targetPosition;
-        prePosition =targetPosition;
+        prePosition=transform.position; 
+        Cursor.SetCursor(null,Vector2.zero,CursorMode.Auto);
+        if(flag){
+            Debug.Log("Destroy");
+            Destroy(gameObject);
+        }
     }
-    // public void OnPointerDown(PointerEventData eventData)
+
+
+    private void tryCreatMirror(){
+        //! todo 判断
+        Instantiate(mirrorSO.mirrorPrefab);
+    }
+
+    private void tryRebackMirror(){
+        //! todo 判断
+
+        //! 事件让他将sprite设置为mirrorSO.icon，并且数量+(1)
+
+
+
+    }
+
+
+
+
+
+    // private Vector3 prePosition;
+    // [SerializeField]private Detection detection;
+
+    // private void Start()
     // {
-    //     Debug.Log("1");
+    //     prePosition=transform.position; 
+    // }
+
+    // public Vector3 GetMousePosition()
+    // {
+    //     Vector3 mousePosition=Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+    //     mousePosition.z=0;
+
+    //     return mousePosition;
+    // }
+    // private void OnMouseDown()
+    // {
+        
+    // }
+    // private void OnMouseDrag()
+    // {
     //     transform.position=GetMousePosition();
     // }
-    // public void OnPointerUp(PointerEventData eventData)
+    // private void OnMouseUp()
     // {
-    //     Debug.Log("2");
     //     Vector3 targetPosition=GetMousePosition();
 
-    //     bool canLocation=false;
-    //     foreach(Vector3 position in canLoadPositionList){
-    //         if(Mathf.Abs(position.x-targetPosition.x)<=OFFSET&&Mathf.Abs(position.y-targetPosition.y)<=OFFSET){
-    //             targetPosition=position;
-    //             canLocation=true;
-    //             break;
-    //         }
-    //     }
-    //     if(!canLocation)   targetPosition=prePosition;
+    //     bool canLocation=detection.PlayPositionPlaceable(targetPosition);
 
-    //     transform.position=targetPosition;
-    //     prePosition =targetPosition;
+    //     if(detection.PlayPositionPlaceable(targetPosition)){
+            
+    //         transform.position=targetPosition;
+    //         //! TODO 放置镜子生成实体
+    //         // tryCreatMirror();
+
+    //     }else if(detection.IconPositionPlaceable(targetPosition)){
+    //         transform.position=targetPosition;
+    //         //! TODO  放回icon
+    //         // tryRebackMirror();
+
+    //     }else{
+    //         transform.position=prePosition;
+    //     }
+
+    //     prePosition=transform.position; 
     // }
+
 }
