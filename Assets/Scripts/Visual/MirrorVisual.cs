@@ -14,6 +14,7 @@ public class MirrorVisual:MonoBehaviour{
 
     [SerializeField]private Detection detection;
 
+
     private void Start()
     {
         originLocalScale=icon.localScale;
@@ -21,7 +22,7 @@ public class MirrorVisual:MonoBehaviour{
         detection=detections[0];
     }
     private Vector3 prePosition;
-    [SerializeField]private Texture2D cursor;
+    // [SerializeField]private Texture2D cursor;
 
     public Vector3 GetMousePosition()
     {
@@ -34,10 +35,9 @@ public class MirrorVisual:MonoBehaviour{
 
     public void OnMouseDown()
     {
-        Debug.Log("Hello");
         //cursor 
-        cursor=mirrorSO.sprite.texture;
-        Cursor.SetCursor(cursor,Vector2.zero,CursorMode.Auto);
+        // cursor=mirrorSO.sprite.texture;
+        // Cursor.SetCursor(cursor,Vector2.zero,CursorMode.Auto);
 
     }
 
@@ -72,7 +72,7 @@ public class MirrorVisual:MonoBehaviour{
         prePosition=transform.position; 
         Cursor.SetCursor(null,Vector2.zero,CursorMode.Auto);
         if(isPlay||isIcon){
-            Destroy(gameObject);
+            Destroy(transform.parent.gameObject);
         }
     }
 

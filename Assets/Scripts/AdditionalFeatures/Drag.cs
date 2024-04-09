@@ -19,7 +19,7 @@ public class Drag : MonoBehaviour
     }
 
     private Vector3 prePosition;
-    [SerializeField]private Texture2D cursor;
+    // [SerializeField]private Texture2D cursor;
 
     public Vector3 GetMousePosition()
     {
@@ -32,8 +32,8 @@ public class Drag : MonoBehaviour
     public void OnMouseDown()
     {
         //cursor 
-        cursor=mirrorSO.sprite.texture;
-        Cursor.SetCursor(cursor,Vector2.zero,CursorMode.Auto);
+        // cursor=mirrorSO.sprite.texture;
+        // Cursor.SetCursor(cursor,Vector2.zero,CursorMode.Auto);
 
     }
 
