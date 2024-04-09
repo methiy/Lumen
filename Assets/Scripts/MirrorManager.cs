@@ -31,7 +31,6 @@ public class MirrorManager : MonoBehaviour
     }
     public int GetUsedMirrorAmount(MirrorType mirrorType){
         int result=0;
-        GameObject[] targetObjects = GameObject.FindGameObjectsWithTag("");
         switch (mirrorType)
         {
             case MirrorType.ReflectMirror:
