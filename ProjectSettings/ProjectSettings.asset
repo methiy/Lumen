@@ -14,7 +14,7 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: DefaultCompany
   productName: LaserDemo
-  defaultCursor: {fileID: 2800000, guid: cb4a4a5dd4d72be47b17a89b4a586410, type: 3}
+  defaultCursor: {fileID: 2800000, guid: 9a293b1cb1156844491aa2a342a6e84a, type: 3}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
   m_ShowUnitySplashScreen: 1
