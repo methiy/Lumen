@@ -7,7 +7,7 @@ public class MainLaser : MonoBehaviour
 {
     [Header("需要检测的物体类别")]
     [SerializeField]private LayerMask layerMasks;
-    [SerializeField]private Event OnChangeMirror;
+    public Action OnChangeMirror;
     //射线
     [SerializeField] private List<LineRenderer> lasersList = new List<LineRenderer>();
 
@@ -15,7 +15,6 @@ public class MainLaser : MonoBehaviour
 
     private void Start()
     {
-        
         // Ray(transform.position,new Vector2(transform.position.x+1,transform.position.y),1,Color.white);
     }
 
@@ -24,6 +23,11 @@ public class MainLaser : MonoBehaviour
         // Ray(transform.position,new Vector2(transform.position.x+1,transform.position.y),1,Color.white);
     }
 
+    public void UpdateMainLaser(){
+        OnChangeMirror?.Invoke();
+        ClearLine();
+        Ray(transform.position,new Vector2(transform.position.x+1,transform.position.y),1,Color.white);
+    }
     private void Ray(Vector2 startPosition, Vector2 endPosition, int index, Color color)
     {
         Vector2 direction = (endPosition - startPosition).normalized;
@@ -53,7 +57,7 @@ public class MainLaser : MonoBehaviour
             lasersList[index].SetPosition(0, transform.position);
             lasersList[index].SetPosition(1, direction*MAX_LENGTH);
         }
-        StartCoroutine(ClearLinePoints());
+        // StartCoroutine(ClearLinePoints());
     }
 
     private float clearInterval =0.1f;

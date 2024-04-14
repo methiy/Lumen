@@ -20,6 +20,17 @@ public class LensMirror : BaseMirror
     /// <param name="originposition"></param>
     /// <param name="direction"></param>
     /// <param name="color"></param>
+    /// 
+
+    private void OnEnable()
+    {
+        mainLaser.OnChangeMirror+=ClearLine;
+    }
+    private void OnDisable()
+    {
+        mainLaser.OnChangeMirror-=ClearLine;
+    }
+
     public override void Ray(Vector2 startPosition, Vector2 endPosition, int index, Color color)
     {
 
@@ -64,7 +75,7 @@ public class LensMirror : BaseMirror
             lasersList[index].SetPosition(1,transform.position+(Vector3)direction*MAX_LENGTH);
         }
 
-        StartCoroutine(ClearLinePoints());
+        // StartCoroutine(ClearLinePoints());
     }
 
     private float clearInterval =0.1f;

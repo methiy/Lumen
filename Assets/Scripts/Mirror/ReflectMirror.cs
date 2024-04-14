@@ -14,6 +14,17 @@ public class ReflectMirror : BaseMirror
     [SerializeField] private const float MAX_LENGTH = 10.0f;
     // [SerializeField]private const int MAX_COUNT=10;
 
+    private void OnEnable()
+    {
+        mainLaser.OnChangeMirror+=ClearLine;
+    }
+    private void OnDisable()
+    {
+        mainLaser.OnChangeMirror-=ClearLine;
+    }
+
+    
+
     /// <summary>
     /// 起点终点 index（设置为哪个line render出射0123 分别为上右左下） color为光线颜色
     /// </summary>
@@ -66,7 +77,7 @@ public class ReflectMirror : BaseMirror
             lasersList[index].SetPosition(0, transform.position);
             lasersList[index].SetPosition(1,transform.position+(Vector3)direction*MAX_LENGTH);
         }
-        StartCoroutine(ClearLinePoints());
+        // StartCoroutine(ClearLinePoints());
     }
 
     private float clearInterval =0.1f;
