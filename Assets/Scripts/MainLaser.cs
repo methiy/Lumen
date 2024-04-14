@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,11 +6,8 @@ using UnityEngine;
 public class MainLaser : MonoBehaviour
 {
     [Header("需要检测的物体类别")]
-    [SerializeField] private LayerMask layerMasks;
-    [SerializeField] private LayerMask mirrorLayerMask;
-    [SerializeField] private LayerMask lensLayerMask;
-    [SerializeField] private LayerMask ClapboardLayerMask;
-
+    [SerializeField]private LayerMask layerMasks;
+    [SerializeField]private Event OnChangeMirror;
     //射线
     [SerializeField] private List<LineRenderer> lasersList = new List<LineRenderer>();
 
@@ -17,26 +15,29 @@ public class MainLaser : MonoBehaviour
 
     private void Start()
     {
-
+        
         // Ray(transform.position,new Vector2(transform.position.x+1,transform.position.y),1,Color.white);
     }
 
     private void Update()
     {
-        Ray(transform.position,new Vector2(transform.position.x+1,transform.position.y),1,Color.white);
+        // Ray(transform.position,new Vector2(transform.position.x+1,transform.position.y),1,Color.white);
     }
 
     private void Ray(Vector2 startPosition, Vector2 endPosition, int index, Color color)
     {
         Vector2 direction = (endPosition - startPosition).normalized;
         RaycastHit2D hit = Physics2D.Raycast(startPosition, direction, MAX_LENGTH, layerMasks);
-        
+
         if (hit.collider!=null && hit.collider.GetComponent<BaseMirror>())
         {
+            Debug.Log("射中");
 
             lasersList[index].positionCount = 2;
             lasersList[index].SetPosition(0, startPosition);
             lasersList[index].SetPosition(1, hit.collider.transform.position);
+            Debug.Log(startPosition);
+            Debug.Log(hit.collider.transform.position);
             //如果击中就通知被击中的物体去发射射线
             
             hit.collider.GetComponent<BaseMirror>()?.Ray(

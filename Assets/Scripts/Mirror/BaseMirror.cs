@@ -1,9 +1,9 @@
+using System;
 using UnityEngine;
 
 public class BaseMirror : MonoBehaviour
 {
 
-    
     [Header("需要检测的物体类别")]
     [SerializeField] protected LayerMask layerMasks;
     [SerializeField] protected LayerMask mirrorLayerMask;

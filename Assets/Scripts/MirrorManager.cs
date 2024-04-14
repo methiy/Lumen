@@ -5,12 +5,32 @@ using UnityEngine;
 
 public class MirrorManager : MonoBehaviour
 {
-    [SerializeField]private int clapboardAmount=0;
-    [SerializeField]private int lensMirrorAmount=0;
-    [SerializeField]private int prismMirrorAmount=0;
-    [SerializeField]private int reflectAmount=0;
+    [SerializeField]private int clapboardAmount;
+    [SerializeField]private int lensMirrorAmount;
+    [SerializeField]private int prismMirrorAmount;
+    [SerializeField]private int reflectAmount;
+
+
+    [SerializeField]private List<Transform> transforms= new List<Transform>();
+    [SerializeField]private Dictionary<Vector3,int> boards=new Dictionary<Vector3, int>();
+
+    private void OnEnable()
+    {
+        init();
+    }
+    private void Start()
+    {
+        
+    }
+    void init(){
+        for(int i=0;i<transforms.Count;i++){
+            boards.Add(transforms[i].position,i);
+            Debug.Log(transforms[i].position);
+        }
+    }
     
-    public int GetMirrorAmount(MirrorType mirrorType){
+    
+    private int GetMirrorAmount(MirrorType mirrorType){
         int result=0;
         switch (mirrorType)
         {
@@ -29,7 +49,7 @@ public class MirrorManager : MonoBehaviour
         }
         return result;
     }
-    public int GetUsedMirrorAmount(MirrorType mirrorType){
+    private int GetUsedMirrorAmount(MirrorType mirrorType){
         int result=0;
         switch (mirrorType)
         {
@@ -46,6 +66,7 @@ public class MirrorManager : MonoBehaviour
                 result=CountObjectsWithScript<Clapboard>();
                 break;
         }
+        Debug.Log("Used "+result);
         return result;
     }
 
@@ -54,6 +75,16 @@ public class MirrorManager : MonoBehaviour
         return FindObjectsOfType<GameObject>()  
             .Where(go => go.GetComponent<T>() != null)  
             .Count();  
+    }
+
+    public void SetVisualAmount(Vector3 position,MirrorType mirrorType){
+        Debug.Log("Ò»½×¶Î");
+        if(boards.ContainsKey(position)){
+
+            int amount=GetMirrorAmount(mirrorType);
+            Debug.Log("¶þ½×¶Î");
+            transforms[boards[position]].GetComponent<MirrorAmountVisual>()?.ChangeAmount(amount);
+        }
     }
 
 }

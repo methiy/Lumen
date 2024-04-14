@@ -1,10 +1,14 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using System.Net.Mail;
 using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class MirrorVisual:MonoBehaviour{
+    private MainLaser mainLaser;
     [SerializeField]private MirrorScriptableObject mirrorSO;
     [SerializeField]private int mirrorAmount;
     [SerializeField]private Transform icon;
@@ -14,7 +18,29 @@ public class MirrorVisual:MonoBehaviour{
 
     [SerializeField]private Detection detection;
 
+    // [SerializeField]private MirrorManager mirrorManager;
 
+    // private Vector3 bornPosition;
+
+    // private void OnEnable()
+    // {
+    //     bornPosition=transform.position;
+    // }
+    // private void OnDestroy()
+    // {
+    //     mirrorManager.SetVisualAmount(bornPosition,mirrorSO.mirrorType);
+    // }
+
+    // private MirrorManager GetMirrorManager(){
+    //     MirrorManager[] allMirrorManager = UnityEngine.Object.FindObjectsOfType<MirrorManager>();  
+    //     return allMirrorManager[0];
+    // }
+    // private void OnEnable()
+    // {
+    //     mirrorManager=GetMirrorManager();
+    //     Debug.Log(transform.position);
+    //     mirrorManager.SetVisualAmount(transform.position,mirrorSO.mirrorType);
+    // }
     private void Start()
     {
         originLocalScale=icon.localScale;
