@@ -10,14 +10,24 @@ public class Drag : MonoBehaviour
     [SerializeField]private MirrorScriptableObject mirrorSO;
 
     [SerializeField]private Detection detection;
-
-    private void Start()
+    
+    private void OnEnable()
     {
         prePosition=transform.position; 
         Detection[] detections=FindObjectsOfType<Detection>();
         detection=detections[0];
+        if(detection.UsedIconPosition.ContainsKey(prePosition))
+            detection.UsedIconPosition[prePosition]=true;
+        if(detection.UsedPlayPosition.ContainsKey(prePosition))
+            detection.UsedPlayPosition[prePosition]=true;
     }
-
+    private void OnDisable()
+    {
+        if(detection.UsedIconPosition.ContainsKey(prePosition))
+            detection.UsedIconPosition[prePosition]=false;
+        if(detection.UsedPlayPosition.ContainsKey(prePosition))
+            detection.UsedPlayPosition[prePosition]=false;
+    }
     private Vector3 prePosition;
     // [SerializeField]private Texture2D cursor;
 

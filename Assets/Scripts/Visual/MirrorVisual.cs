@@ -41,11 +41,23 @@ public class MirrorVisual:MonoBehaviour{
     //     Debug.Log(transform.position);
     //     mirrorManager.SetVisualAmount(transform.position,mirrorSO.mirrorType);
     // }
-    private void Start()
+    private void OnEnable()
     {
         originLocalScale=icon.localScale;
         Detection[] detections=FindObjectsOfType<Detection>();
         detection=detections[0];
+        if(detection.UsedIconPosition.ContainsKey(prePosition))
+            detection.UsedIconPosition[prePosition]=true;
+        if(detection.UsedPlayPosition.ContainsKey(prePosition))
+            detection.UsedPlayPosition[prePosition]=true;
+    }
+
+    private void OnDisable()
+    {
+        if(detection.UsedIconPosition.ContainsKey(prePosition))
+            detection.UsedIconPosition[prePosition]=false;
+        if(detection.UsedPlayPosition.ContainsKey(prePosition))
+            detection.UsedPlayPosition[prePosition]=false;
     }
     private Vector3 prePosition;
     // [SerializeField]private Texture2D cursor;

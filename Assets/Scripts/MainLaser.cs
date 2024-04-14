@@ -35,13 +35,9 @@ public class MainLaser : MonoBehaviour
 
         if (hit.collider!=null && hit.collider.GetComponent<BaseMirror>())
         {
-            Debug.Log("射中");
-
             lasersList[index].positionCount = 2;
             lasersList[index].SetPosition(0, startPosition);
             lasersList[index].SetPosition(1, hit.collider.transform.position);
-            Debug.Log(startPosition);
-            Debug.Log(hit.collider.transform.position);
             //如果击中就通知被击中的物体去发射射线
             
             hit.collider.GetComponent<BaseMirror>()?.Ray(
