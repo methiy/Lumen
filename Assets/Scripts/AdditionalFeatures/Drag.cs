@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class Drag : MonoBehaviour
 {
@@ -54,10 +53,11 @@ public class Drag : MonoBehaviour
 
     public void OnMouseUp()
     {
-       Vector3 targetPosition=GetMousePosition();
-       bool isPlay=false,isIcon=false;
-       Vector3 location; 
-        if(detection.PlayPositionPlaceable(targetPosition,out location)){
+        Vector3 targetPosition=GetMousePosition();
+        bool isPlay=false,isIcon=false;
+        Vector3 location;
+        Debug.Log("Mouse Up Position: " + targetPosition);
+        if (detection.PlayPositionPlaceable(targetPosition,out location)){
             Debug.Log("Play");
             isPlay=true;
             transform.position=location;
@@ -68,11 +68,13 @@ public class Drag : MonoBehaviour
             Debug.Log("Icon");
             isIcon=true;
             transform.position=location;
+            Debug.Log("Icon location: " + location);
             //! TODO  ·Å»Øicon
             tryRebackMirror(location);
 
         }else{
             transform.position=prePosition;
+            Debug.Log("Icon location: ");
         }
 
         prePosition=transform.position; 

@@ -17,6 +17,7 @@ public class MirrorVisual:MonoBehaviour{
     [SerializeField]private float scaleFactort=1.2f;
 
     [SerializeField]private Detection detection;
+    private Vector3 prePosition;
 
     // [SerializeField]private MirrorManager mirrorManager;
 
@@ -43,7 +44,8 @@ public class MirrorVisual:MonoBehaviour{
     // }
     private void OnEnable()
     {
-        originLocalScale=icon.localScale;
+        prePosition = transform.position;
+        originLocalScale =icon.localScale;
         Detection[] detections=FindObjectsOfType<Detection>();
         detection=detections[0];
         if(detection.UsedIconPosition.ContainsKey(prePosition))
@@ -59,7 +61,7 @@ public class MirrorVisual:MonoBehaviour{
         if(detection.UsedPlayPosition.ContainsKey(prePosition))
             detection.UsedPlayPosition[prePosition]=false;
     }
-    private Vector3 prePosition;
+    
     // [SerializeField]private Texture2D cursor;
 
     public Vector3 GetMousePosition()
@@ -82,11 +84,13 @@ public class MirrorVisual:MonoBehaviour{
     public void OnMouseDrag()
     {
         transform.position=GetMousePosition();
+        Debug.Log("Icon location: " + prePosition);
     }
 
     public void OnMouseUp()
     {
-       Vector3 targetPosition=GetMousePosition();
+        Debug.Log("Mouse Up ");
+        Vector3 targetPosition=GetMousePosition();
        bool isPlay=false,isIcon=false;
        Vector3 location; 
         if(detection.PlayPositionPlaceable(targetPosition,out location)){
@@ -104,6 +108,8 @@ public class MirrorVisual:MonoBehaviour{
             tryRebackMirror(location);
 
         }else{
+            Debug.Log("no");
+            Debug.Log("Icon location: " + prePosition);
             transform.position=prePosition;
         }
 

@@ -12,10 +12,9 @@ public class MainLaser : MonoBehaviour
     [SerializeField] private List<LineRenderer> lasersList = new List<LineRenderer>();
 
     [SerializeField] private const float MAX_LENGTH = 100.0f;
-
     private void Start()
     {
-        // Ray(transform.position,new Vector2(transform.position.x+1,transform.position.y),1,Color.white);
+        Ray(transform.position,new Vector2(transform.position.x+1,transform.position.y),1,Color.white);
     }
 
     private void Update()
@@ -24,9 +23,12 @@ public class MainLaser : MonoBehaviour
     }
 
     public void UpdateMainLaser(){
-        OnChangeMirror?.Invoke();
-        ClearLine();
-        Ray(transform.position,new Vector2(transform.position.x+1,transform.position.y),1,Color.white);
+        if (Input.GetMouseButtonUp(0))
+        {
+            OnChangeMirror?.Invoke();
+            ClearLine();
+            Ray(transform.position, new Vector2(transform.position.x + 1, transform.position.y), 1, Color.white);
+        }
     }
     private void Ray(Vector2 startPosition, Vector2 endPosition, int index, Color color)
     {
