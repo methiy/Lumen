@@ -9,8 +9,8 @@ public class TargetMirror : BaseMirror
     public GameObject gameObjec;
     public override void Ray(Vector2 startPosition, Vector2 endPosition, int index, Color color)
     {
-        //! todo ï¿½Ð¶ï¿½ï¿½ï¿½É«
-        Debug.Log("Ê¤ï¿½ï¿½");
+        //! todo ÅÐ¶ÏÑÕÉ«
+        Debug.Log("Ê¤Àû");
         gameObjec.SetActive(false);
         gameObject.SetActive(true);
     }

@@ -11,14 +11,12 @@ public class BaseMirror : MonoBehaviour
     [SerializeField] protected LayerMask ClapboardLayerMask;
 
     [SerializeField] protected LayerMask PrismLayerMask;
-
-    
-
     private void Awake()
     {
         mainLaser=GetMainLaser();
         mainLaser.UpdateMainLaser();
     }
+
     private MainLaser GetMainLaser(){
         MainLaser[] allMirrorManager = UnityEngine.Object.FindObjectsOfType<MainLaser>();  
         return allMirrorManager[0];

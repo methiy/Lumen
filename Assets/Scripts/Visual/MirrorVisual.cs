@@ -75,6 +75,7 @@ public class MirrorVisual:MonoBehaviour{
 
     public void OnMouseDown()
     {
+        Debug.Log("°´ÏÂ");
         //cursor 
         // cursor=mirrorSO.sprite.texture;
         // Cursor.SetCursor(cursor,Vector2.zero,CursorMode.Auto);

@@ -5,17 +5,17 @@ using UnityEngine;
 
 public class LensMirror : BaseMirror
 {
-    //å°„çº¿
+    //ÉäÏß
     [SerializeField] private List<LineRenderer> lasersList = new List<LineRenderer>();
 
     //const
-    [Header("å¸¸é‡")]
+    [Header("³£Á¿")]
     // [SerializeField]private const float OFFSET=0.01f;
     [SerializeField] private const float MAX_LENGTH = 10.0f;
     // [SerializeField]private const int MAX_COUNT=10;
 
     /// <summary>
-    /// èµ·ç‚¹ç»ˆç‚¹ indexï¼ˆè®¾ç½®ä¸ºå“ªä¸ªline renderå‡ºå°„0123 åˆ†åˆ«ä¸ºä¸Šå³å·¦ä¸‹ï¼‰ colorä¸ºå…‰çº¿é¢œè‰²
+    /// ÆğµãÖÕµã index£¨ÉèÖÃÎªÄÄ¸öline render³öÉä0123 ·Ö±ğÎªÉÏÓÒ×óÏÂ£© colorÎª¹âÏßÑÕÉ«
     /// </summary>
     /// <param name="originposition"></param>
     /// <param name="direction"></param>
@@ -34,24 +34,19 @@ public class LensMirror : BaseMirror
     public override void Ray(Vector2 startPosition, Vector2 endPosition, int index, Color color)
     {
 
-        //ä»–çš„1 æ˜¯æˆ‘çš„3 ä»–çš„ 0 æ˜¯æˆ‘çš„ 2
+        //ËûµÄ1 ÊÇÎÒµÄ3 ËûµÄ 0 ÊÇÎÒµÄ 2
         // index^=2;
 
-        //åç§»å€¼
+        //Æ«ÒÆÖµ
         int[] dx = { 0, 1, 0, -1 };
         int[] dy = { 1, 0, -1, 0 };
 
-        //å‡ºå°„æ–¹å‘
+        //³öÉä·½Ïò
         Vector2 direction=new Vector2(dx[index],dy[index]).normalized;
         
-        //! æ”¾ç½®å‡ºç°è‡ªå·±æ‰“è‡ªå·±çš„æƒ…å†µ å°±æ˜¯èµ°ä¸€ä¸ªåŠå¾„
+        //! ·ÅÖÃ³öÏÖ×Ô¼º´ò×Ô¼ºµÄÇé¿ö ¾ÍÊÇ×ßÒ»¸ö°ë¾¶
         float lineOffset=1.1f;
         RaycastHit2D hit = Physics2D.Raycast(endPosition+lineOffset*direction, direction, MAX_LENGTH, layerMasks);
-        // Debug.Log(endPosition+direction*1.1f);
-        // if(hit.collider==null)
-        //     Debug.Log("NULL");
-        // else
-        //     Debug.Log(hit.rigidbody.name);
         
         lasersList[index].material.color=color;
         if (hit.collider != null && hit.collider.GetComponent<BaseMirror>()&&(endPosition!=(Vector2)hit.collider.transform.position))
@@ -60,7 +55,7 @@ public class LensMirror : BaseMirror
             lasersList[index].positionCount = 2;
             lasersList[index].SetPosition(0, endPosition);
             lasersList[index].SetPosition(1, hit.collider.transform.position);
-            //å¦‚æœå‡»ä¸­å°±é€šçŸ¥è¢«å‡»ä¸­çš„ç‰©ä½“å»å‘å°„å°„çº¿
+            //Èç¹û»÷ÖĞ¾ÍÍ¨Öª±»»÷ÖĞµÄÎïÌåÈ¥·¢ÉäÉäÏß
             hit.collider.GetComponent<BaseMirror>()?.Ray(
                 endPosition,
                 hit.collider.transform.position,
@@ -69,7 +64,7 @@ public class LensMirror : BaseMirror
         }
         else
         {
-            //æ²¡æœ‰å‡»ä¸­
+            //Ã»ÓĞ»÷ÖĞ
             lasersList[index].positionCount = 2;
             lasersList[index].SetPosition(0, transform.position);
             lasersList[index].SetPosition(1,transform.position+(Vector3)direction*MAX_LENGTH);
@@ -77,89 +72,41 @@ public class LensMirror : BaseMirror
 
         // StartCoroutine(ClearLinePoints());
     }
-
-    private float clearInterval =0.1f;
-    private IEnumerator ClearLinePoints()  
-    {  
-        while (true) // æ— é™å¾ªç¯ï¼Œç›´åˆ°åœæ­¢Coroutine  
-        {  
-            yield return new WaitForSeconds(clearInterval); // ç­‰å¾…æŒ‡å®šçš„æ—¶é—´é—´éš”  
-            ClearLine(); // æ¸…é™¤LineRendererä¸­çš„ç‚¹  
-        }  
-    }  
-  
     private void ClearLine()  
     {  
         foreach(var lineRenderer in lasersList){
-            lineRenderer.positionCount = 0; // å°†LineRendererä¸­çš„ç‚¹æ•°é‡è®¾ç½®ä¸º0ï¼Œä»è€Œæ¸…é™¤æ‰€æœ‰ç‚¹  
+            lineRenderer.positionCount = 0; // ½«LineRendererÖĞµÄµãÊıÁ¿ÉèÖÃÎª0£¬´Ó¶øÇå³ıËùÓĞµã  
             lineRenderer.material.color=Color.white;
         }
     }    
-
-
-    // private void Ray(Vector2 startPosition,Vector2 endPosition){
-    //     //å‘å°„æ–¹å‘
-    //     Vector2 direction = (endPosition - startPosition).normalized;
-
-    //     RaycastHit2D hit=Physics2D.Raycast(startPosition, direction,MAX_LENGTH,layerMasks);
-    //     List<Pair> hitList=new List<Pair>();
-    //     if(hit.collider!=null)  hitList.Add(new Pair(hit,startPosition));
-    //     int count=0;
-    //     while(hitList.Count!=0&&++count<MAX_COUNT)
-    //     {
-    //         List<Pair> newhitList=new List<Pair>();
-    //         foreach(Pair hit2D in hitList) {
-
-    //             RaycastHit2D raycastHit2D=hit2D.GetRaycastHit2D();//! å½“å‰å‡»ä¸­çš„ç‚¹
-    //             Vector2 originPosition=hit2D.GetOriginPosition();
-
-    //             hit=ReflectMirror(raycastHit2D,originPosition);
-    //             if(hit.collider!=null)  newhitList.Add(new Pair(hit,raycastHit2D.point));
-    //             hit=LensMirror(raycastHit2D,originPosition);
-    //             if(hit.collider!=null)  newhitList.Add(new Pair(hit,raycastHit2D.point));
-    //         }
-    //         hitList=newhitList;
-    //     }
-    // }
-
-
-    // private RaycastHit2D ReflectMirror(RaycastHit2D raycastHit2D,Vector2 originPosition) {
-
-    //     Vector2 direction = Vector2.Reflect(originPosition,raycastHit2D.normal);
-
-    //     RaycastHit2D hit=Physics2D.Raycast(originPosition, direction,MAX_LENGTH,mirrorLayerMask);
-
-    //     return hit; 
-    // }
-    // private RaycastHit2D LensMirror(RaycastHit2D raycastHit2D,Vector2 originPosition){
-    //     //å‘å°„æ–¹å‘
-    //     Vector2 direction = (raycastHit2D.point-originPosition).normalized;
-
-    //     RaycastHit2D hit=Physics2D.Raycast(originPosition, direction,MAX_LENGTH,lensLayerMask);
-
-    //     return hit;
-    // }
+    private int curRotation=0;
+    private void Update()
+    {
+        if(Input.GetMouseButtonDown(1)){
+            TryRotateMirror();
+        }
+    }
+    private void TryRotateMirror(){
+        
+            Vector3 mousePos = Input.mousePosition; // »ñÈ¡Êó±êµÄÆÁÄ»×ø±ê  
+            mousePos.z = Camera.main.nearClipPlane; // ÉèÖÃz×ø±êÎªÏà»úµÄ½ü²Ã¼ôÃæ£¬È·±£×ª»»µ½ÕıÈ·µÄ2DÆ½Ãæ  
+            Vector2 worldPoint = Camera.main.ScreenToWorldPoint(mousePos); // ½«Êó±êµÄÆÁÄ»×ø±ê×ª»»ÎªÊÀ½ç×ø±ê  
+              
+            // Ê¹ÓÃPhysics2D.OverlapCircleÀ´¼ì²âÔ²ĞÎÇøÓòÄÚµÄËùÓĞÅö×²Æ÷  
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(worldPoint, 0.2f);  
+            foreach (Collider2D collider in colliders)  
+            {  
+                // ¼ì²éÏà½»µÄÎïÌåÊÇ·ñÊÇµ±Ç°ÎïÌå  
+                if (collider.gameObject == this.gameObject)  
+                {  
+                    RotateMirror();
+                }  
+            }
+    }
+    private void RotateMirror(){
+        
+        transform.transform.Rotate(0,0,90);
+        curRotation+=1;
+        curRotation%=4;
+    }
 }
-
-// /// <summary>
-// /// è®°å½•å°„çº¿å‡»ä¸­çš„ç›®æ ‡å’Œå°„å…¥èµ·å§‹ç‚¹
-// /// </summary>
-// public class Pair
-// {
-//     RaycastHit2D raycastHit2D;
-//     Vector2 originPosition;
-
-//     public Pair(RaycastHit2D raycastHit2D, Vector2 originPosition)
-//     {
-//         this.raycastHit2D = raycastHit2D;
-//         this.originPosition = originPosition;
-//     }
-//     public RaycastHit2D GetRaycastHit2D()
-//     {
-//         return raycastHit2D;
-//     }
-//     public Vector2 GetOriginPosition()
-//     {
-//         return originPosition;
-//     }
-// }

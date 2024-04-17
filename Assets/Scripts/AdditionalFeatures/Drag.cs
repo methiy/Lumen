@@ -40,9 +40,6 @@ public class Drag : MonoBehaviour
     }
     public void OnMouseDown()
     {
-        //cursor 
-        // cursor=mirrorSO.sprite.texture;
-        // Cursor.SetCursor(cursor,Vector2.zero,CursorMode.Auto);
 
     }
 
@@ -56,7 +53,6 @@ public class Drag : MonoBehaviour
         Vector3 targetPosition=GetMousePosition();
         bool isPlay=false,isIcon=false;
         Vector3 location;
-        Debug.Log("Mouse Up Position: " + targetPosition);
         if (detection.PlayPositionPlaceable(targetPosition,out location)){
             Debug.Log("Play");
             isPlay=true;
