@@ -14,7 +14,8 @@ public class MainLaser : MonoBehaviour
     [SerializeField] private const float MAX_LENGTH = 100.0f;
     private void Start()
     {
-        Ray(transform.position,new Vector2(transform.position.x+1,transform.position.y),1,Color.white);
+        ClearLine();
+        Ray(transform.position, new Vector2(transform.position.x + 1, transform.position.y), 1, Color.white);
     }
 
     private void Update()
