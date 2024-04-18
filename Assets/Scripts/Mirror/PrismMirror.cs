@@ -36,10 +36,19 @@ public class PrismMirror : BaseMirror
 
         //他的1 是我的3 他的 0 是我的 2
         index^=2;
+
+        if((index^curRotation)!=3)    return ;
+
         //求出射时 哪个line render发射射线
         int index1=index^3,index2=index^1;
-
-        Color color1=Color.blue,color2=Color.red;
+        if(index==3||index==1){
+            index1=index^3;
+            index2=index^1;
+        }else if(index==2||index==0){
+            index1=index^1;
+            index2=index^3;
+        }
+        Color color1=Color.red,color2=Color.blue;
         RRay(startPosition,endPosition,index1,color1);
         RRay(startPosition,endPosition,index2,color2);
             
@@ -118,5 +127,6 @@ public class PrismMirror : BaseMirror
         transform.transform.Rotate(0,0,90);
         curRotation+=1;
         curRotation%=4;
+        mainLaser.UpdateMainLaser();
     }
 }

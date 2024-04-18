@@ -34,6 +34,8 @@ public class LensMirror : BaseMirror
     public override void Ray(Vector2 startPosition, Vector2 endPosition, int index, Color color)
     {
 
+       if((index^curRotation)!=1) return ;
+        
         //他的1 是我的3 他的 0 是我的 2
         // index^=2;
 
@@ -108,5 +110,6 @@ public class LensMirror : BaseMirror
         transform.transform.Rotate(0,0,90);
         curRotation+=1;
         curRotation%=4;
+        mainLaser.UpdateMainLaser();
     }
 }

@@ -35,7 +35,13 @@ public class ReflectMirror : BaseMirror
         //他的1 是我的3 他的 0 是我的 2
         index^=2;
         //求出射时 哪个line render发射射线
-        index ^= 3;
+        if(curRotation==0||curRotation==2){
+            index ^= 1;
+        }
+        else if(curRotation==1||curRotation==3){
+            index ^= 3;
+        }
+        
         //偏移值
         int[] dx = { 0, 1, 0, -1 };
         int[] dy = { 1, 0, -1, 0 };
@@ -115,5 +121,6 @@ public class ReflectMirror : BaseMirror
             transform.transform.Rotate(0,0,90);
         curRotation+=1;
         curRotation%=4;
+        mainLaser.UpdateMainLaser();
     }    
 }
