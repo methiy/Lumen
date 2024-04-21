@@ -61,13 +61,12 @@ public class ReflectMirror : BaseMirror
             lasersList[index].SetPosition(0, endPosition);
             lasersList[index].SetPosition(1, hit.collider.transform.position);
             //如果击中就通知被击中的物体去发射射线
-            if(hit.collider.gameObject.layer!=ClapboardLayerMask){
-                hit.collider.GetComponent<BaseMirror>()?.Ray(
-                    endPosition,
-                    hit.collider.transform.position,
-                    index,
-                    color);
-            }
+            
+            hit.collider.GetComponent<BaseMirror>()?.Ray(
+                endPosition,
+                hit.collider.transform.position,
+                index,
+                color);
         }
         else
         {

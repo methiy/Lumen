@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 123068964001efa43840a90352099df0, type: 3}
+  m_Name: TransmissionInputMirror
+  m_EditorClassIdentifier: 
+  mirrorType: 6
+  icon: {fileID: 21300000, guid: 1611f704417d5d949897f29b477a2868, type: 3}
+  sprite: {fileID: 21300000, guid: 798a49d3bcf15e644abbdc80aacac8cc, type: 3}
+  mirrorPrefab: {fileID: 2487413014930886714, guid: d455655c06d47fb4bb24d9c8b2242c7f, type: 3}
+  mirrorIconPrefab: {fileID: 84917668928162648, guid: 47afd78176809f74ba6cc50f34de0da1, type: 3}

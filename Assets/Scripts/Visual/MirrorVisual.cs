@@ -18,32 +18,9 @@ public class MirrorVisual:MonoBehaviour{
 
     [SerializeField]private Detection detection;
     private Vector3 prePosition;
-
-    // [SerializeField]private MirrorManager mirrorManager;
-
-    // private Vector3 bornPosition;
-
-    // private void OnEnable()
-    // {
-    //     bornPosition=transform.position;
-    // }
-    // private void OnDestroy()
-    // {
-    //     mirrorManager.SetVisualAmount(bornPosition,mirrorSO.mirrorType);
-    // }
-
-    // private MirrorManager GetMirrorManager(){
-    //     MirrorManager[] allMirrorManager = UnityEngine.Object.FindObjectsOfType<MirrorManager>();  
-    //     return allMirrorManager[0];
-    // }
-    // private void OnEnable()
-    // {
-    //     mirrorManager=GetMirrorManager();
-    //     Debug.Log(transform.position);
-    //     mirrorManager.SetVisualAmount(transform.position,mirrorSO.mirrorType);
-    // }
     private void OnEnable()
     {
+        Debug.Log(gameObject.name);
         prePosition = transform.position;
         originLocalScale =icon.localScale;
         Detection[] detections=FindObjectsOfType<Detection>();

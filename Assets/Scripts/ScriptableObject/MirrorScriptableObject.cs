@@ -20,5 +20,7 @@ public enum MirrorType
     ReflectMirror,
     LensMirror,
     PrismMirror,
-    Clapboard
+    Clapboard,
+    TransmissionInputMirror,
+    TransmissionOutputMirror
 }
