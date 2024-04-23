@@ -85,6 +85,9 @@ public class ReflectMirror : BaseMirror
         }
     }
 
+    /// <summary>
+    /// Rotate
+    /// </summary>
     private int curRotation=-1;
     private void Start()
     {
@@ -115,9 +118,9 @@ public class ReflectMirror : BaseMirror
     }
     private void RotateMirror(){
         if(curRotation==-1)
-            transform.transform.Rotate(0,0,45);
+            transform.Rotate(0,0,45);
         else 
-            transform.transform.Rotate(0,0,90);
+            transform.Rotate(0,0,90);
         curRotation+=1;
         curRotation%=4;
         mainLaser.UpdateMainLaser();

@@ -62,17 +62,14 @@ public class MirrorVisual:MonoBehaviour{
     public void OnMouseDrag()
     {
         transform.position=GetMousePosition();
-        Debug.Log("Icon location: " + prePosition);
     }
 
     public void OnMouseUp()
     {
-        Debug.Log("Mouse Up ");
         Vector3 targetPosition=GetMousePosition();
-       bool isPlay=false,isIcon=false;
-       Vector3 location; 
+        bool isPlay=false,isIcon=false;
+        Vector3 location; 
         if(detection.PlayPositionPlaceable(targetPosition,out location)){
-            Debug.Log("Play");
             isPlay=true;
             transform.position=location;
             //! TODO 放置镜子生成实体

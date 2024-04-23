@@ -15,6 +15,11 @@ public class TransmissionInputMirror : BaseMirror
         if(index==curRotation)
             outputMirror?.RRay(color);
     }
+
+
+    /// <summary>
+    /// Rotate
+    /// </summary>
     private int curRotation=0;
     private void Update()
     {
@@ -41,7 +46,7 @@ public class TransmissionInputMirror : BaseMirror
     }
     private void RotateMirror(){
         
-        transform.transform.Rotate(0,0,90);
+        transform.Rotate(0,0,90);
         curRotation+=1;
         curRotation%=4;
         mainLaser.UpdateMainLaser();

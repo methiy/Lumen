@@ -22,5 +22,10 @@ public enum MirrorType
     PrismMirror,
     Clapboard,
     TransmissionInputMirror,
-    TransmissionOutputMirror
+    TransmissionOutputMirror,
+    DispersingMirror,
+    LensAndReflectMirror,
+    ReflectAndClapBoardMirror,
+    ClapboardAndLensMirror,
+    ReflectAndLensMirror
 }

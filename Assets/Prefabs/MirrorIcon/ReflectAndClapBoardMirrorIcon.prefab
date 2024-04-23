@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &3085124702924010012
+--- !u!1001 &4833743439700853927
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,59 +10,59 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3169725695271074116, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
       propertyPath: m_Name
-      value: TransmissionOutputMirrorIcon
+      value: ReflectAndClapBoardMirrorIcon
       objectReference: {fileID: 0}
     - target: {fileID: 3280165213867779001, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
       propertyPath: mirrorSO
       value: 
-      objectReference: {fileID: 11400000, guid: 88c3682e282a16647b3cb534041ea998, type: 2}
+      objectReference: {fileID: 11400000, guid: 8dc70089adbd7364eade0fcf1135451c, type: 2}
     - target: {fileID: 3724991831026547751, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
       propertyPath: m_Size.x
-      value: 1.18
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 3724991831026547751, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
       propertyPath: m_Size.y
-      value: 1.18
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 3724991831026547751, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 1611f704417d5d949897f29b477a2868, type: 3}
+      objectReference: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 3724991831026547751, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4136297218256937197, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
       propertyPath: m_Size.x
-      value: 1.0300937
+      value: 2.788586
       objectReference: {fileID: 0}
     - target: {fileID: 4136297218256937197, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
       propertyPath: m_Size.y
-      value: 1.0098978
+      value: 2.8418438
       objectReference: {fileID: 0}
     - target: {fileID: 4136297218256937197, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
       propertyPath: m_Offset.x
-      value: 0.030294001
+      value: 0.0487324
       objectReference: {fileID: 0}
     - target: {fileID: 4136297218256937197, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
       propertyPath: m_Offset.y
-      value: 0.040391922
+      value: -0.5388148
       objectReference: {fileID: 0}
     - target: {fileID: 4136297218256937197, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 1.18
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 4136297218256937197, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.y
-      value: 1.18
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 4136297218256937197, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 1.2
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 4136297218256937197, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 0.95
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 8090256923695889012, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
       propertyPath: m_LocalPosition.x

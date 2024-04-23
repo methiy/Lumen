@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 123068964001efa43840a90352099df0, type: 3}
+  m_Name: ReflectAndClapBoardMirrorSO
+  m_EditorClassIdentifier: 
+  mirrorType: 9
+  icon: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 65fa3fb9bfefd624b91f26163edc9999, type: 3}
+  mirrorPrefab: {fileID: 9135114164166828958, guid: 8b67cede3ed54b94faa3b2f812c3af22, type: 3}
+  mirrorIconPrefab: {fileID: 7559794131458981347, guid: 338b3ec2459d5d9449f55c45041ebeda, type: 3}

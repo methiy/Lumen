@@ -35,9 +35,6 @@ public class LensMirror : BaseMirror
     {
 
        if((index^curRotation)!=1) return ;
-        
-        //他的1 是我的3 他的 0 是我的 2
-        // index^=2;
 
         //偏移值
         int[] dx = { 0, 1, 0, -1 };
@@ -71,9 +68,9 @@ public class LensMirror : BaseMirror
             lasersList[index].SetPosition(0, transform.position);
             lasersList[index].SetPosition(1,transform.position+(Vector3)direction*MAX_LENGTH);
         }
-
-        // StartCoroutine(ClearLinePoints());
     }
+
+
     private void ClearLine()  
     {  
         foreach(var lineRenderer in lasersList){
@@ -81,6 +78,10 @@ public class LensMirror : BaseMirror
             lineRenderer.material.color=Color.white;
         }
     }    
+
+    /// <summary>
+    /// Rotate
+    /// </summary>
     private int curRotation=0;
     private void Update()
     {
@@ -107,7 +108,7 @@ public class LensMirror : BaseMirror
     }
     private void RotateMirror(){
         
-        transform.transform.Rotate(0,0,90);
+        transform.Rotate(0,0,90);
         curRotation+=1;
         curRotation%=4;
         mainLaser.UpdateMainLaser();

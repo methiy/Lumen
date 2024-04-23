@@ -1,26 +1,25 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TransmissionOutputMirror : BaseMirror
+public class ClapboardAndLensMirror : BaseMirror
 {
-
-    private TransmissionInputMirror inputMirror;
-
-    private void Start()
-    {
-        inputMirror=GetInputMirror();
-        inputMirror.setOutputMirror(this);
-    }
-    private TransmissionInputMirror GetInputMirror(){
-        TransmissionInputMirror[] allInputMirror = UnityEngine.Object.FindObjectsOfType<TransmissionInputMirror>();  
-        return allInputMirror[0];
-    }
-    
+    //射线
     [SerializeField] private List<LineRenderer> lasersList = new List<LineRenderer>();
 
+    //const
+    [Header("常量")]
+    // [SerializeField]private const float OFFSET=0.01f;
     [SerializeField] private const float MAX_LENGTH = 10.0f;
+    // [SerializeField]private const int MAX_COUNT=10;
+
+    /// <summary>
+    /// 起点终点 index（设置为哪个line render出射0123 分别为上右左下） color为光线颜色
+    /// </summary>
+    /// <param name="originposition"></param>
+    /// <param name="direction"></param>
+    /// <param name="color"></param>
+    /// 
 
     private void OnEnable()
     {
@@ -31,13 +30,21 @@ public class TransmissionOutputMirror : BaseMirror
         mainLaser.OnChangeMirror-=ClearLine;
     }
 
-    public override void Ray(Vector2 startPosition, Vector2 endPosition, int index, Color color){ 
+    public override void Ray(Vector2 startPosition, Vector2 endPosition, int index, Color color)
+    {
+
+       index^=2;
+
+       if(index%2!=curRotation%2)   return ;
+
+       int index1=index^2;
+       
+       RRay(startPosition, endPosition, index1, color);
 
     }
-    public void RRay(Color color){
 
-        int index=curRotation;
-        Vector2 endPosition=transform.position;
+    public void RRay(Vector2 startPosition, Vector2 endPosition, int index, Color color)
+    {
 
         //偏移值
         int[] dx = { 0, 1, 0, -1 };
@@ -72,6 +79,7 @@ public class TransmissionOutputMirror : BaseMirror
             lasersList[index].SetPosition(1,transform.position+(Vector3)direction*MAX_LENGTH);
         }
     }
+
     private void ClearLine()  
     {  
         foreach(var lineRenderer in lasersList){
@@ -107,7 +115,7 @@ public class TransmissionOutputMirror : BaseMirror
                 }  
             }
     }
-    private void RotateMirror(){ 
+    private void RotateMirror(){
         
         transform.Rotate(0,0,90);
         curRotation+=1;
