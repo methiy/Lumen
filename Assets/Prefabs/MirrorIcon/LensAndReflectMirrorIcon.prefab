@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3169725695271074116, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
       propertyPath: m_Name
-      value: HalfMirrorIcon
+      value: LensAndReflectMirrorIcon
       objectReference: {fileID: 0}
     - target: {fileID: 3280165213867779001, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
       propertyPath: mirrorSO
@@ -34,19 +34,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4136297218256937197, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
       propertyPath: m_Size.x
-      value: 0.8016796
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4136297218256937197, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
       propertyPath: m_Size.y
-      value: 0.77099717
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4136297218256937197, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
       propertyPath: m_Offset.x
-      value: -0.024929523
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4136297218256937197, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
       propertyPath: m_Offset.y
-      value: 0.04027076
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4136297218256937197, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
