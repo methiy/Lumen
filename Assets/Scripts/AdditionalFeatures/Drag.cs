@@ -9,23 +9,27 @@ public class Drag : MonoBehaviour
     [SerializeField]private MirrorScriptableObject mirrorSO;
 
     [SerializeField]private Detection detection;
+
     
     private void OnEnable()
     {
         prePosition=transform.position; 
         Detection[] detections=FindObjectsOfType<Detection>();
         detection=detections[0];
-        if(detection.UsedIconPosition.ContainsKey(prePosition))
-            detection.UsedIconPosition[prePosition]=true;
-        if(detection.UsedPlayPosition.ContainsKey(prePosition))
-            detection.UsedPlayPosition[prePosition]=true;
+
+        if(detection.UsedIconPosition.ContainsKey(detection.PositionToString(prePosition))){
+            detection.UsedIconPosition[detection.PositionToString(prePosition)]="true";
+        }
+        if(detection.UsedPlayPosition.ContainsKey(detection.PositionToString(prePosition))){
+            detection.UsedPlayPosition[detection.PositionToString(prePosition)]="true";
+        }
     }
     private void OnDisable()
     {
-        if(detection.UsedIconPosition.ContainsKey(prePosition))
-            detection.UsedIconPosition[prePosition]=false;
-        if(detection.UsedPlayPosition.ContainsKey(prePosition))
-            detection.UsedPlayPosition[prePosition]=false;
+        if(detection.UsedIconPosition.ContainsKey(detection.PositionToString(prePosition)))
+            detection.UsedIconPosition[detection.PositionToString(prePosition)]="false";
+        if(detection.UsedPlayPosition.ContainsKey(detection.PositionToString(prePosition)))
+            detection.UsedPlayPosition[detection.PositionToString(prePosition)]="false";
     }
     private Vector3 prePosition;
     // [SerializeField]private Texture2D cursor;
@@ -54,7 +58,6 @@ public class Drag : MonoBehaviour
         bool isPlay=false,isIcon=false;
         Vector3 location;
         if (detection.PlayPositionPlaceable(targetPosition,out location)){
-            Debug.Log("Play");
             isPlay=true;
             transform.position=location;
             //! TODO 放置镜子生成实体

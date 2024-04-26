@@ -20,23 +20,22 @@ public class MirrorVisual:MonoBehaviour{
     private Vector3 prePosition;
     private void OnEnable()
     {
-        Debug.Log(gameObject.name);
         prePosition = transform.position;
         originLocalScale =icon.localScale;
         Detection[] detections=FindObjectsOfType<Detection>();
         detection=detections[0];
-        if(detection.UsedIconPosition.ContainsKey(prePosition))
-            detection.UsedIconPosition[prePosition]=true;
-        if(detection.UsedPlayPosition.ContainsKey(prePosition))
-            detection.UsedPlayPosition[prePosition]=true;
+        if(detection.UsedIconPosition.ContainsKey(detection.PositionToString(prePosition)))
+            detection.UsedIconPosition[detection.PositionToString(prePosition)]="true";
+        if(detection.UsedPlayPosition.ContainsKey(detection.PositionToString(prePosition)))
+            detection.UsedPlayPosition[detection.PositionToString(prePosition)]="true";
     }
 
     private void OnDisable()
     {
-        if(detection.UsedIconPosition.ContainsKey(prePosition))
-            detection.UsedIconPosition[prePosition]=false;
-        if(detection.UsedPlayPosition.ContainsKey(prePosition))
-            detection.UsedPlayPosition[prePosition]=false;
+        if(detection.UsedIconPosition.ContainsKey(detection.PositionToString(prePosition)))
+            detection.UsedIconPosition[detection.PositionToString(prePosition)]="false";
+        if(detection.UsedPlayPosition.ContainsKey(detection.PositionToString(prePosition)))
+            detection.UsedPlayPosition[detection.PositionToString(prePosition)]="false";
     }
     
     // [SerializeField]private Texture2D cursor;
@@ -52,7 +51,6 @@ public class MirrorVisual:MonoBehaviour{
 
     public void OnMouseDown()
     {
-        Debug.Log("°´ÏÂ");
         //cursor 
         // cursor=mirrorSO.sprite.texture;
         // Cursor.SetCursor(cursor,Vector2.zero,CursorMode.Auto);

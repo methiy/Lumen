@@ -13,11 +13,13 @@ public class Detection : MonoBehaviour
     //! icon Area
     [SerializeField] private List<Vector3> iconPositionList = new List<Vector3>();
 
-    public Dictionary<Vector3, bool> UsedPlayPosition = new Dictionary<Vector3, bool>();
-    public Dictionary<Vector3, bool> UsedIconPosition = new Dictionary<Vector3, bool>();
+    public StringStringDictionary UsedPlayPosition = new StringStringDictionary();
+    public StringStringDictionary UsedIconPosition = new StringStringDictionary();
 
     private const float OFFSET = 1.3f;
-
+    public String PositionToString(Vector3 position){
+        return position.ToString();
+    }
     private void Awake()
     {
         foreach (Transform child in playArea.GetComponentInChildren<Transform>(true))
@@ -25,7 +27,7 @@ public class Detection : MonoBehaviour
             if (child != playArea)
             {
                 playPositionList.Add(child.position);
-                UsedPlayPosition.Add(child.position, false);
+                UsedPlayPosition.Add(PositionToString(child.position), "false");
             }
         }
         foreach (Transform child in iconArea.GetComponentInChildren<Transform>(true))
@@ -33,7 +35,7 @@ public class Detection : MonoBehaviour
             if (child != iconArea)
             {
                 iconPositionList.Add(child.position);
-                UsedIconPosition.Add(child.position, false);
+                UsedIconPosition.Add(PositionToString(child.position), "false");
             }
         }
 
@@ -66,15 +68,12 @@ public class Detection : MonoBehaviour
 
         foreach (Vector3 position in iconPositionList)
         {
-            if (Input.GetMouseButtonUp(0))
-            {
                 if (Vector3.Distance(position, mousePosition) <= OFFSET)
                 {
                     location = position;
                     canLocation = true;
                     break;
                 }
-            }
         }
 
         return canLocation;

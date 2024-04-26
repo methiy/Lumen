@@ -1346,6 +1346,12 @@ MonoBehaviour:
   iconArea: {fileID: 2021327747}
   playPositionList: []
   iconPositionList: []
+  UsedPlayPosition:
+    m_keys: []
+    m_values: []
+  UsedIconPosition:
+    m_keys: []
+    m_values: []
 --- !u!4 &293003526
 Transform:
   m_ObjectHideFlags: 0
@@ -6280,6 +6286,10 @@ PrefabInstance:
     - target: {fileID: 198198547777868657, guid: 00ff5d104d8246245bd1f9066f576891, type: 3}
       propertyPath: m_Name
       value: LensAndReflectMirrorIcon
+      objectReference: {fileID: 0}
+    - target: {fileID: 198198547777868657, guid: 00ff5d104d8246245bd1f9066f576891, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5258170730709162737, guid: 00ff5d104d8246245bd1f9066f576891, type: 3}
       propertyPath: m_AnchoredPosition.x
