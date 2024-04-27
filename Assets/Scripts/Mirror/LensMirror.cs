@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -5,17 +6,17 @@ using UnityEngine;
 
 public class LensMirror : BaseMirror
 {
-    //ÉäÏß
+    //å°„çº¿
     [SerializeField] private List<LineRenderer> lasersList = new List<LineRenderer>();
 
     //const
-    [Header("³£Á¿")]
+    [Header("å¸¸é‡")]
     // [SerializeField]private const float OFFSET=0.01f;
     [SerializeField] private const float MAX_LENGTH = 10.0f;
     // [SerializeField]private const int MAX_COUNT=10;
 
     /// <summary>
-    /// ÆğµãÖÕµã index£¨ÉèÖÃÎªÄÄ¸öline render³öÉä0123 ·Ö±ğÎªÉÏÓÒ×óÏÂ£© colorÎª¹âÏßÑÕÉ«
+    /// èµ·ç‚¹ç»ˆç‚¹ indexï¼ˆè®¾ç½®ä¸ºå“ªä¸ªline renderå‡ºå°„0123 åˆ†åˆ«ä¸ºä¸Šå³å·¦ä¸‹ï¼‰ colorä¸ºå…‰çº¿é¢œè‰²
     /// </summary>
     /// <param name="originposition"></param>
     /// <param name="direction"></param>
@@ -36,14 +37,14 @@ public class LensMirror : BaseMirror
 
        if((index^curRotation)!=1) return ;
 
-        //Æ«ÒÆÖµ
+        //åç§»å€¼
         int[] dx = { 0, 1, 0, -1 };
         int[] dy = { 1, 0, -1, 0 };
 
-        //³öÉä·½Ïò
+        //å‡ºå°„æ–¹å‘
         Vector2 direction=new Vector2(dx[index],dy[index]).normalized;
         
-        //! ·ÅÖÃ³öÏÖ×Ô¼º´ò×Ô¼ºµÄÇé¿ö ¾ÍÊÇ×ßÒ»¸ö°ë¾¶
+        //! æ”¾ç½®å‡ºç°è‡ªå·±æ‰“è‡ªå·±çš„æƒ…å†µ å°±æ˜¯èµ°ä¸€ä¸ªåŠå¾„
         float lineOffset=1.1f;
         RaycastHit2D hit = Physics2D.Raycast(endPosition+lineOffset*direction, direction, MAX_LENGTH, layerMasks);
         
@@ -54,7 +55,7 @@ public class LensMirror : BaseMirror
             lasersList[index].positionCount = 2;
             lasersList[index].SetPosition(0, endPosition);
             lasersList[index].SetPosition(1, hit.collider.transform.position);
-            //Èç¹û»÷ÖĞ¾ÍÍ¨Öª±»»÷ÖĞµÄÎïÌåÈ¥·¢ÉäÉäÏß
+            //å¦‚æœå‡»ä¸­å°±é€šçŸ¥è¢«å‡»ä¸­çš„ç‰©ä½“å»å‘å°„å°„çº¿
             hit.collider.GetComponent<BaseMirror>()?.Ray(
                 endPosition,
                 hit.collider.transform.position,
@@ -63,7 +64,7 @@ public class LensMirror : BaseMirror
         }
         else
         {
-            //Ã»ÓĞ»÷ÖĞ
+            //æ²¡æœ‰å‡»ä¸­
             lasersList[index].positionCount = 2;
             lasersList[index].SetPosition(0, transform.position);
             lasersList[index].SetPosition(1,transform.position+(Vector3)direction*MAX_LENGTH);
@@ -74,7 +75,7 @@ public class LensMirror : BaseMirror
     private void ClearLine()  
     {  
         foreach(var lineRenderer in lasersList){
-            lineRenderer.positionCount = 0; // ½«LineRendererÖĞµÄµãÊıÁ¿ÉèÖÃÎª0£¬´Ó¶øÇå³ıËùÓĞµã  
+            lineRenderer.positionCount = 0; // å°†LineRendererä¸­çš„ç‚¹æ•°é‡è®¾ç½®ä¸º0ï¼Œä»è€Œæ¸…é™¤æ‰€æœ‰ç‚¹  
             lineRenderer.material.color=Color.white;
         }
     }    
@@ -83,23 +84,31 @@ public class LensMirror : BaseMirror
     /// Rotate
     /// </summary>
     private int curRotation=0;
+
+    public bool isRotate;
+
+    private void Start()
+    {
+
+    }
+
     private void Update()
     {
-        if(Input.GetMouseButtonDown(1)){
+        if(Input.GetMouseButtonDown(1) && isRotate){
             TryRotateMirror();
         }
     }
     private void TryRotateMirror(){
         
-            Vector3 mousePos = Input.mousePosition; // »ñÈ¡Êó±êµÄÆÁÄ»×ø±ê  
-            mousePos.z = Camera.main.nearClipPlane; // ÉèÖÃz×ø±êÎªÏà»úµÄ½ü²Ã¼ôÃæ£¬È·±£×ª»»µ½ÕıÈ·µÄ2DÆ½Ãæ  
-            Vector2 worldPoint = Camera.main.ScreenToWorldPoint(mousePos); // ½«Êó±êµÄÆÁÄ»×ø±ê×ª»»ÎªÊÀ½ç×ø±ê  
+            Vector3 mousePos = Input.mousePosition; // è·å–é¼ æ ‡çš„å±å¹•åæ ‡  
+            mousePos.z = Camera.main.nearClipPlane; // è®¾ç½®zåæ ‡ä¸ºç›¸æœºçš„è¿‘è£å‰ªé¢ï¼Œç¡®ä¿è½¬æ¢åˆ°æ­£ç¡®çš„2Då¹³é¢  
+            Vector2 worldPoint = Camera.main.ScreenToWorldPoint(mousePos); // å°†é¼ æ ‡çš„å±å¹•åæ ‡è½¬æ¢ä¸ºä¸–ç•Œåæ ‡  
               
-            // Ê¹ÓÃPhysics2D.OverlapCircleÀ´¼ì²âÔ²ĞÎÇøÓòÄÚµÄËùÓĞÅö×²Æ÷  
+            // ä½¿ç”¨Physics2D.OverlapCircleæ¥æ£€æµ‹åœ†å½¢åŒºåŸŸå†…çš„æ‰€æœ‰ç¢°æ’å™¨  
             Collider2D[] colliders = Physics2D.OverlapCircleAll(worldPoint, 0.2f);  
             foreach (Collider2D collider in colliders)  
             {  
-                // ¼ì²éÏà½»µÄÎïÌåÊÇ·ñÊÇµ±Ç°ÎïÌå  
+                // æ£€æŸ¥ç›¸äº¤çš„ç‰©ä½“æ˜¯å¦æ˜¯å½“å‰ç‰©ä½“  
                 if (collider.gameObject == this.gameObject)  
                 {  
                     RotateMirror();

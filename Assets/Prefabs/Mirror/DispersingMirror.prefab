@@ -108,6 +108,8 @@ MonoBehaviour:
   - {fileID: 239795815570701806}
   - {fileID: 604572375234516118}
   - {fileID: 76794924512174188}
+  curRotation: 0
+  isRotate: 1
 --- !u!120 &8961073890904393736 stripped
 LineRenderer:
   m_CorrespondingSourceObject: {fileID: 835223788316730117, guid: f0392c228302ed148ad0813c89128d36, type: 3}

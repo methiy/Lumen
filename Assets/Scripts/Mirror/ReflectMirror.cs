@@ -12,6 +12,8 @@ public class ReflectMirror : BaseMirror
     [Header("³£Á¿")]
     // [SerializeField]private const float OFFSET=0.01f;
     [SerializeField] private const float MAX_LENGTH = 10.0f;
+
+
     // [SerializeField]private const int MAX_COUNT=10;
 
     private void OnEnable()
@@ -88,14 +90,20 @@ public class ReflectMirror : BaseMirror
     /// <summary>
     /// Rotate
     /// </summary>
-    private int curRotation=-1;
+    public int curRotation=-1;
+    public bool isRotate = true;
+
     private void Start()
     {
-        RotateMirror();
+        if (isRotate)
+        {
+            RotateMirror();
+        }
+        
     }
     private void Update()
     {
-        if(Input.GetMouseButtonDown(1)){
+        if(Input.GetMouseButtonDown(1) && isRotate){
             TryRotateMirror();
         }
     }

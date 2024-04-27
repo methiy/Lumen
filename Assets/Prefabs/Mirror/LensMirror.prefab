@@ -113,23 +113,12 @@ MonoBehaviour:
   layerMasks:
     serializedVersion: 2
     m_Bits: 128
-  mirrorLayerMask:
-    serializedVersion: 2
-    m_Bits: 128
-  lensLayerMask:
-    serializedVersion: 2
-    m_Bits: 256
-  ClapboardLayerMask:
-    serializedVersion: 2
-    m_Bits: 512
-  PrismLayerMask:
-    serializedVersion: 2
-    m_Bits: 1024
   lasersList:
   - {fileID: 2502442549085131752}
   - {fileID: 6752507736847541774}
   - {fileID: 6234539187659771766}
   - {fileID: 6914858962511821708}
+  isRotate: 1
 --- !u!120 &6234539187659771766 stripped
 LineRenderer:
   m_CorrespondingSourceObject: {fileID: 9198797928908423067, guid: f0392c228302ed148ad0813c89128d36, type: 3}

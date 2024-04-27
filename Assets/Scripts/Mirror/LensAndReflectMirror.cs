@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class LensAndReflectMirror : BaseMirror
 {
-    //ÉäÏß
+    //å°„çº¿
     [SerializeField] private List<LineRenderer> lasersList = new List<LineRenderer>();
 
     //const
-    [Header("³£Á¿")]
+    [Header("å¸¸é‡")]
     // [SerializeField]private const float OFFSET=0.01f;
     [SerializeField] private const float MAX_LENGTH = 10.0f;
     // [SerializeField]private const int MAX_COUNT=10;
 
     /// <summary>
-    /// ÆğµãÖÕµã index£¨ÉèÖÃÎªÄÄ¸öline render³öÉä0123 ·Ö±ğÎªÉÏÓÒ×óÏÂ£© colorÎª¹âÏßÑÕÉ«
+    /// èµ·ç‚¹ç»ˆç‚¹ indexï¼ˆè®¾ç½®ä¸ºå“ªä¸ªline renderå‡ºå°„0123 åˆ†åˆ«ä¸ºä¸Šå³å·¦ä¸‹ï¼‰ colorä¸ºå…‰çº¿é¢œè‰²
     /// </summary>
     /// <param name="originposition"></param>
     /// <param name="direction"></param>
@@ -34,42 +34,42 @@ public class LensAndReflectMirror : BaseMirror
     {
 
 
-        //ËûµÄ1 ÊÇÎÒµÄ3 ËûµÄ 0 ÊÇÎÒµÄ 2
+        //ä»–çš„1 æ˜¯æˆ‘çš„3 ä»–çš„ 0 æ˜¯æˆ‘çš„ 2
         index^=2;
 
-        // Çó³öÉäÊ± ÄÄ¸öline render·¢ÉäÉäÏß
+        // æ±‚å‡ºå°„æ—¶ å“ªä¸ªline renderå‘å°„å°„çº¿
         int index1=-1,index2=-1;
         
         if(curRotation==0){
             if(index==2||index==3){
-                //!todo Í¸Éä
+                //!todo é€å°„
                 index1=index^2;
             }else{
-                //!todo ·´Éä
+                //!todo åå°„
                 index2=index^1;
             }
         }else if(curRotation==1){
             if(index==1||index==2){
-                //!todo Í¸Éä
+                //!todo é€å°„
                 index1=index^2;
             }else{
-                //!todo ·´Éä
+                //!todo åå°„
                 index2=index^3;
             }
         }else if(curRotation==2){
             if(index==0||index==1){
-                //!todo Í¸Éä
+                //!todo é€å°„
                 index1=index^2;
             }else{
-                //!todo ·´Éä
+                //!todo åå°„
                 index2=index^1;
             }
         }if(curRotation==3){
             if(index==0||index==3){
-                //!todo Í¸Éä
+                //!todo é€å°„
                 index1=index^2;
             }else{
-                //!todo ·´Éä
+                //!todo åå°„
                 index2=index^3;
             }
         }
@@ -79,14 +79,14 @@ public class LensAndReflectMirror : BaseMirror
     }
 
     private void RRay(Vector2 startPosition, Vector2 endPosition, int index, Color color){
-        //Æ«ÒÆÖµ
+        //åç§»å€¼
         int[] dx = { 0, 1, 0, -1 };
         int[] dy = { 1, 0, -1, 0 };
 
-        //³öÉä·½Ïò
+        //å‡ºå°„æ–¹å‘
         Vector2 direction=new Vector2(dx[index],dy[index]).normalized;
         
-        //! ·ÅÖÃ³öÏÖ×Ô¼º´ò×Ô¼ºµÄÇé¿ö ¾ÍÊÇ×ßÒ»¸ö°ë¾¶
+        //! æ”¾ç½®å‡ºç°è‡ªå·±æ‰“è‡ªå·±çš„æƒ…å†µ å°±æ˜¯èµ°ä¸€ä¸ªåŠå¾„
         float lineOffset=1.1f;
         RaycastHit2D hit = Physics2D.Raycast(endPosition+lineOffset*direction, direction, MAX_LENGTH, layerMasks);
         
@@ -97,7 +97,7 @@ public class LensAndReflectMirror : BaseMirror
             lasersList[index].positionCount = 2;
             lasersList[index].SetPosition(0, endPosition);
             lasersList[index].SetPosition(1, hit.collider.transform.position);
-            //Èç¹û»÷ÖĞ¾ÍÍ¨Öª±»»÷ÖĞµÄÎïÌåÈ¥·¢ÉäÉäÏß
+            //å¦‚æœå‡»ä¸­å°±é€šçŸ¥è¢«å‡»ä¸­çš„ç‰©ä½“å»å‘å°„å°„çº¿
             hit.collider.GetComponent<BaseMirror>()?.Ray(
                 endPosition,
                 hit.collider.transform.position,
@@ -106,7 +106,7 @@ public class LensAndReflectMirror : BaseMirror
         }
         else
         {
-            //Ã»ÓĞ»÷ÖĞ
+            //æ²¡æœ‰å‡»ä¸­
             lasersList[index].positionCount = 2;
             lasersList[index].SetPosition(0, transform.position);
             lasersList[index].SetPosition(1,transform.position+(Vector3)direction*MAX_LENGTH);
@@ -118,7 +118,7 @@ public class LensAndReflectMirror : BaseMirror
     private void ClearLine()  
     {  
         foreach(var lineRenderer in lasersList){
-            lineRenderer.positionCount = 0; // ½«LineRendererÖĞµÄµãÊıÁ¿ÉèÖÃÎª0£¬´Ó¶øÇå³ıËùÓĞµã  
+            lineRenderer.positionCount = 0; // å°†LineRendererä¸­çš„ç‚¹æ•°é‡è®¾ç½®ä¸º0ï¼Œä»è€Œæ¸…é™¤æ‰€æœ‰ç‚¹  
             lineRenderer.material.color=Color.white;
         }
     }  
@@ -126,28 +126,33 @@ public class LensAndReflectMirror : BaseMirror
     /// <summary>
     /// Rotate
     /// </summary>
-    private int curRotation=-1;
+    public int curRotation=-1;
+    public bool isRotate;
     private void Start()
     {
-        RotateMirror();
+        if (isRotate)
+        {
+            RotateMirror();
+        }
+
     }
     private void Update()
     {
-        if(Input.GetMouseButtonDown(1)){
+        if(Input.GetMouseButtonDown(1)&& isRotate){
             TryRotateMirror();
         }
     }
     private void TryRotateMirror(){
         
-            Vector3 mousePos = Input.mousePosition; // »ñÈ¡Êó±êµÄÆÁÄ»×ø±ê  
-            mousePos.z = Camera.main.nearClipPlane; // ÉèÖÃz×ø±êÎªÏà»úµÄ½ü²Ã¼ôÃæ£¬È·±£×ª»»µ½ÕıÈ·µÄ2DÆ½Ãæ  
-            Vector2 worldPoint = Camera.main.ScreenToWorldPoint(mousePos); // ½«Êó±êµÄÆÁÄ»×ø±ê×ª»»ÎªÊÀ½ç×ø±ê  
+            Vector3 mousePos = Input.mousePosition; // è·å–é¼ æ ‡çš„å±å¹•åæ ‡  
+            mousePos.z = Camera.main.nearClipPlane; // è®¾ç½®zåæ ‡ä¸ºç›¸æœºçš„è¿‘è£å‰ªé¢ï¼Œç¡®ä¿è½¬æ¢åˆ°æ­£ç¡®çš„2Då¹³é¢  
+            Vector2 worldPoint = Camera.main.ScreenToWorldPoint(mousePos); // å°†é¼ æ ‡çš„å±å¹•åæ ‡è½¬æ¢ä¸ºä¸–ç•Œåæ ‡  
               
-            // Ê¹ÓÃPhysics2D.OverlapCircleÀ´¼ì²âÔ²ĞÎÇøÓòÄÚµÄËùÓĞÅö×²Æ÷  
+            // ä½¿ç”¨Physics2D.OverlapCircleæ¥æ£€æµ‹åœ†å½¢åŒºåŸŸå†…çš„æ‰€æœ‰ç¢°æ’å™¨  
             Collider2D[] colliders = Physics2D.OverlapCircleAll(worldPoint, 0.2f);  
             foreach (Collider2D collider in colliders)  
             {  
-                // ¼ì²éÏà½»µÄÎïÌåÊÇ·ñÊÇµ±Ç°ÎïÌå  
+                // æ£€æŸ¥ç›¸äº¤çš„ç‰©ä½“æ˜¯å¦æ˜¯å½“å‰ç‰©ä½“  
                 if (collider.gameObject == this.gameObject)  
                 {  
                     RotateMirror();

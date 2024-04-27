@@ -105,14 +105,20 @@ public class ReflectAndClapBoardMirror : BaseMirror
     /// <summary>
     /// Rotate
     /// </summary>
-    private int curRotation=-1;
+    public int curRotation=-1;
+
+    public bool isRotate;
     private void Start()
     {
-        RotateMirror();
+        if (isRotate)
+        {
+            RotateMirror();
+        }
+
     }
     private void Update()
     {
-        if(Input.GetMouseButtonDown(1)){
+        if(Input.GetMouseButtonDown(1)&& isRotate ){
             TryRotateMirror();
         }
     }

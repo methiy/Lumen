@@ -100,10 +100,11 @@ public class PrismMirror : BaseMirror
     /// <summary>
     /// Rotate
     /// </summary>
-    private int curRotation=0;
+    public int curRotation=0;
+    public bool isRotate;
     private void Update()
     {
-        if(Input.GetMouseButtonDown(1)){
+        if(Input.GetMouseButtonDown(1)&& isRotate){
             TryRotateMirror();
         }
     }

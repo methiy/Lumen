@@ -4,7 +4,7 @@ using UnityEngine;
 public class BaseMirror : MonoBehaviour
 {
     protected MainLaser mainLaser;
-    [Header("需要检测的物体类别")]
+    [Header("闇�瑕佹娴嬬殑鐗╀綋绫诲埆")]
     [SerializeField] protected LayerMask layerMasks;
     private void Awake()
     {

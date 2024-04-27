@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Mail;
-using Microsoft.Unity.VisualStudio.Editor;
+
 using UnityEngine;
 using UnityEngine.EventSystems;
 

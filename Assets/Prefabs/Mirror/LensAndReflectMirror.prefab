@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: ca3aeee042b86f94c89def271a4bdd25, type: 2}
     - target: {fileID: 336993069418054312, guid: f0392c228302ed148ad0813c89128d36, type: 3}
       propertyPath: m_Name
-      value: HalfMirror
+      value: LensAndReflectMirror
       objectReference: {fileID: 0}
     - target: {fileID: 5809068557772317030, guid: f0392c228302ed148ad0813c89128d36, type: 3}
       propertyPath: m_Sprite
@@ -129,3 +129,5 @@ MonoBehaviour:
   - {fileID: 3262390256396095283}
   - {fileID: 2771513664527017547}
   - {fileID: 3388236557864522417}
+  curRotation: -1
+  isRotate: 1
