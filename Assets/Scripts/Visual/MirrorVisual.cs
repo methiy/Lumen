@@ -73,7 +73,7 @@ public class MirrorVisual:MonoBehaviour{
             //! TODO 放置镜子生成实体
             tryCreatMirror(location);
 
-        }else if(detection.IconPositionPlaceable(targetPosition,out location)){
+        }else if(mirrorSO.isHaveIcon && detection.IconPositionPlaceable(targetPosition,out location)){
             Debug.Log("Icon");
             isIcon=true;
             transform.position=location;

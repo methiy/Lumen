@@ -11,7 +11,7 @@ public class MirrorScriptableObject : ScriptableObject
     public Sprite icon,sprite;
     public GameObject mirrorPrefab;
     public GameObject mirrorIconPrefab;
-
+    public bool isHaveIcon;
 
 }
 public enum MirrorType
