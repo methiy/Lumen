@@ -2,8 +2,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class level2 : MonoBehaviour
+public class ChangeSceneOnClick : MonoBehaviour
 {
+    [SerializeField] private string sceneName; // ³¡¾°Ãû
+
     void Start()
     {
         this.GetComponent<Button>().onClick.AddListener(OnClick);
@@ -11,6 +13,7 @@ public class level2 : MonoBehaviour
 
     void OnClick()
     {
-        SceneManager.LoadScene("level2");
+        SceneManager.LoadScene(sceneName);
     }
 }
+
