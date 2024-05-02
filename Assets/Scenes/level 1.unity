@@ -417,7 +417,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 685184654}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -965,7 +965,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 685184654}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -1063,6 +1063,7 @@ GameObject:
   - component: {fileID: 133136519}
   - component: {fileID: 133136518}
   - component: {fileID: 133136517}
+  - component: {fileID: 133136520}
   m_Layer: 5
   m_Name: Button (Legacy)
   m_TagString: Untagged
@@ -1171,6 +1172,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 133136515}
   m_CullTransparentMesh: 1
+--- !u!114 &133136520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133136515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61dba0bd5d262ab4496fd949b7ce48d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &155736656
 GameObject:
   m_ObjectHideFlags: 0
@@ -1260,6 +1273,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2431420382670760905, guid: 81ab3cf20e3c7334eaba6649fee0522a, type: 3}
       propertyPath: mirriorState
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 597530706379179366, guid: 81ab3cf20e3c7334eaba6649fee0522a, type: 3}
+      propertyPath: m_SortingOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3540049750521558721, guid: 81ab3cf20e3c7334eaba6649fee0522a, type: 3}
@@ -2227,7 +2244,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 685184654}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -4556,7 +4573,7 @@ Transform:
   m_GameObject: {fileID: 1766365208}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -142.683, y: -74.435, z: -0.14804944}
+  m_LocalPosition: {x: -142.76, y: -74.43, z: -0.14804944}
   m_LocalScale: {x: 0.13101064, y: 0.1201825, z: 0.124864936}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4602,7 +4619,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 9b6d4a48e3d1a054f83d9b018ef0f1a8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
