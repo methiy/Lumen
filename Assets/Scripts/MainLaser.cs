@@ -18,11 +18,6 @@ public class MainLaser : MonoBehaviour
         Ray(transform.position, new Vector2(transform.position.x + 1, transform.position.y), 1, Color.white);
     }
 
-    private void Update()
-    {
-        // Ray(transform.position,new Vector2(transform.position.x+1,transform.position.y),1,Color.white);
-    }
-
     public void UpdateMainLaser(){
         OnChangeMirror?.Invoke();
         ClearLine();
@@ -68,6 +63,7 @@ public class MainLaser : MonoBehaviour
   
     private void ClearLine()  
     {  
+        if(lasersList == null)  return ;
         foreach(var lineRenderer in lasersList){
             lineRenderer.positionCount = 0; // 将LineRenderer中的点数量设置为0，从而清除所有点  
             lineRenderer.material.color=Color.white;

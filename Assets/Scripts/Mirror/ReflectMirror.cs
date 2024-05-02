@@ -19,9 +19,11 @@ public class ReflectMirror : BaseMirror
     private void OnEnable()
     {
         mainLaser.OnChangeMirror+=ClearLine;
+        mainLaser.UpdateMainLaser();
     }
     private void OnDisable()
     {
+        mainLaser.UpdateMainLaser();
         mainLaser.OnChangeMirror-=ClearLine;
     }
 
@@ -81,6 +83,7 @@ public class ReflectMirror : BaseMirror
   
     private void ClearLine()  
     {  
+        Debug.Log(this.gameObject.name);
         foreach(var lineRenderer in lasersList){
             lineRenderer.positionCount = 0; // 将LineRenderer中的点数量设置为0，从而清除所有点  
             lineRenderer.material.color=Color.white;

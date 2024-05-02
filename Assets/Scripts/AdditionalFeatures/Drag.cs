@@ -64,10 +64,8 @@ public class Drag : MonoBehaviour
             tryCreatMirror(location);
 
         }else if(detection.IconPositionPlaceable(targetPosition,out location)){
-            Debug.Log("Icon");
             isIcon=true;
             transform.position=location;
-            Debug.Log("Icon location: " + location);
             //! TODO  ·Å»Øicon
             tryRebackMirror(location);
 

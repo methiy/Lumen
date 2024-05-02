@@ -24,9 +24,11 @@ public class LensAndReflectMirror : BaseMirror
     private void OnEnable()
     {
         mainLaser.OnChangeMirror+=ClearLine;
+        mainLaser.UpdateMainLaser();
     }
     private void OnDisable()
     {
+        mainLaser.UpdateMainLaser();
         mainLaser.OnChangeMirror-=ClearLine;
     }
     

@@ -9,9 +9,7 @@ public class BaseMirror : MonoBehaviour
     private void Awake()
     {
         mainLaser=GetMainLaser();
-        mainLaser.UpdateMainLaser();
     }
-
     private MainLaser GetMainLaser(){
         MainLaser[] allMirrorManager = UnityEngine.Object.FindObjectsOfType<MainLaser>();  
         return allMirrorManager[0];
