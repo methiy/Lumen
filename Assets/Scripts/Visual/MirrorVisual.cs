@@ -17,9 +17,11 @@ public class MirrorVisual:MonoBehaviour{
     [SerializeField]private float scaleFactort=1.2f;
 
     [SerializeField]private Detection detection;
+    private Composite composite;
     private Vector3 prePosition;
     private void OnEnable()
     {
+        composite = GetComponent<Composite>(); 
         prePosition = transform.position;
         originLocalScale =icon.localScale;
         Detection[] detections=FindObjectsOfType<Detection>();
@@ -51,9 +53,6 @@ public class MirrorVisual:MonoBehaviour{
 
     public void OnMouseDown()
     {
-        //cursor 
-        // cursor=mirrorSO.sprite.texture;
-        // Cursor.SetCursor(cursor,Vector2.zero,CursorMode.Auto);
 
     }
 
@@ -64,32 +63,45 @@ public class MirrorVisual:MonoBehaviour{
 
     public void OnMouseUp()
     {
-        Vector3 targetPosition=GetMousePosition();
         bool isPlay=false,isIcon=false;
-        Vector3 location; 
-        if(detection.PlayPositionPlaceable(targetPosition,out location)){
-            isPlay=true;
-            transform.position=location;
-            //! TODO 放置镜子生成实体
-            tryCreatMirror(location);
+        bool isComposable=false;
+        MirrorScriptableObject targetMirror=null;
+        if(composite!=null && composite.Composable()){
+            targetMirror = composite.CompositeResult();
+            isComposable=true;
+        }
 
+        Vector3 targetPosition=GetMousePosition();
+        Vector3 location;
+        if (detection.PlayPositionPlaceable(targetPosition,out location)){
+            //! TODO 放置镜子生成实体
+            if(!isComposable){
+                isPlay=true;
+                isComposable=false;
+                transform.position=location;
+                tryCreatMirror(location);
+            }else if(targetMirror!=null){
+                isPlay=true;
+                transform.position=location;
+                Instantiate(targetMirror.mirrorPrefab,location,Quaternion.identity);
+            }else{
+                isComposable=false;
+                transform.position=prePosition;    
+            }
         }else if(mirrorSO.isHaveIcon && detection.IconPositionPlaceable(targetPosition,out location)){
-            Debug.Log("Icon");
             isIcon=true;
             transform.position=location;
             //! TODO  放回icon
             tryRebackMirror(location);
 
         }else{
-            Debug.Log("no");
-            Debug.Log("Icon location: " + prePosition);
             transform.position=prePosition;
-        }
+        }    
 
-        prePosition=transform.position; 
+        prePosition=transform.position;
         Cursor.SetCursor(null,Vector2.zero,CursorMode.Auto);
-        if(isPlay||isIcon){
-            Destroy(transform.parent.gameObject);
+        if(isPlay||isIcon||isComposable){
+            Destroy(gameObject);
         }
     }
 

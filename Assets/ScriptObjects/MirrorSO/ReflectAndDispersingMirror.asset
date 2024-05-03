@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 123068964001efa43840a90352099df0, type: 3}
-  m_Name: ReflectAndLensMirror
+  m_Name: ReflectAndDispersingMirror
   m_EditorClassIdentifier: 
   mirrorType: 11
   icon: {fileID: 0}

@@ -27,5 +27,5 @@ public enum MirrorType
     LensAndReflectMirror,
     ReflectAndClapBoardMirror,
     ClapboardAndLensMirror,
-    ReflectAndLensMirror
+    ReflectAndDispersingMirror
 }

@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: mirrorSO
       value: 
       objectReference: {fileID: 11400000, guid: 6d0d81f331e12a34789afc2abd3f2d43, type: 2}
+    - target: {fileID: -2673515251639091695, guid: f0392c228302ed148ad0813c89128d36, type: 3}
+      propertyPath: composite
+      value: 
+      objectReference: {fileID: 1819970206110770753}
     - target: {fileID: 336993069418054312, guid: f0392c228302ed148ad0813c89128d36, type: 3}
       propertyPath: m_Name
       value: PrismMirror
@@ -83,6 +87,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 336993069418054312, guid: f0392c228302ed148ad0813c89128d36, type: 3}
       insertIndex: -1
       addedObject: {fileID: -4769862917855687349}
+    - targetCorrespondingSourceObject: {fileID: 336993069418054312, guid: f0392c228302ed148ad0813c89128d36, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1819970206110770753}
   m_SourcePrefab: {fileID: 100100000, guid: f0392c228302ed148ad0813c89128d36, type: 3}
 --- !u!120 &2409119861648391854 stripped
 LineRenderer:
@@ -131,3 +138,23 @@ MonoBehaviour:
   - {fileID: 2890715081038105172}
   curRotation: 0
   isRotate: 1
+--- !u!114 &1819970206110770753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6515412696930845597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89a46ea884c78574ba4e54ce58bf3b1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mirrorResult: {fileID: 0}
+  ClapboardAndLensMirror: {fileID: 11400000, guid: b0f4c2dd3fe0ffe4eb90293a90fb6b9c, type: 2}
+  LensAndReflectMirror: {fileID: 11400000, guid: ca3aeee042b86f94c89def271a4bdd25, type: 2}
+  ReflectAndClapBoardMirror: {fileID: 11400000, guid: 8dc70089adbd7364eade0fcf1135451c, type: 2}
+  ReflectAndDispersingMirror: {fileID: 11400000, guid: 9de795ffeb5c0964591362881d553cb3, type: 2}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 128

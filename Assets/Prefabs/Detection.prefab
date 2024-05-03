@@ -48,3 +48,9 @@ MonoBehaviour:
   iconArea: {fileID: 7357686952989765783, guid: c0547a90090225c47a71ba4328988def, type: 3}
   playPositionList: []
   iconPositionList: []
+  UsedPlayPosition:
+    m_keys: []
+    m_values: []
+  UsedIconPosition:
+    m_keys: []
+    m_values: []

@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: mirrorSO
       value: 
       objectReference: {fileID: 11400000, guid: b23380d64f3ce64418f0f05f2ffae8cf, type: 2}
+    - target: {fileID: -2673515251639091695, guid: f0392c228302ed148ad0813c89128d36, type: 3}
+      propertyPath: composite
+      value: 
+      objectReference: {fileID: 6573458651791306315}
     - target: {fileID: 336993069418054312, guid: f0392c228302ed148ad0813c89128d36, type: 3}
       propertyPath: m_Name
       value: ReflectMirror
@@ -87,6 +91,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 336993069418054312, guid: f0392c228302ed148ad0813c89128d36, type: 3}
       insertIndex: -1
       addedObject: {fileID: -2431420382670760905}
+    - targetCorrespondingSourceObject: {fileID: 336993069418054312, guid: f0392c228302ed148ad0813c89128d36, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6573458651791306315}
   m_SourcePrefab: {fileID: 100100000, guid: f0392c228302ed148ad0813c89128d36, type: 3}
 --- !u!120 &2846169321403128731 stripped
 LineRenderer:
@@ -128,20 +135,30 @@ MonoBehaviour:
   layerMasks:
     serializedVersion: 2
     m_Bits: 1920
-  mirrorLayerMask:
-    serializedVersion: 2
-    m_Bits: 128
-  lensLayerMask:
-    serializedVersion: 2
-    m_Bits: 256
-  ClapboardLayerMask:
-    serializedVersion: 2
-    m_Bits: 512
-  PrismLayerMask:
-    serializedVersion: 2
-    m_Bits: 1024
   lasersList:
   - {fileID: 5998901964415780613}
   - {fileID: 3192961642383045347}
   - {fileID: 2846169321403128731}
   - {fileID: 3318189924886179681}
+  curRotation: -1
+  isRotate: 1
+--- !u!114 &6573458651791306315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6663660008784848552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89a46ea884c78574ba4e54ce58bf3b1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mirrorResult: {fileID: 0}
+  ClapboardAndLensMirror: {fileID: 11400000, guid: b0f4c2dd3fe0ffe4eb90293a90fb6b9c, type: 2}
+  LensAndReflectMirror: {fileID: 11400000, guid: ca3aeee042b86f94c89def271a4bdd25, type: 2}
+  ReflectAndClapBoardMirror: {fileID: 11400000, guid: 8dc70089adbd7364eade0fcf1135451c, type: 2}
+  ReflectAndDispersingMirror: {fileID: 11400000, guid: 9de795ffeb5c0964591362881d553cb3, type: 2}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 128

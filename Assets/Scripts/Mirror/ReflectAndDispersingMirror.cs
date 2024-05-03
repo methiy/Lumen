@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ReflectAndLensMirror : BaseMirror
+public class ReflectAndDispersingMirror : BaseMirror
 {
         //…‰œﬂ
     [SerializeField] private List<LineRenderer> lasersList = new List<LineRenderer>();

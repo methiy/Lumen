@@ -6,13 +6,16 @@ using UnityEngine;
 public class Drag : MonoBehaviour
 {
 
-    [SerializeField]private MirrorScriptableObject mirrorSO;
+    [SerializeField]public MirrorScriptableObject mirrorSO;
 
     [SerializeField]private Detection detection;
+
+    private Composite composite;
 
     
     private void OnEnable()
     {
+        composite = GetComponent<Composite>();
         prePosition=transform.position; 
         Detection[] detections=FindObjectsOfType<Detection>();
         detection=detections[0];
@@ -51,18 +54,33 @@ public class Drag : MonoBehaviour
     {
         transform.position=GetMousePosition();
     }
-
     public void OnMouseUp()
     {
-        Vector3 targetPosition=GetMousePosition();
         bool isPlay=false,isIcon=false;
+        bool isComposable=false;
+        MirrorScriptableObject targetMirror=null;
+        if(composite!=null && composite.Composable()){
+            targetMirror = composite.CompositeResult();
+            isComposable=true;
+        }
+
+        Vector3 targetPosition=GetMousePosition();
         Vector3 location;
         if (detection.PlayPositionPlaceable(targetPosition,out location)){
-            isPlay=true;
-            transform.position=location;
             //! TODO 放置镜子生成实体
-            tryCreatMirror(location);
-
+            if(!isComposable){
+                isPlay=true;
+                isComposable=false;
+                transform.position=location;
+                tryCreatMirror(location);
+            }else if(targetMirror!=null){
+                isPlay=true;
+                transform.position=location;
+                Instantiate(targetMirror.mirrorPrefab,location,Quaternion.identity);
+            }else{
+                isComposable=false;
+                transform.position=prePosition;    
+            }
         }else if(mirrorSO.isHaveIcon && detection.IconPositionPlaceable(targetPosition,out location)){
             isIcon=true;
             transform.position=location;
@@ -71,11 +89,11 @@ public class Drag : MonoBehaviour
 
         }else{
             transform.position=prePosition;
-        }
+        }    
 
-        prePosition=transform.position; 
+        prePosition=transform.position;
         Cursor.SetCursor(null,Vector2.zero,CursorMode.Auto);
-        if(isPlay||isIcon){
+        if(isPlay||isIcon||isComposable){
             Destroy(gameObject);
         }
     }
@@ -90,8 +108,6 @@ public class Drag : MonoBehaviour
         //! todo 判断
         Instantiate(mirrorSO.mirrorIconPrefab,position,Quaternion.identity);
         //! 事件让他将sprite,数量+(1)
-
-
 
     }
 
