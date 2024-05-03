@@ -6,7 +6,7 @@ public class UIMovement : MonoBehaviour
 {
     public float moveDistance = 153f; // 移动距离
     public float moveSpeed = 5f; // 移动速度
-    public float buttonCooldown = 1f; // 按钮冷却时间
+    public float buttonCooldown = 0.7f; // 按钮冷却时间
 
     private RectTransform rectTransform;
     private bool canInteract = true;
