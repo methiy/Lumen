@@ -18,12 +18,11 @@ public enum MirrorType
 {
     BaseMirror,
     ReflectMirror,
+    DispersingMirror,
     LensMirror,
-    PrismMirror,
     Clapboard,
     TransmissionInputMirror,
     TransmissionOutputMirror,
-    DispersingMirror,
     LensAndReflectMirror,
     ReflectAndClapBoardMirror,
     ClapboardAndLensMirror,

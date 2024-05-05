@@ -12,10 +12,6 @@ public class Detection : MonoBehaviour
     [SerializeField] private List<Vector3> playPositionList = new List<Vector3>();
     //! icon Area
     [SerializeField] private List<Vector3> iconPositionList = new List<Vector3>();
-
-    public StringStringDictionary UsedPlayPosition = new StringStringDictionary();
-    public StringStringDictionary UsedIconPosition = new StringStringDictionary();
-
     private const float OFFSET = 1.3f;
     public String PositionToString(Vector3 position){
         return position.ToString();
@@ -27,7 +23,6 @@ public class Detection : MonoBehaviour
             if (child != playArea)
             {
                 playPositionList.Add(child.position);
-                UsedPlayPosition.Add(PositionToString(child.position), "false");
             }
         }
         foreach (Transform child in iconArea.GetComponentInChildren<Transform>(true))
@@ -35,7 +30,6 @@ public class Detection : MonoBehaviour
             if (child != iconArea)
             {
                 iconPositionList.Add(child.position);
-                UsedIconPosition.Add(PositionToString(child.position), "false");
             }
         }
 

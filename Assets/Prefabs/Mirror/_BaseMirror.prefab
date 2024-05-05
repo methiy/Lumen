@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7635825046220067521}
   - component: {fileID: 6597375754611637153}
-  - component: {fileID: -2673515251639091695}
+  - component: {fileID: -6008145608323655015}
   m_Layer: 7
   m_Name: _BaseMirror
   m_TagString: Untagged
@@ -83,7 +83,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &-2673515251639091695
+--- !u!114 &-6008145608323655015
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -92,11 +92,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 336993069418054312}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3716a772c00e62459c49eb254cd040a, type: 3}
+  m_Script: {fileID: 11500000, guid: fe5f7418efece304c83e57f5cd852b04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mirrorSO: {fileID: 11400000, guid: 6d76d95a24cf6e34b8e39cf8bcc481eb, type: 2}
-  detection: {fileID: 3599230729701061363, guid: d4e01b322c078e1418824e60dfd063c0, type: 3}
+  mirrorSO: {fileID: 0}
+  detection: {fileID: 0}
 --- !u!1 &1666861066817763340
 GameObject:
   m_ObjectHideFlags: 0

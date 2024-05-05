@@ -1,29 +1,29 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net.Mail;
-
 using UnityEngine;
-using UnityEngine.EventSystems;
 
-public class MirrorVisual:MonoBehaviour{
-    [SerializeField]private MirrorScriptableObject mirrorSO;
+public class Drag : MonoBehaviour
+{
+
+    [SerializeField]public MirrorScriptableObject mirrorSO;
 
     private Detection detection;
     private Composite composite;
-    private Vector3 prePosition;
+
+    
     private void OnEnable()
     {
-        composite = GetComponent<Composite>(); 
-        prePosition = transform.position;
+        composite = GetComponent<Composite>();
+        prePosition=transform.position; 
         Detection[] detections=FindObjectsOfType<Detection>();
         detection=detections[0];
     }
-
     private void OnDisable()
     {
     }
+    private Vector3 prePosition;
+    // [SerializeField]private Texture2D cursor;
 
     public Vector3 GetMousePosition()
     {
@@ -33,7 +33,6 @@ public class MirrorVisual:MonoBehaviour{
 
         return mousePosition;
     }
-
     public void OnMouseDown()
     {
 
@@ -43,7 +42,6 @@ public class MirrorVisual:MonoBehaviour{
     {
         transform.position=GetMousePosition();
     }
-
     public void OnMouseUp()
     {
         bool isPlay=false,isIcon=false;
@@ -68,7 +66,6 @@ public class MirrorVisual:MonoBehaviour{
                 transform.position=location;
                 tryCreatMirror(location);
             }
-
         }else if(mirrorSO.isHaveIcon && detection.IconPositionPlaceable(targetPosition,out location)){
             isIcon=true;
             transform.position=location;
@@ -95,5 +92,8 @@ public class MirrorVisual:MonoBehaviour{
     private void tryRebackMirror(Vector3 position){
         //! todo 判断
         Instantiate(mirrorSO.mirrorIconPrefab,position,Quaternion.identity);
+        //! 事件让他将sprite,数量+(1)
+
     }
+
 }

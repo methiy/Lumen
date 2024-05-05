@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Composite : MonoBehaviour
 {
-    [SerializeField]private MirrorScriptableObject mirrorResult;
+    private MirrorScriptableObject mirrorResult;
     [SerializeField]private MirrorScriptableObject ClapboardAndLensMirror;
     [SerializeField]private MirrorScriptableObject LensAndReflectMirror;
     [SerializeField]private MirrorScriptableObject ReflectAndClapBoardMirror;
@@ -72,9 +72,9 @@ public class Composite : MonoBehaviour
     /// 上面或者下面有没有东西
     /// </summary>
     /// <returns></returns>
-    public bool Composable(){
+    public bool HasMirror(Vector3 position){
         bool result = false;
-        RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, Vector2.up,1000,layerMask);
+        RaycastHit2D[] hits = Physics2D.RaycastAll(position, Vector3.back,layerMask);
         RaycastHit2D hit=CheckHits(hits);
         if (hit.collider != null&&hit.collider.gameObject != gameObject)
         {
@@ -91,7 +91,7 @@ public class Composite : MonoBehaviour
             result=true;
             
         }else{
-            hits = Physics2D.RaycastAll(transform.position, Vector2.down, 1000,layerMask);
+            hits = Physics2D.RaycastAll(position,Vector3.forward,layerMask);
             hit = CheckHits(hits);
             if (hit.collider != null &&  hit.collider.gameObject != gameObject)
             {
