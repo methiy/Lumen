@@ -23,20 +23,24 @@ public class UIMovement : MonoBehaviour
         rightButton.onClick.AddListener(MoveRight);
     }
 
-    // 向左移动游戏对象
+
     void MoveLeft()
     {
-        if (canInteract)
+
+        float currentPosition = rectTransform.position.x;
+        Debug.Log(currentPosition);
+        if (currentPosition >-2200 && canInteract)
         {
             MoveObject(-moveDistance);
             StartCoroutine(ButtonCooldown());
         }
     }
 
-    // 向右移动游戏对象
     void MoveRight()
     {
-        if (canInteract)
+        float currentPosition = rectTransform.position.x;
+        Debug.Log(currentPosition);
+        if (currentPosition <= 2.75606 && canInteract)
         {
             MoveObject(moveDistance);
             StartCoroutine(ButtonCooldown());
@@ -50,7 +54,6 @@ public class UIMovement : MonoBehaviour
         StartCoroutine(MoveCoroutine(targetPosition));
     }
 
-    // 协程实现平滑移动
     IEnumerator MoveCoroutine(Vector3 targetPosition)
     {
         while (Vector3.Distance(rectTransform.position, targetPosition) > 0.01f)
@@ -60,7 +63,6 @@ public class UIMovement : MonoBehaviour
         }
     }
 
-    // 按钮冷却协程
     IEnumerator ButtonCooldown()
     {
         canInteract = false;
