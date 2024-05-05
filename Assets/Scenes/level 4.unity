@@ -685,8 +685,8 @@ MonoBehaviour:
   layerMasks:
     serializedVersion: 2
     m_Bits: 4294967295
-  gameObject: {fileID: 0}
-  gameObjec: {fileID: 0}
+  gameObject: {fileID: 1728199055}
+  gameObjec: {fileID: 192426681}
 --- !u!61 &121732716
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6839,8 +6839,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 0d1e363e5285a11478903b93090f4fbf, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -6968,7 +6968,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2644054096729351482, guid: da66979bc2cbf5a4db93cf6d3f9735e8, type: 3}
       propertyPath: layerMasks.m_Bits
-      value: 6016
+      value: 384
       objectReference: {fileID: 0}
     - target: {fileID: 2644054096729351482, guid: da66979bc2cbf5a4db93cf6d3f9735e8, type: 3}
       propertyPath: ClapboardLayerMask.m_Bits
