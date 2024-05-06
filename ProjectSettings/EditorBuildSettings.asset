@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/StartMenu.unity
     guid: 998b801886980114797a59e2d2ef3a1d
   - enabled: 1
+    path: Assets/Scenes/shipin.unity
+    guid: cf05a3d717d3e0245891228752808256
+  - enabled: 1
     path: Assets/Scenes/xinshoujiaocheng.unity
     guid: bc4186e53a209ab448a9a5935d8f7bcc
   - enabled: 1

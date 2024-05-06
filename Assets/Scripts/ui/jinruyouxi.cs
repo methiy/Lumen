@@ -14,7 +14,7 @@ public class Choose : MonoBehaviour {
     IEnumerator LoadSceneAfterDelay()
     {
         yield return new WaitForSeconds(0.8f);
-        SceneManager.LoadScene("xinshoujiaocheng");
+        SceneManager.LoadScene("shipin");
     }
 
     void OnClick()
