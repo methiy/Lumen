@@ -6,11 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/GameScene.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
-  - enabled: 1
     path: Assets/Scenes/StartMenu.unity
     guid: 998b801886980114797a59e2d2ef3a1d
+  - enabled: 1
+    path: Assets/Scenes/xinshoujiaocheng.unity
+    guid: bc4186e53a209ab448a9a5935d8f7bcc
   - enabled: 1
     path: Assets/Scenes/level 1.unity
     guid: 37f5c2d7e05a34546ae3046e721afb54
@@ -20,4 +20,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/level 3.unity
     guid: 5c7052ac0b1308b48abd713cd21b3833
+  - enabled: 1
+    path: Assets/Scenes/level 4.unity
+    guid: 7b7c2492f53fb6b409d998e868dae7c5
+  - enabled: 1
+    path: Assets/Scenes/level 5.unity
+    guid: 1173d8bed3ce62f4586d50e769f06c3c
+  - enabled: 1
+    path: Assets/Scenes/level 6.unity
+    guid: 94c06d17df2496d4e92fa50794ec133e
   m_configObjects: {}
