@@ -8,7 +8,7 @@ public class LensMirror : BaseMirror
 {
     [SerializeField] private List<LineRenderer> lasersList = new List<LineRenderer>();
     [SerializeField] private const float MAX_LENGTH = 10.0f;
-
+    public Color colorNow;
     private void OnEnable()
     {
         mainLaser.OnChangeMirror+=ClearLine;
@@ -25,7 +25,7 @@ public class LensMirror : BaseMirror
 
        if((index^curRotation)!=1) return ;
 
-        //鍋忕Щ鍊?
+        //偏移??
         int[] dx = { 0, 1, 0, -1 };
         int[] dy = { 1, 0, -1, 0 };
 
@@ -34,14 +34,14 @@ public class LensMirror : BaseMirror
         float lineOffset=1.1f;
         RaycastHit2D hit = Physics2D.Raycast(endPosition+lineOffset*direction, direction, MAX_LENGTH, layerMasks);
         
-        lasersList[index].material.color=color;
+        lasersList[index].material.color=colorNow;
         if (hit.collider != null && hit.collider.GetComponent<BaseMirror>()&&(endPosition!=(Vector2)hit.collider.transform.position))
         {
             // Debug.Log(this.transform.name + "hit "+index);
             lasersList[index].positionCount = 2;
             lasersList[index].SetPosition(0, endPosition);
             lasersList[index].SetPosition(1, hit.collider.transform.position);
-            //濡傛灉鍑讳腑灏遍�氱煡琚?鍑讳腑鐨勭墿浣撳幓鍙戝皠灏勭嚎
+            //如果击中就通知??击中的物体去发射射线
             hit.collider.GetComponent<BaseMirror>()?.Ray(
                 endPosition,
                 hit.collider.transform.position,
@@ -60,7 +60,7 @@ public class LensMirror : BaseMirror
     private void ClearLine()  
     {  
         foreach(var lineRenderer in lasersList){
-            lineRenderer.positionCount = 0; // 灏哃ineRenderer涓?鐨勭偣鏁伴噺璁剧疆涓?0锛屼粠鑰屾竻闄ゆ墍鏈夌偣  
+            lineRenderer.positionCount = 0; // 将LineRenderer??的点数量设置??0，从而清除所有点  
             lineRenderer.material.color=Color.white;
         }
     }    
