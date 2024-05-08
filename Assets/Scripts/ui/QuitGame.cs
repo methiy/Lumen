@@ -1,10 +1,13 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
+using UnityEngine.UI; 
 public class QuitGame : MonoBehaviour
 {
-    public void Quit()
+     void OnClick()
     {
-        Debug.Log("退出游戏");
-        Application.Quit(); // 在游戏中退出
+        Debug.Log("exit");
+        Application.Quit(); 
     }
 }

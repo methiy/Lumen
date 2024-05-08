@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI; // 需要引入UI命名空间
+using UnityEngine.UI; 
 
 public class SceneReset : MonoBehaviour
 {
@@ -12,10 +12,10 @@ public class SceneReset : MonoBehaviour
     }
     void OnClick()
     {
-        // 获取当前场景的索引
+        // 锟斤拷取锟斤拷前锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷
         int sceneIndex = SceneManager.GetActiveScene().buildIndex;
 
-        // 重新加载当前场景
+        // 锟斤拷锟铰硷拷锟截碉拷前锟斤拷锟斤拷
         SceneManager.LoadScene(sceneIndex);
         Debug.Log("11");
     }
