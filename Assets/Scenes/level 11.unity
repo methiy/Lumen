@@ -5804,7 +5804,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dba0bd5d262ab4496fd949b7ce48d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: level 6
+  sceneName: level 3
 --- !u!114 &1357838391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9245,10 +9245,6 @@ PrefabInstance:
     - target: {fileID: 6951709154650604865, guid: 8113c602fddfa1a4ea4edabeb54bcd76, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7842397801628519441, guid: 8113c602fddfa1a4ea4edabeb54bcd76, type: 3}
-      propertyPath: addition
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7842397801628519441, guid: 8113c602fddfa1a4ea4edabeb54bcd76, type: 3}
       propertyPath: gameObjec

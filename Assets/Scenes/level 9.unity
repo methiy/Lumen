@@ -828,9 +828,9 @@ MonoBehaviour:
   layerMasks:
     serializedVersion: 2
     m_Bits: 4294967295
-  gameObject: {fileID: 567471467}
-  gameObjec: {fileID: 474084490}
-  color: {r: 0, g: 0, b: 0, a: 0}
+  targetColor: {r: 0, g: 0, b: 0, a: 0}
+  canRay: 0
+  lasersList: []
 --- !u!61 &121732716
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1108,6 +1108,7 @@ GameObject:
   - component: {fileID: 133136519}
   - component: {fileID: 133136518}
   - component: {fileID: 133136517}
+  - component: {fileID: 133136520}
   m_Layer: 5
   m_Name: Button (Legacy)
   m_TagString: Untagged
@@ -1217,6 +1218,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 133136515}
   m_CullTransparentMesh: 1
+--- !u!114 &133136520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133136515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61dba0bd5d262ab4496fd949b7ce48d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: level 10
 --- !u!1 &155736656
 GameObject:
   m_ObjectHideFlags: 0
@@ -7534,9 +7548,9 @@ MonoBehaviour:
   layerMasks:
     serializedVersion: 2
     m_Bits: 4294967295
-  gameObject: {fileID: 567471467}
-  gameObjec: {fileID: 474084490}
-  color: {r: 0, g: 0, b: 0, a: 0}
+  targetColor: {r: 0, g: 0, b: 0, a: 0}
+  canRay: 0
+  lasersList: []
 --- !u!61 &1782314677
 BoxCollider2D:
   m_ObjectHideFlags: 0

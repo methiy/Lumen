@@ -1891,7 +1891,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dba0bd5d262ab4496fd949b7ce48d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: level 6
+  sceneName: level 3
 --- !u!114 &481678809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4240,7 +4240,7 @@ MonoBehaviour:
   currentLensMirrorAmount: 0
   gameObject: {fileID: 1187013669}
   gameObjec: {fileID: 1816217437}
-  addition: 1
+  addition: 0
 --- !u!4 &911535953
 Transform:
   m_ObjectHideFlags: 0

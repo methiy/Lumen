@@ -352,6 +352,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   targetColor: {r: 1, g: 1, b: 1, a: 1}
+  canRay: 0
+  lasersList: []
 --- !u!61 &121732716
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4995,8 +4997,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetAmount: 1
+  currentAmount: 0
+  targetLensMirrorAmount: 0
+  currentLensMirrorAmount: 0
   gameObject: {fileID: 997947538}
   gameObjec: {fileID: 1356149309}
+  addition: 1
 --- !u!4 &1303054768
 Transform:
   m_ObjectHideFlags: 0
