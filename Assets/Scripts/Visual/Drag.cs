@@ -50,8 +50,8 @@ public class Drag : MonoBehaviour
         Vector3 targetPosition=GetMousePosition();
         Vector3 location;
         if (detection.PlayPositionPlaceable(targetPosition,out location)){
-            //ÊÇ·ñÓÐ¾µ×Ó ÊÇhasMirrorµÄ·µ»ØÖµ
-            //composite.CompositeResult() ÄÜ²»ÄÜºÏ³É
+            //ï¿½Ç·ï¿½ï¿½Ð¾ï¿½ï¿½ï¿½ ï¿½ï¿½hasMirrorï¿½Ä·ï¿½ï¿½ï¿½Öµ
+            //composite.CompositeResult() ï¿½Ü²ï¿½ï¿½ÜºÏ³ï¿½
             if(composite!=null && composite.HasMirror(location)){
                 targetMirror = composite.CompositeResult();
                 if(targetMirror!=null){
@@ -69,7 +69,7 @@ public class Drag : MonoBehaviour
         }else if(mirrorSO.isHaveIcon && detection.IconPositionPlaceable(targetPosition,out location)){
             isIcon=true;
             transform.position=location;
-            //! TODO  ·Å»Øicon
+            //! TODO  ï¿½Å»ï¿½icon
             tryRebackMirror(location);
 
         }else{
@@ -85,14 +85,14 @@ public class Drag : MonoBehaviour
 
 
     private void tryCreatMirror(Vector3 position){
-        //! todo ÅÐ¶Ï
+        //! todo ï¿½Ð¶ï¿½
         Instantiate(mirrorSO.mirrorPrefab,position,Quaternion.identity);
     }
 
     private void tryRebackMirror(Vector3 position){
-        //! todo ÅÐ¶Ï
+        //! todo ï¿½Ð¶ï¿½
         Instantiate(mirrorSO.mirrorIconPrefab,position,Quaternion.identity);
-        //! ÊÂ¼þÈÃËû½«sprite,ÊýÁ¿+(1)
+        //! ï¿½Â¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½sprite,ï¿½ï¿½ï¿½ï¿½+(1)
 
     }
 
