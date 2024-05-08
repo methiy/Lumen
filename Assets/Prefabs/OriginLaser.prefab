@@ -453,7 +453,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layerMasks:
     serializedVersion: 2
-    m_Bits: 896
+    m_Bits: 384
   lasersList:
   - {fileID: 3836119626320386018}
   - {fileID: 7367481973170847570}

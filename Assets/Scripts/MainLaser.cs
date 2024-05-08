@@ -46,7 +46,7 @@ public class MainLaser : MonoBehaviour
             //没有击中
             lasersList[index].positionCount = 2;
             lasersList[index].SetPosition(0, transform.position);
-            lasersList[index].SetPosition(1, direction*MAX_LENGTH);
+            lasersList[index].SetPosition(1, new Vector3(transform.position.x+direction.x*MAX_LENGTH,transform.position.y+direction.y*MAX_LENGTH,0));
         }
         // StartCoroutine(ClearLinePoints());
     }
