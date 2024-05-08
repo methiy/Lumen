@@ -11,6 +11,7 @@ public class Drag : MonoBehaviour
     private Detection detection;
     private Composite composite;
 
+    [SerializeField]private bool isCanDrag;
     
     private void OnEnable()
     {
@@ -26,7 +27,7 @@ public class Drag : MonoBehaviour
     // [SerializeField]private Texture2D cursor;
 
     public Vector3 GetMousePosition()
-    {
+    { 
         Vector3 mousePosition=Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         mousePosition.z=0;
@@ -40,18 +41,20 @@ public class Drag : MonoBehaviour
 
     public void OnMouseDrag()
     {
+        if(!isCanDrag) return;
         transform.position=GetMousePosition();
     }
     public void OnMouseUp()
     {
+        if(!isCanDrag) return;
+
+
         bool isPlay=false,isIcon=false;
         MirrorScriptableObject targetMirror=null;
 
         Vector3 targetPosition=GetMousePosition();
         Vector3 location;
         if (detection.PlayPositionPlaceable(targetPosition,out location)){
-            //�Ƿ��о��� ��hasMirror�ķ���ֵ
-            //composite.CompositeResult() �ܲ��ܺϳ�
             if(composite!=null && composite.HasMirror(location)){
                 targetMirror = composite.CompositeResult();
                 if(targetMirror!=null){

@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: mirrorSO
       value: 
       objectReference: {fileID: 11400000, guid: 88c3682e282a16647b3cb534041ea998, type: 2}
+    - target: {fileID: -6008145608323655015, guid: f0392c228302ed148ad0813c89128d36, type: 3}
+      propertyPath: isCanDrag
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -2673515251639091695, guid: f0392c228302ed148ad0813c89128d36, type: 3}
       propertyPath: mirrorSO
       value: 

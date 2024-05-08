@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: mirrorSO
       value: 
       objectReference: {fileID: 11400000, guid: 2e614ba3a86ce96449bc82c0e1f1a79c, type: 2}
+    - target: {fileID: -6008145608323655015, guid: f0392c228302ed148ad0813c89128d36, type: 3}
+      propertyPath: isCanDrag
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -2673515251639091695, guid: f0392c228302ed148ad0813c89128d36, type: 3}
       propertyPath: mirrorSO
       value: 
@@ -130,6 +134,7 @@ MonoBehaviour:
   - {fileID: 6752507736847541774}
   - {fileID: 6234539187659771766}
   - {fileID: 6914858962511821708}
+  mirrorColor: {r: 1, g: 0, b: 0, a: 1}
   isRotate: 1
 --- !u!114 &9136024839272961380
 MonoBehaviour:

@@ -8,9 +8,25 @@ public class LensMirror : BaseMirror
 {
     [SerializeField] private List<LineRenderer> lasersList = new List<LineRenderer>();
     [SerializeField] private const float MAX_LENGTH = 10.0f;
-    public Color colorNow;
+    [SerializeField] private Color mirrorColor;
+
+    //! delete
+    private VictoryManager victoryManager;
+    private void Start()
+    {
+        
+    }
+    private VictoryManager GetVictoryManager(){
+        VictoryManager[] allVictoryManager = UnityEngine.Object.FindObjectsOfType<VictoryManager>();  
+        return allVictoryManager[0];
+    }
+
+
     private void OnEnable()
     {
+        //! delete
+        victoryManager=GetVictoryManager();
+
         mainLaser.OnChangeMirror+=ClearLine;
         mainLaser.UpdateMainLaser();
     }
@@ -25,6 +41,9 @@ public class LensMirror : BaseMirror
 
        if((index^curRotation)!=1) return ;
 
+        //! delete
+        victoryManager.UpdateLensMirrorAmount(transform.position);
+
         //Æ«ÒÆ??
         int[] dx = { 0, 1, 0, -1 };
         int[] dy = { 1, 0, -1, 0 };
@@ -34,7 +53,7 @@ public class LensMirror : BaseMirror
         float lineOffset=1.1f;
         RaycastHit2D hit = Physics2D.Raycast(endPosition+lineOffset*direction, direction, MAX_LENGTH, layerMasks);
         
-        lasersList[index].material.color=colorNow;
+        lasersList[index].material.color=mirrorColor;
         if (hit.collider != null && hit.collider.GetComponent<BaseMirror>()&&(endPosition!=(Vector2)hit.collider.transform.position))
         {
             // Debug.Log(this.transform.name + "hit "+index);
@@ -46,7 +65,7 @@ public class LensMirror : BaseMirror
                 endPosition,
                 hit.collider.transform.position,
                 index,
-                color);
+                mirrorColor);
         }
         else
         {

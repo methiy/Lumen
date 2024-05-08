@@ -5,21 +5,82 @@ using UnityEngine.SceneManagement;
 
 public class TargetMirror : BaseMirror
 {
-    
-    public GameObject gameObject;
-    public GameObject gameObjec;
+    private VictoryManager victoryManager;
+    [SerializeField]private Color targetColor;
+    [SerializeField]private bool canRay;
 
-    public Color color;
+    [SerializeField] private List<LineRenderer> lasersList = new List<LineRenderer>();
+    [SerializeField] private const float MAX_LENGTH = 10.0f;
+
+    private void Start()
+    {
+        victoryManager=GetVictoryManager();
+    }
+    private VictoryManager GetVictoryManager(){
+        VictoryManager[] allVictoryManager = UnityEngine.Object.FindObjectsOfType<VictoryManager>();  
+        return allVictoryManager[0];
+    }
+
+    private void OnEnable()
+    {
+        mainLaser.OnChangeMirror+=ClearLine;
+        mainLaser.UpdateMainLaser();
+    }
+    private void OnDisable()
+    {
+        mainLaser.UpdateMainLaser();
+        mainLaser.OnChangeMirror-=ClearLine;
+    }
     public override void Ray(Vector2 startPosition, Vector2 endPosition, int index, Color color)
     {
-        Debug.Log(color + "000");
-        Debug.Log(this.color);
+        Debug.Log(color);
+        Debug.Log(targetColor);
         //!todo color is right?
-        if (color == this.color)
+        if (color == targetColor)
         {
-            gameObjec.SetActive(false);
-            gameObject.SetActive(true);  
+            victoryManager.UpdateAmount(transform.position);
         }
 
+        if(!canRay){
+            return ;
+        }
+
+        int[] dx = { 0, 1, 0, -1 };
+        int[] dy = { 1, 0, -1, 0 };
+
+        Vector2 direction=new Vector2(dx[index],dy[index]).normalized;
+        
+        float lineOffset=1.1f;
+        RaycastHit2D hit = Physics2D.Raycast(endPosition+lineOffset*direction, direction, MAX_LENGTH, layerMasks);
+        
+        lasersList[index].material.color=color;
+        if (hit.collider != null && hit.collider.GetComponent<BaseMirror>()&&(endPosition!=(Vector2)hit.collider.transform.position))
+        {
+            // Debug.Log(this.transform.name + "hit "+index);
+            lasersList[index].positionCount = 2;
+            lasersList[index].SetPosition(0, endPosition);
+            lasersList[index].SetPosition(1, hit.collider.transform.position);
+            //如果击中就通知??击中的物体去发射射线
+            hit.collider.GetComponent<BaseMirror>()?.Ray(
+                endPosition,
+                hit.collider.transform.position,
+                index,
+                color);
+        }
+        else
+        {
+            lasersList[index].positionCount = 2;
+            lasersList[index].SetPosition(0, transform.position);
+            lasersList[index].SetPosition(1,transform.position+(Vector3)direction*MAX_LENGTH);
+        }
+
+    }
+
+    private void ClearLine()  
+    {  
+        foreach(var lineRenderer in lasersList){
+            lineRenderer.positionCount = 0; // 将LineRenderer??的点数量设置??0，从而清除所有点  
+            lineRenderer.material.color=Color.white;
+        }
     }
 }

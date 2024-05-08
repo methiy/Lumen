@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: mirrorSO
       value: 
       objectReference: {fileID: 11400000, guid: 1fcd665f22173924bb30fafdbb967567, type: 2}
+    - target: {fileID: -6008145608323655015, guid: f0392c228302ed148ad0813c89128d36, type: 3}
+      propertyPath: isCanDrag
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -2673515251639091695, guid: f0392c228302ed148ad0813c89128d36, type: 3}
       propertyPath: mirrorSO
       value: 
@@ -127,7 +131,6 @@ MonoBehaviour:
   - {fileID: 239795815570701806}
   - {fileID: 604572375234516118}
   - {fileID: 76794924512174188}
-  curRotation: 0
   isRotate: 1
 --- !u!114 &5716414372639087266
 MonoBehaviour:
@@ -141,7 +144,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89a46ea884c78574ba4e54ce58bf3b1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mirrorResult: {fileID: 0}
   ClapboardAndLensMirror: {fileID: 11400000, guid: b0f4c2dd3fe0ffe4eb90293a90fb6b9c, type: 2}
   LensAndReflectMirror: {fileID: 11400000, guid: ca3aeee042b86f94c89def271a4bdd25, type: 2}
   ReflectAndClapBoardMirror: {fileID: 11400000, guid: 8dc70089adbd7364eade0fcf1135451c, type: 2}
