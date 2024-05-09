@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 123068964001efa43840a90352099df0, type: 3}
-  m_Name: ReflectAndClapBoardMirrorSO
+  m_Name: ClapboardAndRedLensMirrorSO
   m_EditorClassIdentifier: 
-  mirrorType: 12
+  mirrorType: 13
   icon: {fileID: 0}
-  sprite: {fileID: 21300000, guid: 65fa3fb9bfefd624b91f26163edc9999, type: 3}
-  mirrorPrefab: {fileID: 9135114164166828958, guid: 8b67cede3ed54b94faa3b2f812c3af22, type: 3}
-  mirrorIconPrefab: {fileID: 7559794131458981347, guid: 338b3ec2459d5d9449f55c45041ebeda, type: 3}
+  sprite: {fileID: 21300000, guid: bf9ec6b1c5626224d98709ca7abbc666, type: 3}
+  mirrorPrefab: {fileID: 7035249103369773547, guid: b4c918502827f9246a5c155e5d08da4f, type: 3}
+  mirrorIconPrefab: {fileID: 9173283710977157553, guid: e8e1c92aff5d8d54781e2b43cabc490b, type: 3}
   isHaveIcon: 0

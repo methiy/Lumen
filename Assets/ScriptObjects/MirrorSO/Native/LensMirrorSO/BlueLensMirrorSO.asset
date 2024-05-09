@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 123068964001efa43840a90352099df0, type: 3}
-  m_Name: ClapboardSO
+  m_Name: BlueLensMirrorSO
   m_EditorClassIdentifier: 
-  mirrorType: 6
-  icon: {fileID: 21300000, guid: 265a224c33989594a8d58425be145cba, type: 3}
-  sprite: {fileID: 21300000, guid: 0c57387c0a6d3ea4ea9b8e79541fde7f, type: 3}
-  mirrorPrefab: {fileID: 706477367829414608, guid: e976e91f72c5594428dfdfe012b6ccab, type: 3}
-  mirrorIconPrefab: {fileID: 9015158887298425604, guid: 5312b4a0538ff6b4982a3a93a08afa41, type: 3}
+  mirrorType: 4
+  icon: {fileID: 21300000, guid: 21aee94caeff39b44a28c0c63808e64a, type: 3}
+  sprite: {fileID: 21300000, guid: 26ce311833f5f0345a49dc70d3cba214, type: 3}
+  mirrorPrefab: {fileID: 3278625786067120709, guid: b3edb109fcb46da4a8733bfd28b1a26f, type: 3}
+  mirrorIconPrefab: {fileID: 5484634062177550427, guid: 4336fbda7cc3915459e2c6fd4809cba8, type: 3}
   isHaveIcon: 1

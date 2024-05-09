@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 123068964001efa43840a90352099df0, type: 3}
-  m_Name: LensAndReflectMirrorSO
+  m_Name: RedLensAndReflectMirrorSO
   m_EditorClassIdentifier: 
-  mirrorType: 7
-  icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  mirrorType: 9
+  icon: {fileID: 0}
   sprite: {fileID: 21300000, guid: 4240b76c4df64f54cbe517822840a698, type: 3}
   mirrorPrefab: {fileID: 6733981425030650744, guid: 2d7500c38bfae3e4cbbc50585c33d00e, type: 3}
   mirrorIconPrefab: {fileID: 198198547777868657, guid: 00ff5d104d8246245bd1f9066f576891, type: 3}

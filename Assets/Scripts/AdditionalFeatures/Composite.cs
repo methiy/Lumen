@@ -5,19 +5,35 @@ using UnityEngine;
 public class Composite : MonoBehaviour
 {
     private MirrorScriptableObject mirrorResult;
-    [SerializeField]private MirrorScriptableObject ClapboardAndLensMirror;
-    [SerializeField]private MirrorScriptableObject LensAndReflectMirror;
+    [SerializeField]private MirrorScriptableObject ClapboardAndRedLensMirror;
+    [SerializeField]private MirrorScriptableObject ClapboardAndBlueLensMirror;
+    [SerializeField]private MirrorScriptableObject ClapboardAndWhiteLensMirror;
+    [SerializeField]private MirrorScriptableObject RedLensAndReflectMirror;
+    [SerializeField]private MirrorScriptableObject BlueLensAndReflectMirror;
+    [SerializeField]private MirrorScriptableObject WhiteLensAndReflectMirror;
     [SerializeField]private MirrorScriptableObject ReflectAndClapBoardMirror;
     [SerializeField]private MirrorScriptableObject ReflectAndDispersingMirror;
     [SerializeField]private LayerMask layerMask;
 
     MirrorScriptableObject GetMirrorScriptableObject(MirrorType mirrorType){
         switch(mirrorType){
-            case MirrorType.ClapboardAndLensMirror:
-            return ClapboardAndLensMirror;
+            case MirrorType.ClapboardAndRedLensMirror:
+            return ClapboardAndRedLensMirror;
             break;
-            case MirrorType.LensAndReflectMirror:
-            return LensAndReflectMirror;
+            case MirrorType.ClapboardAndBlueLensMirror:
+            return ClapboardAndBlueLensMirror;
+            break;
+            case MirrorType.ClapboardAndWhiteLensMirror:
+            return ClapboardAndWhiteLensMirror;
+            break;
+            case MirrorType.RedLensAndReflectMirror:
+            return RedLensAndReflectMirror;
+            break;
+            case MirrorType.BlueLensAndReflectMirror:
+            return BlueLensAndReflectMirror;
+            break;
+            case MirrorType.WhiteLensAndReflectMirror:
+            return WhiteLensAndReflectMirror;
             break;
             case MirrorType.ReflectAndClapBoardMirror:
             return ReflectAndClapBoardMirror;
@@ -33,15 +49,32 @@ public class Composite : MonoBehaviour
     MirrorScriptableObject FindTargetMirror(MirrorType firstMirror, MirrorType secondMirror){
         Debug.Log(firstMirror+" "+secondMirror);
         MirrorScriptableObject mirrorTarget = null;
-        if((firstMirror == MirrorType.Clapboard && secondMirror == MirrorType.LensMirror) || 
-           (firstMirror == MirrorType.LensMirror && secondMirror == MirrorType.Clapboard)
+        if((firstMirror == MirrorType.Clapboard && secondMirror == MirrorType.RedLensMirror) || 
+           (firstMirror == MirrorType.RedLensMirror && secondMirror == MirrorType.Clapboard)
         ){
-            return GetMirrorScriptableObject(MirrorType.ClapboardAndLensMirror);
-        }else if((firstMirror == MirrorType.ReflectMirror && secondMirror == MirrorType.LensMirror) || 
-                 (firstMirror == MirrorType.LensMirror && secondMirror == MirrorType.ReflectMirror)
+            return GetMirrorScriptableObject(MirrorType.ClapboardAndRedLensMirror);
+        }else if((firstMirror == MirrorType.ReflectMirror && secondMirror == MirrorType.RedLensMirror) || 
+                 (firstMirror == MirrorType.RedLensMirror && secondMirror == MirrorType.ReflectMirror)
         ){
-            return GetMirrorScriptableObject(MirrorType.LensAndReflectMirror);
-        }else if((firstMirror == MirrorType.ReflectMirror && secondMirror == MirrorType.Clapboard) || 
+            return GetMirrorScriptableObject(MirrorType.RedLensAndReflectMirror);
+        }else if((firstMirror == MirrorType.Clapboard && secondMirror == MirrorType.BlueLensMirror) || 
+           (firstMirror == MirrorType.BlueLensMirror && secondMirror == MirrorType.Clapboard)
+        ){
+            return GetMirrorScriptableObject(MirrorType.ClapboardAndBlueLensMirror);
+        }else if((firstMirror == MirrorType.ReflectMirror && secondMirror == MirrorType.BlueLensMirror) || 
+                 (firstMirror == MirrorType.BlueLensMirror && secondMirror == MirrorType.ReflectMirror)
+        ){
+            return GetMirrorScriptableObject(MirrorType.BlueLensAndReflectMirror);
+        }else if((firstMirror == MirrorType.Clapboard && secondMirror == MirrorType.WhiteLensMirror) || 
+           (firstMirror == MirrorType.WhiteLensMirror && secondMirror == MirrorType.Clapboard)
+        ){
+            return GetMirrorScriptableObject(MirrorType.ClapboardAndWhiteLensMirror);
+        }else if((firstMirror == MirrorType.ReflectMirror && secondMirror == MirrorType.WhiteLensMirror) || 
+                 (firstMirror == MirrorType.WhiteLensMirror && secondMirror == MirrorType.ReflectMirror)
+        ){
+            return GetMirrorScriptableObject(MirrorType.WhiteLensAndReflectMirror);
+        }
+        else if((firstMirror == MirrorType.ReflectMirror && secondMirror == MirrorType.Clapboard) || 
                  (firstMirror == MirrorType.Clapboard && secondMirror == MirrorType.ReflectMirror)
         ){
             return GetMirrorScriptableObject(MirrorType.ReflectAndClapBoardMirror);

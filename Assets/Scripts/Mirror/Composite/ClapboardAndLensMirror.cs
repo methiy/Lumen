@@ -6,7 +6,7 @@ public class ClapboardAndLensMirror : BaseMirror
 {
     [SerializeField] private List<LineRenderer> lasersList = new List<LineRenderer>();
     [SerializeField] private const float MAX_LENGTH = 10.0f;
-    
+    [SerializeField] private Color mirrorColor;
 
     /// <summary>
     /// 
@@ -36,7 +36,7 @@ public class ClapboardAndLensMirror : BaseMirror
 
        int index1=index^2;
        
-       RRay(startPosition, endPosition, index1, color);
+       RRay(startPosition, endPosition, index1, mirrorColor);
 
     }
 

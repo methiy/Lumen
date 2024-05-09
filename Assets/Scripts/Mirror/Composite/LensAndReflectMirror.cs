@@ -6,12 +6,8 @@ public class LensAndReflectMirror : BaseMirror
 {
     //射线
     [SerializeField] private List<LineRenderer> lasersList = new List<LineRenderer>();
-
-    //const
-    [Header("常量")]
-    // [SerializeField]private const float OFFSET=0.01f;
     [SerializeField] private const float MAX_LENGTH = 10.0f;
-    // [SerializeField]private const int MAX_COUNT=10;
+    [SerializeField] private Color mirrorColor;
 
     /// <summary>
     /// 起点终点 index（设置为哪个line render出射0123 分别为上右左下） color为光线颜色
@@ -75,7 +71,7 @@ public class LensAndReflectMirror : BaseMirror
                 index2=index^3;
             }
         }
-        if(index1!=-1)   RRay(startPosition,endPosition,index1,color);
+        if(index1!=-1)   RRay(startPosition,endPosition,index1,mirrorColor);
         if(index2!=-1)   RRay(startPosition,endPosition,index2,color);
             
     }

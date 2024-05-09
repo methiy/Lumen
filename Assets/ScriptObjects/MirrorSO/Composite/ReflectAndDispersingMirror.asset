@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 123068964001efa43840a90352099df0, type: 3}
   m_Name: ReflectAndDispersingMirror
   m_EditorClassIdentifier: 
-  mirrorType: 10
+  mirrorType: 16
   icon: {fileID: 0}
   sprite: {fileID: 21300000, guid: 63f0b99e7c8ccde4cb0c372f02ff90fb, type: 3}
   mirrorPrefab: {fileID: 8636381454408855161, guid: 3f6e603e89df16849bdf5ca0d302c8a1, type: 3}

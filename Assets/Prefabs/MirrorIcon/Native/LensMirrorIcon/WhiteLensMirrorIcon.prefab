@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &4833743439700853927
+--- !u!1001 &7485111391877511455
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -8,29 +8,73 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1191633543473477430, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
+      propertyPath: m_Size.x
+      value: 0.89
+      objectReference: {fileID: 0}
+    - target: {fileID: 1191633543473477430, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
+      propertyPath: m_Size.y
+      value: 0.89
+      objectReference: {fileID: 0}
+    - target: {fileID: 1191633543473477430, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 142085afb696b424eb1dfd25ed7a38b4, type: 3}
+    - target: {fileID: 1191633543473477430, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2068192318407257727, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
+      propertyPath: mirrorSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 2e614ba3a86ce96449bc82c0e1f1a79c, type: 2}
     - target: {fileID: 3169725695271074116, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
       propertyPath: m_Name
-      value: ReflectAndClapBoardMirrorIcon
+      value: WhiteLensMirrorIcon
       objectReference: {fileID: 0}
     - target: {fileID: 3280165213867779001, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
       propertyPath: mirrorSO
       value: 
-      objectReference: {fileID: 11400000, guid: 8dc70089adbd7364eade0fcf1135451c, type: 2}
+      objectReference: {fileID: 11400000, guid: 2e614ba3a86ce96449bc82c0e1f1a79c, type: 2}
     - target: {fileID: 3724991831026547751, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
       propertyPath: m_Size.x
-      value: 0.2
+      value: 0.51
       objectReference: {fileID: 0}
     - target: {fileID: 3724991831026547751, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
       propertyPath: m_Size.y
-      value: 0.2
+      value: 1.22
       objectReference: {fileID: 0}
     - target: {fileID: 3724991831026547751, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+      objectReference: {fileID: 21300000, guid: b26f185bae8839740957037a22e514b4, type: 3}
     - target: {fileID: 3724991831026547751, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3979153399486140345, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
+      propertyPath: m_Size.x
+      value: 0.8998039
+      objectReference: {fileID: 0}
+    - target: {fileID: 3979153399486140345, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
+      propertyPath: m_Size.y
+      value: 0.91355634
+      objectReference: {fileID: 0}
+    - target: {fileID: 3979153399486140345, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.0009823292
+      objectReference: {fileID: 0}
+    - target: {fileID: 3979153399486140345, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
+      propertyPath: m_Offset.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3979153399486140345, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 0.89
+      objectReference: {fileID: 0}
+    - target: {fileID: 3979153399486140345, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 0.89
       objectReference: {fileID: 0}
     - target: {fileID: 4136297218256937197, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
       propertyPath: m_Size.x
@@ -50,24 +94,40 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4136297218256937197, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 0.2
+      value: 0.51
       objectReference: {fileID: 0}
     - target: {fileID: 4136297218256937197, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.y
-      value: 0.2
+      value: 1.22
       objectReference: {fileID: 0}
     - target: {fileID: 4136297218256937197, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 0.2
+      value: 0.89
       objectReference: {fileID: 0}
     - target: {fileID: 4136297218256937197, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 0.2
+      value: 0.89
       objectReference: {fileID: 0}
     - target: {fileID: 5457584875759379782, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
       propertyPath: mirrorSO
       value: 
-      objectReference: {fileID: 11400000, guid: 8dc70089adbd7364eade0fcf1135451c, type: 2}
+      objectReference: {fileID: 11400000, guid: eb24e8de2edfdb840a9fb732d86ff5b2, type: 2}
+    - target: {fileID: 7045250862570385604, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0.89
+      objectReference: {fileID: 0}
+    - target: {fileID: 7045250862570385604, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0.89
+      objectReference: {fileID: 0}
+    - target: {fileID: 7045250862570385604, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7045250862570385604, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8090256923695889012, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -111,5 +171,36 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3169725695271074116, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -7334824666332545748}
   m_SourcePrefab: {fileID: 100100000, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
+--- !u!1 &5484634062177550427 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3169725695271074116, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
+  m_PrefabInstance: {fileID: 7485111391877511455}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-7334824666332545748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5484634062177550427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89a46ea884c78574ba4e54ce58bf3b1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ClapboardAndRedLensMirror: {fileID: 0}
+  ClapboardAndBlueLensMirror: {fileID: 0}
+  ClapboardAndWhiteLensMirror: {fileID: 0}
+  RedLensAndReflectMirror: {fileID: 0}
+  BlueLensAndReflectMirror: {fileID: 0}
+  WhiteLensAndReflectMirror: {fileID: 0}
+  ReflectAndClapBoardMirror: {fileID: 11400000, guid: 8dc70089adbd7364eade0fcf1135451c, type: 2}
+  ReflectAndDispersingMirror: {fileID: 11400000, guid: 9de795ffeb5c0964591362881d553cb3, type: 2}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 128
