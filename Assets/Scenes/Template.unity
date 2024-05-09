@@ -797,9 +797,9 @@ MonoBehaviour:
   layerMasks:
     serializedVersion: 2
     m_Bits: 4294967295
-  gameObject: {fileID: 997339448}
-  gameObjec: {fileID: 1804879385}
-  color: {r: 0, g: 0, b: 0, a: 0}
+  targetColor: {r: 0, g: 0, b: 0, a: 0}
+  canRay: 0
+  lasersList: []
 --- !u!61 &121732716
 BoxCollider2D:
   m_ObjectHideFlags: 0
