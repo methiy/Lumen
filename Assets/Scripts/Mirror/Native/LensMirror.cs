@@ -106,18 +106,10 @@ public class LensMirror : BaseMirror
             {  
                 if (collider.gameObject == this.gameObject)  
                 {  
-                    // RotateMirror();
                     StartRotation();
                 }  
             }
     }
-    private void RotateMirror(){
-        transform.Rotate(0,0,90);
-        curRotation+=1;
-        curRotation%=4;
-        mainLaser.UpdateMainLaser();
-    }
-
     private float rotationDuration = 0.25f; // 旋转持续时间
     private bool isRotating = false; // 是否正在旋转
 
