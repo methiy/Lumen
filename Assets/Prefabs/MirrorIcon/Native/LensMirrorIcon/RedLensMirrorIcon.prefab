@@ -30,7 +30,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 2e614ba3a86ce96449bc82c0e1f1a79c, type: 2}
     - target: {fileID: 3169725695271074116, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
       propertyPath: m_Name
-      value: LensMirrorIcon
+      value: RedLensMirrorIcon
       objectReference: {fileID: 0}
     - target: {fileID: 3280165213867779001, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
       propertyPath: mirrorSO
@@ -193,8 +193,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89a46ea884c78574ba4e54ce58bf3b1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ClapboardAndLensMirror: {fileID: 11400000, guid: b0f4c2dd3fe0ffe4eb90293a90fb6b9c, type: 2}
-  LensAndReflectMirror: {fileID: 11400000, guid: ca3aeee042b86f94c89def271a4bdd25, type: 2}
+  ClapboardAndRedLensMirror: {fileID: 11400000, guid: b0f4c2dd3fe0ffe4eb90293a90fb6b9c, type: 2}
+  ClapboardAndBlueLensMirror: {fileID: 11400000, guid: 99bfb73dde5da884d88ff8476f6fc7cb, type: 2}
+  ClapboardAndWhiteLensMirror: {fileID: 11400000, guid: 543d5585217582842809c5abaad07d94, type: 2}
+  RedLensAndReflectMirror: {fileID: 11400000, guid: ca3aeee042b86f94c89def271a4bdd25, type: 2}
+  BlueLensAndReflectMirror: {fileID: 11400000, guid: f1a66b52ebcca254e9e5219077497cf9, type: 2}
+  WhiteLensAndReflectMirror: {fileID: 11400000, guid: eb24e8de2edfdb840a9fb732d86ff5b2, type: 2}
   ReflectAndClapBoardMirror: {fileID: 11400000, guid: 8dc70089adbd7364eade0fcf1135451c, type: 2}
   ReflectAndDispersingMirror: {fileID: 11400000, guid: 9de795ffeb5c0964591362881d553cb3, type: 2}
   layerMask:
