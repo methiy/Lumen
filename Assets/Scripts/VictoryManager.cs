@@ -1,49 +1,94 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Rendering.Universal;
 using UnityEngine;
 
 public class VictoryManager : MonoBehaviour
 {
     [SerializeField]private int targetAmount;
-    [SerializeField]private int currentAmount = 0;
-
     [SerializeField]private int targetLensMirrorAmount;
-    [SerializeField]private int currentLensMirrorAmount = 0;
 
     [SerializeField]private GameObject gameObject;
     [SerializeField]private GameObject gameObjec;
+    private bool hasVictory;
 
-    private Dictionary<string,bool> hasUpdate = new Dictionary<string, bool>();
-    private Dictionary<string,bool> hasUpdate1 = new Dictionary<string, bool>();
-    [SerializeField]private bool addition;
+    // private Dictionary<string,bool> hasUpdate = new Dictionary<string, bool>();
+    // private Dictionary<string,bool> hasUpdate1 = new Dictionary<string, bool>();
+    // [SerializeField]private bool addition;
 
-    public void UpdateAmount(Vector3 vector3){
-        if(hasUpdate.ContainsKey(vector3.ToString())){
-            if(currentAmount >= targetAmount && addition){
-            Victory();
-        }
-            return ;
-        }
-        hasUpdate[vector3.ToString()]=true;
-        currentAmount++;
-        if(currentAmount >= targetAmount && addition){
+    private void Start()
+    {
+        hasVictory = false;
+    }
+
+
+    private void Update()
+    {
+        if(!hasVictory && UpdateAmount() && UpdateLensMirrorAmount()){
             Victory();
         }
     }
 
-    public void UpdateLensMirrorAmount(Vector3 vector3){
-        if(hasUpdate1.ContainsKey(vector3.ToString())){
-            return ;
+    public bool UpdateAmount(){
+        int currentAmount = 0;
+        Dictionary<string,bool> dict = new Dictionary<string, bool>();
+
+        LineRenderer[] LineRenderers = UnityEngine.Object.FindObjectsOfType<LineRenderer>();
+        foreach(LineRenderer lineRenderer in LineRenderers){
+            int pointCount = lineRenderer.positionCount;
+            // 遍历所有点，并输出它们的位置
+            for (int i = 0; i < pointCount; i++)
+            {
+                Vector3 point = lineRenderer.GetPosition(i);
+                dict[point.ToString()] = true;
+            }
         }
-        hasUpdate1[vector3.ToString()]=true;
-        currentLensMirrorAmount++;
-        
+
+        TargetMirror[] targetMirrors = UnityEngine.Object.FindObjectsOfType<TargetMirror>();     
+        foreach (var TargetMirror in targetMirrors)
+        {
+            if(TargetMirror.ColorisRight() && dict.ContainsKey(TargetMirror.transform.position.ToString())){
+                currentAmount++;
+            }
+        }
+        if(currentAmount>=targetAmount){
+            return true;
+        }
+        return false;
+    }
+
+    public bool UpdateLensMirrorAmount(){
+    
+        int currentLensMirrorAmount = 0;
+        Dictionary<string,bool> dict = new Dictionary<string, bool>();
+
+        LineRenderer[] LineRenderers = UnityEngine.Object.FindObjectsOfType<LineRenderer>();
+        foreach(LineRenderer lineRenderer in LineRenderers){
+            int pointCount = lineRenderer.positionCount;
+            // 遍历所有点，并输出它们的位置
+            for (int i = 0; i < pointCount; i++)
+            {
+                Vector3 point = lineRenderer.GetPosition(i);
+                dict[point.ToString()] = true;
+            }
+        }
+
+        LensMirror[] LensMirrors = UnityEngine.Object.FindObjectsOfType<LensMirror>();     
+        foreach (var LensMirror in LensMirrors)
+        {
+            if(dict.ContainsKey(LensMirror.transform.position.ToString())){
+                currentLensMirrorAmount++;
+            }
+        }
+
         if(currentLensMirrorAmount >= targetLensMirrorAmount){
-            addition=true;
+            return true;
         }
+        return false;
     }
 
     private void Victory(){
+        hasVictory = true;
         gameObjec.SetActive(false);
         gameObject.SetActive(true); 
     }

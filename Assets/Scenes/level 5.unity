@@ -9258,6 +9258,10 @@ PrefabInstance:
       propertyPath: gameObject
       value: 
       objectReference: {fileID: 1363827944}
+    - target: {fileID: 7842397801628519441, guid: 8113c602fddfa1a4ea4edabeb54bcd76, type: 3}
+      propertyPath: targetAmount
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8718299764757284281, guid: 8113c602fddfa1a4ea4edabeb54bcd76, type: 3}
       propertyPath: m_Name
       value: VictoryManager

@@ -11,21 +11,21 @@ public class LensMirror : BaseMirror
     [SerializeField] private Color mirrorColor;
 
     //! delete
-    private VictoryManager victoryManager;
-    private void Start()
-    {
+    // private VictoryManager victoryManager;
+    // private void Start()
+    // {
         
-    }
-    private VictoryManager GetVictoryManager(){
-        VictoryManager[] allVictoryManager = UnityEngine.Object.FindObjectsOfType<VictoryManager>();  
-        return allVictoryManager[0];
-    }
-
+    // }
+    // private VictoryManager GetVictoryManager(){
+    //     VictoryManager[] allVictoryManager = UnityEngine.Object.FindObjectsOfType<VictoryManager>();  
+    //     return allVictoryManager[0];
+    // }
+    
 
     private void OnEnable()
     {
         //! delete
-        victoryManager=GetVictoryManager();
+        // victoryManager=GetVictoryManager();
 
         mainLaser.OnChangeMirror+=ClearLine;
         mainLaser.UpdateMainLaser();
@@ -41,8 +41,8 @@ public class LensMirror : BaseMirror
 
        if((index^curRotation)!=1) return ;
 
-        //! delete
-        victoryManager.UpdateLensMirrorAmount(transform.position);
+        // ! delete
+        // victoryManager.UpdateLensMirrorAmount(transform.position);
 
         //Æ«ÒÆ??
         int[] dx = { 0, 1, 0, -1 };

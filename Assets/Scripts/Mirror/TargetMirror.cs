@@ -7,6 +7,7 @@ public class TargetMirror : BaseMirror
 {
     private VictoryManager victoryManager;
     [SerializeField]private Color targetColor;
+    [SerializeField]private Color currentColor;
     [SerializeField]private bool canRay;
 
     [SerializeField] private List<LineRenderer> lasersList = new List<LineRenderer>();
@@ -31,15 +32,13 @@ public class TargetMirror : BaseMirror
         mainLaser.UpdateMainLaser();
         mainLaser.OnChangeMirror-=ClearLine;
     }
+
+    public bool ColorisRight(){
+        return targetColor == currentColor;
+    }
     public override void Ray(Vector2 startPosition, Vector2 endPosition, int index, Color color)
     {
-        Debug.Log(color);
-        Debug.Log(targetColor);
-        //!todo color is right?
-        if (color == targetColor)
-        {
-            victoryManager.UpdateAmount(transform.position);
-        }
+        currentColor=color;
 
         if(!canRay){
             return ;
