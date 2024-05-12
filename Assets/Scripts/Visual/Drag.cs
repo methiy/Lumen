@@ -60,7 +60,7 @@ public class Drag : MonoBehaviour
                 if(targetMirror!=null){
                     isPlay=true;
                     transform.position=location;
-                    Instantiate(targetMirror.mirrorPrefab,location,Quaternion.identity);
+                    Instantiate(targetMirror.mirrorPrefab,location,targetMirror.mirrorPrefab.transform.rotation);
                 }else{
                     transform.position=prePosition;    
                 }
@@ -72,7 +72,6 @@ public class Drag : MonoBehaviour
         }else if(mirrorSO.isHaveIcon && detection.IconPositionPlaceable(targetPosition,out location)){
             isIcon=true;
             transform.position=location;
-            //! TODO  �Ż�icon
             tryRebackMirror(location);
 
         }else{
@@ -88,15 +87,11 @@ public class Drag : MonoBehaviour
 
 
     private void tryCreatMirror(Vector3 position){
-        //! todo �ж�
-        Instantiate(mirrorSO.mirrorPrefab,position,Quaternion.identity);
+        Instantiate(mirrorSO.mirrorPrefab, position, mirrorSO.mirrorPrefab.transform.rotation);
     }
 
     private void tryRebackMirror(Vector3 position){
-        //! todo �ж�
         Instantiate(mirrorSO.mirrorIconPrefab,position,Quaternion.identity);
-        //! �¼�������sprite,����+(1)
-
     }
 
 }

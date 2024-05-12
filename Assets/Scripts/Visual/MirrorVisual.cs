@@ -59,7 +59,7 @@ public class MirrorVisual:MonoBehaviour{
                 if(targetMirror!=null){
                     isPlay=true;
                     transform.position=location;
-                    Instantiate(targetMirror.mirrorPrefab,location,Quaternion.identity);
+                    Instantiate(targetMirror.mirrorPrefab,location,targetMirror.mirrorPrefab.transform.rotation);
                 }else{
                     transform.position=prePosition;    
                 }
@@ -89,7 +89,7 @@ public class MirrorVisual:MonoBehaviour{
 
     private void tryCreatMirror(Vector3 position){
         //! todo еп╤о
-        Instantiate(mirrorSO.mirrorPrefab,position,Quaternion.identity);
+        Instantiate(mirrorSO.mirrorPrefab, position, mirrorSO.mirrorPrefab.transform.rotation);
     }
 
     private void tryRebackMirror(Vector3 position){
