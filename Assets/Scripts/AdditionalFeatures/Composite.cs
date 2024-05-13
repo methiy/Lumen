@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Composite : MonoBehaviour
 {
+    [SerializeField]public bool compositable;
     private MirrorScriptableObject mirrorResult;
     [SerializeField]private MirrorScriptableObject ClapboardAndRedLensMirror;
     [SerializeField]private MirrorScriptableObject ClapboardAndBlueLensMirror;
@@ -49,6 +50,9 @@ public class Composite : MonoBehaviour
     MirrorScriptableObject FindTargetMirror(MirrorType firstMirror, MirrorType secondMirror){
         Debug.Log(firstMirror+" "+secondMirror);
         MirrorScriptableObject mirrorTarget = null;
+
+        if(!compositable)   return mirrorTarget;
+
         if((firstMirror == MirrorType.Clapboard && secondMirror == MirrorType.RedLensMirror) || 
            (firstMirror == MirrorType.RedLensMirror && secondMirror == MirrorType.Clapboard)
         ){

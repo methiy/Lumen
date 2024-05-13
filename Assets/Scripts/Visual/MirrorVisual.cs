@@ -88,12 +88,12 @@ public class MirrorVisual:MonoBehaviour{
 
 
     private void tryCreatMirror(Vector3 position){
-        //! todo еп╤о
-        Instantiate(mirrorSO.mirrorPrefab, position, mirrorSO.mirrorPrefab.transform.rotation);
+        GameObject newGameobject = Instantiate(mirrorSO.mirrorPrefab, position, mirrorSO.mirrorPrefab.transform.rotation);
+        newGameobject.GetComponent<Composite>().compositable = composite.compositable;
     }
 
     private void tryRebackMirror(Vector3 position){
-        //! todo еп╤о
-        Instantiate(mirrorSO.mirrorIconPrefab,position,Quaternion.identity);
+        GameObject newGameobject = Instantiate(mirrorSO.mirrorIconPrefab,position,Quaternion.identity);
+        newGameobject.GetComponent<Composite>().compositable = composite.compositable;
     }
 }

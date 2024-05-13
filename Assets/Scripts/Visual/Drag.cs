@@ -57,6 +57,7 @@ public class Drag : MonoBehaviour
         if (detection.PlayPositionPlaceable(targetPosition,out location)){
             if(composite!=null && composite.HasMirror(location)){
                 targetMirror = composite.CompositeResult();
+                Debug.Log(targetMirror);
                 if(targetMirror!=null){
                     isPlay=true;
                     transform.position=location;
@@ -87,11 +88,15 @@ public class Drag : MonoBehaviour
 
 
     private void tryCreatMirror(Vector3 position){
-        Instantiate(mirrorSO.mirrorPrefab, position, mirrorSO.mirrorPrefab.transform.rotation);
+        GameObject newGameobject = Instantiate(mirrorSO.mirrorPrefab, position, mirrorSO.mirrorPrefab.transform.rotation);
+        if(newGameobject.GetComponent<Composite>() != null)
+            newGameobject.GetComponent<Composite>().compositable = composite.compositable;
     }
 
     private void tryRebackMirror(Vector3 position){
-        Instantiate(mirrorSO.mirrorIconPrefab,position,Quaternion.identity);
+        GameObject newGameobject = Instantiate(mirrorSO.mirrorIconPrefab,position,Quaternion.identity);
+        if(newGameobject.GetComponent<Composite>() != null)
+            newGameobject.GetComponent<Composite>().compositable = composite.compositable;
     }
 
 }
