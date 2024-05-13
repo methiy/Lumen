@@ -170,7 +170,10 @@ public class Composite : MonoBehaviour
                 result = false;
             }
         }
-        return result && hit.transform.gameObject.GetComponent<MirrorVisual>().mirrorSO.mirrorType != mirrorType;
+        if(hit.transform.gameObject.GetComponent<MirrorVisual>()!=null)
+            return result && hit.transform.gameObject.GetComponent<MirrorVisual>().mirrorSO.mirrorType != mirrorType;
+        else
+            return false;
     }
 
     public MirrorScriptableObject  CompositeResult(){

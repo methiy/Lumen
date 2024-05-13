@@ -158,7 +158,7 @@ MonoBehaviour:
   ReflectAndDispersingMirror: {fileID: 11400000, guid: 9de795ffeb5c0964591362881d553cb3, type: 2}
   mirrorLayerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   mirroriconLayerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256

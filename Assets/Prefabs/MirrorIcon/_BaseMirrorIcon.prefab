@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1191633543473477430}
   - component: {fileID: 5457584875759379782}
   - component: {fileID: 3979153399486140345}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: _BaseMirrorIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,10 +103,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mirrorSO: {fileID: 11400000, guid: 6d76d95a24cf6e34b8e39cf8bcc481eb, type: 2}
-  mirrorAmount: 0
-  icon: {fileID: 8090256923695889012}
-  originLocalScale: {x: 0, y: 0, z: 0}
-  scaleFactort: 1.2
 --- !u!61 &3979153399486140345
 BoxCollider2D:
   m_ObjectHideFlags: 0
