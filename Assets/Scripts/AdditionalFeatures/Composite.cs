@@ -14,7 +14,8 @@ public class Composite : MonoBehaviour
     [SerializeField]private MirrorScriptableObject WhiteLensAndReflectMirror;
     [SerializeField]private MirrorScriptableObject ReflectAndClapBoardMirror;
     [SerializeField]private MirrorScriptableObject ReflectAndDispersingMirror;
-    [SerializeField]private LayerMask layerMask;
+    [SerializeField]private LayerMask mirrorLayerMask;
+    [SerializeField]private LayerMask mirroriconLayerMask;
 
     MirrorScriptableObject GetMirrorScriptableObject(MirrorType mirrorType){
         switch(mirrorType){
@@ -111,7 +112,7 @@ public class Composite : MonoBehaviour
     /// <returns></returns>
     public bool HasMirror(Vector3 position){
         bool result = false;
-        RaycastHit2D[] hits = Physics2D.RaycastAll(position, Vector3.back,layerMask);
+        RaycastHit2D[] hits = Physics2D.RaycastAll(position, Vector3.back,mirrorLayerMask);
         RaycastHit2D hit=CheckHits(hits);
         if (hit.collider != null&&hit.collider.gameObject != gameObject)
         {
@@ -128,7 +129,7 @@ public class Composite : MonoBehaviour
             result=true;
             
         }else{
-            hits = Physics2D.RaycastAll(position,Vector3.forward,layerMask);
+            hits = Physics2D.RaycastAll(position,Vector3.forward,mirrorLayerMask);
             hit = CheckHits(hits);
             if (hit.collider != null &&  hit.collider.gameObject != gameObject)
             {
@@ -149,6 +150,27 @@ public class Composite : MonoBehaviour
         }
         if(result&&mirrorResult!=null)  Destroy(hit.collider.gameObject);
         return result;
+    }
+
+
+    public bool HasMirrorIcon(Vector3 position, MirrorType mirrorType){
+        bool result = false;
+        RaycastHit2D[] hits = Physics2D.RaycastAll(position, Vector3.back,mirroriconLayerMask);
+        RaycastHit2D hit=CheckHits(hits);
+        if (hit.collider != null&&hit.collider.gameObject != gameObject)
+        {
+            result=true;   
+        }else{
+            hits = Physics2D.RaycastAll(position,Vector3.forward,mirroriconLayerMask);
+            hit = CheckHits(hits);
+            if (hit.collider != null &&  hit.collider.gameObject != gameObject)
+            {
+                result=true;
+            }else{
+                result = false;
+            }
+        }
+        return result && hit.transform.gameObject.GetComponent<MirrorVisual>().mirrorSO.mirrorType != mirrorType;
     }
 
     public MirrorScriptableObject  CompositeResult(){

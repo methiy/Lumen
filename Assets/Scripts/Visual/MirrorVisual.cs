@@ -8,7 +8,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class MirrorVisual:MonoBehaviour{
-    [SerializeField]private MirrorScriptableObject mirrorSO;
+    [SerializeField]public MirrorScriptableObject mirrorSO;
 
     private Detection detection;
     private Composite composite;
@@ -70,10 +70,13 @@ public class MirrorVisual:MonoBehaviour{
             }
 
         }else if(mirrorSO.isHaveIcon && detection.IconPositionPlaceable(targetPosition,out location)){
-            isIcon=true;
-            transform.position=location;
-            //! TODO  ·Å»Øicon
-            tryRebackMirror(location);
+            if(composite!=null && composite.HasMirrorIcon(location, mirrorSO.mirrorType)){
+                transform.position=prePosition;    
+            }else{
+                isIcon=true;
+                transform.position=location;
+                tryRebackMirror(location);
+            }
 
         }else{
             transform.position=prePosition;

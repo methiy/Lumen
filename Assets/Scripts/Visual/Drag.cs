@@ -71,9 +71,13 @@ public class Drag : MonoBehaviour
                 tryCreatMirror(location);
             }
         }else if(mirrorSO.isHaveIcon && detection.IconPositionPlaceable(targetPosition,out location)){
-            isIcon=true;
-            transform.position=location;
-            tryRebackMirror(location);
+            if(composite!=null && composite.HasMirrorIcon(location, mirrorSO.mirrorType)){
+                transform.position=prePosition;    
+            }else{
+                isIcon=true;
+                transform.position=location;
+                tryRebackMirror(location);
+            }
 
         }else{
             transform.position=prePosition;
