@@ -2952,7 +2952,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6320042944321722650, guid: 7f434605f58f69448973e6736c7c23b0, type: 3}
       propertyPath: compositable
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7404517775447591178, guid: 7f434605f58f69448973e6736c7c23b0, type: 3}
       propertyPath: m_Pivot.x
@@ -3570,7 +3570,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6320042944321722650, guid: 7f434605f58f69448973e6736c7c23b0, type: 3}
       propertyPath: compositable
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7404517775447591178, guid: 7f434605f58f69448973e6736c7c23b0, type: 3}
       propertyPath: m_Pivot.x
@@ -3937,7 +3937,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -7334824666332545748, guid: 430228ff5993a814fb304229e2da68bc, type: 3}
       propertyPath: compositable
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1704094494218978155, guid: 430228ff5993a814fb304229e2da68bc, type: 3}
       propertyPath: m_Pivot.x
@@ -5808,7 +5808,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -7334824666332545748, guid: a226112e1fce5a54daa927ea4ba323fe, type: 3}
       propertyPath: compositable
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1704094494218978155, guid: a226112e1fce5a54daa927ea4ba323fe, type: 3}
       propertyPath: m_Pivot.x
@@ -5909,7 +5909,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -7334824666332545748, guid: 4336fbda7cc3915459e2c6fd4809cba8, type: 3}
       propertyPath: compositable
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1704094494218978155, guid: 4336fbda7cc3915459e2c6fd4809cba8, type: 3}
       propertyPath: m_Pivot.x
@@ -6695,7 +6695,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6320042944321722650, guid: 7f434605f58f69448973e6736c7c23b0, type: 3}
       propertyPath: compositable
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7404517775447591178, guid: 7f434605f58f69448973e6736c7c23b0, type: 3}
       propertyPath: m_Pivot.x
