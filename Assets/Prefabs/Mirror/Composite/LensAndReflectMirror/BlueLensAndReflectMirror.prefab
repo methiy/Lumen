@@ -91,6 +91,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 336993069418054312, guid: f0392c228302ed148ad0813c89128d36, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1648131130249792427}
+    - targetCorrespondingSourceObject: {fileID: 336993069418054312, guid: f0392c228302ed148ad0813c89128d36, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9106823502545406363}
   m_SourcePrefab: {fileID: 100100000, guid: f0392c228302ed148ad0813c89128d36, type: 3}
 --- !u!120 &2771513664527017547 stripped
 LineRenderer:
@@ -139,3 +142,31 @@ MonoBehaviour:
   - {fileID: 3388236557864522417}
   mirrorColor: {r: 0, g: 0, b: 1, a: 1}
   isRotate: 1
+--- !u!114 &9106823502545406363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6733981425030650744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89a46ea884c78574ba4e54ce58bf3b1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  compositable: 0
+  ClapboardAndRedLensMirror: {fileID: 11400000, guid: b0f4c2dd3fe0ffe4eb90293a90fb6b9c, type: 2}
+  ClapboardAndBlueLensMirror: {fileID: 11400000, guid: 99bfb73dde5da884d88ff8476f6fc7cb, type: 2}
+  ClapboardAndWhiteLensMirror: {fileID: 11400000, guid: ebe53ba271c636a4bb714e13b3d957fc, type: 2}
+  RedLensAndReflectMirror: {fileID: 11400000, guid: ca3aeee042b86f94c89def271a4bdd25, type: 2}
+  BlueLensAndReflectMirror: {fileID: 11400000, guid: f1a66b52ebcca254e9e5219077497cf9, type: 2}
+  WhiteLensAndReflectMirror: {fileID: 11400000, guid: 230c30f2d4821ac4aae1d177e7bf5194, type: 2}
+  ReflectAndClapBoardMirror: {fileID: 11400000, guid: 9de795ffeb5c0964591362881d553cb3, type: 2}
+  ReflectAndDispersingMirror: {fileID: 11400000, guid: 9de795ffeb5c0964591362881d553cb3, type: 2}
+  LensAndDispersingMirror: {fileID: 11400000, guid: e918e154f66c4e644b305c7e097e8608, type: 2}
+  mirrorLayerMask:
+    serializedVersion: 2
+    m_Bits: 128
+  mirroriconLayerMask:
+    serializedVersion: 2
+    m_Bits: 256
