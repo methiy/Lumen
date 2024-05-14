@@ -22,6 +22,10 @@ public class MainLaser : MonoBehaviour
         OnChangeMirror?.Invoke();
         ClearLine();
         Ray(transform.position, new Vector2(transform.position.x + 1, transform.position.y), 1, Color.white);
+        
+        OnChangeMirror?.Invoke();
+        ClearLine();
+        Ray(transform.position, new Vector2(transform.position.x + 1, transform.position.y), 1, Color.white);
     }
     private void Ray(Vector2 startPosition, Vector2 endPosition, int index, Color color)
     {

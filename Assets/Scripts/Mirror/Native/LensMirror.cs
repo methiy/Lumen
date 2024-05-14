@@ -78,6 +78,7 @@ public class LensMirror : BaseMirror
 
     private void ClearLine()  
     {  
+        Debug.Log("clear");
         foreach(var lineRenderer in lasersList){
             lineRenderer.positionCount = 0; // 将LineRenderer??的点数量设置??0，从而清除所有点  
             lineRenderer.material.color=Color.white;

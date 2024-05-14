@@ -12,7 +12,8 @@ public class TransmissionInputMirror : BaseMirror
     }
     public override void Ray(Vector2 startPosition, Vector2 endPosition, int index, Color color)
     {
-        if(index==curRotation)
+        index^=2;
+        if(index==(curRotation^2))
             outputMirror?.RRay(color);
     }
 
