@@ -17,4 +17,4 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 798a49d3bcf15e644abbdc80aacac8cc, type: 3}
   mirrorPrefab: {fileID: 8468186036792514989, guid: a5f23bba14cff2346a0c3d72977d1ff4, type: 3}
   mirrorIconPrefab: {fileID: 84917668928162648, guid: 47afd78176809f74ba6cc50f34de0da1, type: 3}
-  isHaveIcon: 0
+  isHaveIcon: 1

@@ -52,6 +52,46 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3972944438383823807, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
+      propertyPath: mirrorLayerMask.m_Bits
+      value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 3972944438383823807, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
+      propertyPath: RedLensAndReflectMirror
+      value: 
+      objectReference: {fileID: 11400000, guid: ca3aeee042b86f94c89def271a4bdd25, type: 2}
+    - target: {fileID: 3972944438383823807, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
+      propertyPath: BlueLensAndReflectMirror
+      value: 
+      objectReference: {fileID: 11400000, guid: f1a66b52ebcca254e9e5219077497cf9, type: 2}
+    - target: {fileID: 3972944438383823807, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
+      propertyPath: ClapboardAndRedLensMirror
+      value: 
+      objectReference: {fileID: 11400000, guid: b0f4c2dd3fe0ffe4eb90293a90fb6b9c, type: 2}
+    - target: {fileID: 3972944438383823807, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
+      propertyPath: ReflectAndClapBoardMirror
+      value: 
+      objectReference: {fileID: 11400000, guid: 9de795ffeb5c0964591362881d553cb3, type: 2}
+    - target: {fileID: 3972944438383823807, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
+      propertyPath: WhiteLensAndReflectMirror
+      value: 
+      objectReference: {fileID: 11400000, guid: 230c30f2d4821ac4aae1d177e7bf5194, type: 2}
+    - target: {fileID: 3972944438383823807, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
+      propertyPath: ClapboardAndBlueLensMirror
+      value: 
+      objectReference: {fileID: 11400000, guid: 99bfb73dde5da884d88ff8476f6fc7cb, type: 2}
+    - target: {fileID: 3972944438383823807, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
+      propertyPath: ReflectAndDispersingMirror
+      value: 
+      objectReference: {fileID: 11400000, guid: 9de795ffeb5c0964591362881d553cb3, type: 2}
+    - target: {fileID: 3972944438383823807, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
+      propertyPath: mirroriconLayerMask.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 3972944438383823807, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
+      propertyPath: ClapboardAndWhiteLensMirror
+      value: 
+      objectReference: {fileID: 11400000, guid: 543d5585217582842809c5abaad07d94, type: 2}
     - target: {fileID: 3979153399486140345, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
       propertyPath: m_Size.x
       value: 0.8998039
@@ -171,40 +211,5 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3169725695271074116, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: -7334824666332545748}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
---- !u!1 &5484634062177550427 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3169725695271074116, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
-  m_PrefabInstance: {fileID: 7485111391877511455}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &-7334824666332545748
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5484634062177550427}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89a46ea884c78574ba4e54ce58bf3b1e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  compositable: 0
-  ClapboardAndRedLensMirror: {fileID: 11400000, guid: b0f4c2dd3fe0ffe4eb90293a90fb6b9c, type: 2}
-  ClapboardAndBlueLensMirror: {fileID: 11400000, guid: 99bfb73dde5da884d88ff8476f6fc7cb, type: 2}
-  ClapboardAndWhiteLensMirror: {fileID: 11400000, guid: 543d5585217582842809c5abaad07d94, type: 2}
-  RedLensAndReflectMirror: {fileID: 11400000, guid: ca3aeee042b86f94c89def271a4bdd25, type: 2}
-  BlueLensAndReflectMirror: {fileID: 11400000, guid: f1a66b52ebcca254e9e5219077497cf9, type: 2}
-  WhiteLensAndReflectMirror: {fileID: 11400000, guid: eb24e8de2edfdb840a9fb732d86ff5b2, type: 2}
-  ReflectAndClapBoardMirror: {fileID: 11400000, guid: 8dc70089adbd7364eade0fcf1135451c, type: 2}
-  ReflectAndDispersingMirror: {fileID: 11400000, guid: 9de795ffeb5c0964591362881d553cb3, type: 2}
-  mirrorLayerMask:
-    serializedVersion: 2
-    m_Bits: 128
-  mirroriconLayerMask:
-    serializedVersion: 2
-    m_Bits: 256
