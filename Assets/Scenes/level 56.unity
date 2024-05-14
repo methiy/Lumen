@@ -728,7 +728,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 23fd005eea0a5bd4fa5aee00f3970127, type: 3}
-    m_FontSize: 100
+    m_FontSize: 95
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -1232,7 +1232,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 23fd005eea0a5bd4fa5aee00f3970127, type: 3}
-    m_FontSize: 100
+    m_FontSize: 95
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -3156,6 +3156,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WhiteLensMirrorIcon (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5819441052593812128, guid: a226112e1fce5a54daa927ea4ba323fe, type: 3}
+      propertyPath: compositable
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3169,6 +3173,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2424844851585251521, guid: 7f434605f58f69448973e6736c7c23b0, type: 3}
+      propertyPath: compositable
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4429673793729350202, guid: 7f434605f58f69448973e6736c7c23b0, type: 3}
       propertyPath: m_Name
       value: ReflectMirrorIcon
@@ -3860,6 +3868,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2424844851585251521, guid: 7f434605f58f69448973e6736c7c23b0, type: 3}
+      propertyPath: compositable
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4429673793729350202, guid: 7f434605f58f69448973e6736c7c23b0, type: 3}
       propertyPath: m_Name
       value: ReflectMirrorIcon (1)
@@ -4376,6 +4388,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RedLensMirrorIcon
       objectReference: {fileID: 0}
+    - target: {fileID: 5819441052593812128, guid: 430228ff5993a814fb304229e2da68bc, type: 3}
+      propertyPath: compositable
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4473,6 +4489,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2424844851585251521, guid: 7f434605f58f69448973e6736c7c23b0, type: 3}
+      propertyPath: compositable
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4429673793729350202, guid: 7f434605f58f69448973e6736c7c23b0, type: 3}
       propertyPath: m_Name
       value: ReflectMirrorIcon (5)
@@ -4658,6 +4678,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2424844851585251521, guid: 7f434605f58f69448973e6736c7c23b0, type: 3}
+      propertyPath: compositable
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4429673793729350202, guid: 7f434605f58f69448973e6736c7c23b0, type: 3}
       propertyPath: m_Name
       value: ReflectMirrorIcon (3)
@@ -6703,6 +6727,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WhiteLensMirrorIcon
       objectReference: {fileID: 0}
+    - target: {fileID: 5819441052593812128, guid: a226112e1fce5a54daa927ea4ba323fe, type: 3}
+      propertyPath: compositable
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8412,7 +8440,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 23fd005eea0a5bd4fa5aee00f3970127, type: 3}
-    m_FontSize: 100
+    m_FontSize: 95
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -8440,6 +8468,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2424844851585251521, guid: 7f434605f58f69448973e6736c7c23b0, type: 3}
+      propertyPath: compositable
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4429673793729350202, guid: 7f434605f58f69448973e6736c7c23b0, type: 3}
       propertyPath: m_Name
       value: ReflectMirrorIcon (4)
@@ -8959,7 +8991,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 23fd005eea0a5bd4fa5aee00f3970127, type: 3}
-    m_FontSize: 100
+    m_FontSize: 95
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
