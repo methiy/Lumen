@@ -157,6 +157,7 @@ MonoBehaviour:
   WhiteLensAndReflectMirror: {fileID: 11400000, guid: 230c30f2d4821ac4aae1d177e7bf5194, type: 2}
   ReflectAndClapBoardMirror: {fileID: 11400000, guid: 8dc70089adbd7364eade0fcf1135451c, type: 2}
   ReflectAndDispersingMirror: {fileID: 11400000, guid: 9de795ffeb5c0964591362881d553cb3, type: 2}
+  LensAndDispersingMirror: {fileID: 11400000, guid: e918e154f66c4e644b305c7e097e8608, type: 2}
   mirrorLayerMask:
     serializedVersion: 2
     m_Bits: 128

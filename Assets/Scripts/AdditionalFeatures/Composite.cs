@@ -14,6 +14,8 @@ public class Composite : MonoBehaviour
     [SerializeField]private MirrorScriptableObject WhiteLensAndReflectMirror;
     [SerializeField]private MirrorScriptableObject ReflectAndClapBoardMirror;
     [SerializeField]private MirrorScriptableObject ReflectAndDispersingMirror;
+    [SerializeField]private MirrorScriptableObject LensAndDispersingMirror;
+
     [SerializeField]private LayerMask mirrorLayerMask;
     [SerializeField]private LayerMask mirroriconLayerMask;
 
@@ -43,6 +45,9 @@ public class Composite : MonoBehaviour
             case MirrorType.ReflectAndDispersingMirror:
             return ReflectAndDispersingMirror;
             break;
+            case MirrorType.LensAndDispersingMirror:
+            return LensAndDispersingMirror;
+            break;
             default :
             return null;
         }
@@ -51,7 +56,6 @@ public class Composite : MonoBehaviour
     MirrorScriptableObject FindTargetMirror(MirrorType firstMirror, MirrorType secondMirror){
         Debug.Log(firstMirror+" "+secondMirror);
         MirrorScriptableObject mirrorTarget = null;
-
         if(!compositable)   return mirrorTarget;
 
         if((firstMirror == MirrorType.Clapboard && secondMirror == MirrorType.RedLensMirror) || 
@@ -87,6 +91,18 @@ public class Composite : MonoBehaviour
                  (firstMirror == MirrorType.DispersingMirror && secondMirror == MirrorType.ReflectMirror)
         ){
             return GetMirrorScriptableObject(MirrorType.ReflectAndDispersingMirror);
+        }else if((firstMirror == MirrorType.DispersingMirror && secondMirror == MirrorType.RedLensMirror) || 
+           (firstMirror == MirrorType.RedLensMirror && secondMirror == MirrorType.DispersingMirror)
+        ){
+            return GetMirrorScriptableObject(MirrorType.LensAndDispersingMirror);
+        }else if((firstMirror == MirrorType.DispersingMirror && secondMirror == MirrorType.BlueLensMirror) || 
+           (firstMirror == MirrorType.BlueLensMirror && secondMirror == MirrorType.DispersingMirror)
+        ){
+            return GetMirrorScriptableObject(MirrorType.LensAndDispersingMirror);
+        }else if((firstMirror == MirrorType.DispersingMirror && secondMirror == MirrorType.WhiteLensMirror) || 
+           (firstMirror == MirrorType.WhiteLensMirror && secondMirror == MirrorType.DispersingMirror)
+        ){
+            return GetMirrorScriptableObject(MirrorType.LensAndDispersingMirror);
         }
         return mirrorTarget;
     }
@@ -175,7 +191,6 @@ public class Composite : MonoBehaviour
             return result && hit.transform.gameObject.GetComponent<MirrorVisual>().mirrorSO.mirrorType != mirrorType;
         }
         else{
-            Debug.Log("no object");
             return false;
         }
     }

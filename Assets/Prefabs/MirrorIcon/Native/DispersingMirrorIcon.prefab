@@ -48,6 +48,10 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3972944438383823807, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
+      propertyPath: LensAndDispersingMirror
+      value: 
+      objectReference: {fileID: 11400000, guid: e918e154f66c4e644b305c7e097e8608, type: 2}
     - target: {fileID: 3979153399486140345, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
       value: 1.01

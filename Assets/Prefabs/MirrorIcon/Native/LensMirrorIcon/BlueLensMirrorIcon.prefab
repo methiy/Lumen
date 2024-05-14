@@ -57,6 +57,10 @@ PrefabInstance:
       value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 3972944438383823807, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
+      propertyPath: LensAndDispersingMirror
+      value: 
+      objectReference: {fileID: 11400000, guid: e918e154f66c4e644b305c7e097e8608, type: 2}
+    - target: {fileID: 3972944438383823807, guid: b18f0deba8e7b7b409f23310274853eb, type: 3}
       propertyPath: RedLensAndReflectMirror
       value: 
       objectReference: {fileID: 11400000, guid: ca3aeee042b86f94c89def271a4bdd25, type: 2}
