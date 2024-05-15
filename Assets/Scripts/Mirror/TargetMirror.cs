@@ -48,6 +48,7 @@ public class TargetMirror : BaseMirror
         int[] dy = { 1, 0, -1, 0 };
 
         Vector2 direction=new Vector2(dx[index],dy[index]).normalized;
+            index^=2;
         
         float lineOffset=1.1f;
         RaycastHit2D hit = Physics2D.Raycast(endPosition+lineOffset*direction, direction, MAX_LENGTH, layerMasks);
@@ -59,7 +60,7 @@ public class TargetMirror : BaseMirror
             lasersList[index].positionCount = 2;
             lasersList[index].SetPosition(0, endPosition);
             lasersList[index].SetPosition(1, hit.collider.transform.position);
-            //Èç¹û»÷ÖÐ¾ÍÍ¨Öª??»÷ÖÐµÄÎïÌåÈ¥·¢ÉäÉäÏß
+            //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¾ï¿½Í¨Öª??ï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½È¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             hit.collider.GetComponent<BaseMirror>()?.Ray(
                 endPosition,
                 hit.collider.transform.position,
@@ -78,7 +79,7 @@ public class TargetMirror : BaseMirror
     private void ClearLine()  
     {  
         foreach(var lineRenderer in lasersList){
-            lineRenderer.positionCount = 0; // ½«LineRenderer??µÄµãÊýÁ¿ÉèÖÃ??0£¬´Ó¶øÇå³ýËùÓÐµã  
+            lineRenderer.positionCount = 0; // ï¿½ï¿½LineRenderer??ï¿½Äµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½??0ï¿½ï¿½ï¿½Ó¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½  
             lineRenderer.material.color=Color.white;
         }
     }

@@ -611,7 +611,7 @@ Transform:
   m_GameObject: {fileID: 109362370}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7089551, w: 0.7052536}
-  m_LocalPosition: {x: -142.466, y: -74.516, z: -0.14804943}
+  m_LocalPosition: {x: -143.288, y: -74.385, z: -0.14804943}
   m_LocalScale: {x: 0.0644548, y: 0.08392924, z: 0.08392923}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -659,7 +659,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0253a652910a292459cb05bba4670c03, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.00126791, g: 0, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -721,7 +721,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dba0bd5d262ab4496fd949b7ce48d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: level 3
+  sceneName: level 56
 --- !u!114 &122220008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2616,6 +2616,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2424844851585251521, guid: 7f434605f58f69448973e6736c7c23b0, type: 3}
+      propertyPath: compositable
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4429673793729350202, guid: 7f434605f58f69448973e6736c7c23b0, type: 3}
       propertyPath: m_Name
       value: ReflectMirrorIcon
@@ -3238,6 +3242,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2424844851585251521, guid: 7f434605f58f69448973e6736c7c23b0, type: 3}
+      propertyPath: compositable
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4429673793729350202, guid: 7f434605f58f69448973e6736c7c23b0, type: 3}
       propertyPath: m_Name
       value: ReflectMirrorIcon (1)
@@ -3547,6 +3555,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RedLensMirrorIcon
       objectReference: {fileID: 0}
+    - target: {fileID: 5819441052593812128, guid: 430228ff5993a814fb304229e2da68bc, type: 3}
+      propertyPath: compositable
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3812,7 +3824,7 @@ Transform:
   m_GameObject: {fileID: 760968876}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -142.683, y: -74.435, z: -0.14804944}
+  m_LocalPosition: {x: -142.618, y: -74.435, z: -0.14804944}
   m_LocalScale: {x: 0.13101064, y: 0.1201825, z: 0.124864936}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4809,8 +4821,8 @@ Transform:
   m_GameObject: {fileID: 978401056}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7089551, w: 0.7052536}
-  m_LocalPosition: {x: -142.16278, y: -74.39496, z: -0.14804943}
-  m_LocalScale: {x: 0.12899123, y: 0.08392924, z: 0.08392923}
+  m_LocalPosition: {x: -143.304, y: -74.08437, z: -0.14804943}
+  m_LocalScale: {x: 0.06039527, y: 0.08392924, z: 0.08392923}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1004326168}
@@ -4958,6 +4970,10 @@ PrefabInstance:
     - target: {fileID: 7581059273182339666, guid: a4d0283f47977fd40bbde8ff092275a7, type: 3}
       propertyPath: m_Name
       value: DispersingMirrorIcon
+      objectReference: {fileID: 0}
+    - target: {fileID: 8496830615524659369, guid: a4d0283f47977fd40bbde8ff092275a7, type: 3}
+      propertyPath: compositable
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5505,8 +5521,8 @@ Transform:
   m_GameObject: {fileID: 1036084157}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -142.91705, y: -74.367, z: -0.14804943}
-  m_LocalScale: {x: 0.20676553, y: 0.08392923, z: 0.08392923}
+  m_LocalPosition: {x: -143.28159, y: -74.507, z: -0.14804943}
+  m_LocalScale: {x: 0.15528919, y: 0.08392923, z: 0.08392923}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1004326168}
@@ -5553,7 +5569,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0253a652910a292459cb05bba4670c03, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.06818819, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -5743,6 +5759,10 @@ PrefabInstance:
     - target: {fileID: 5484634062177550427, guid: a226112e1fce5a54daa927ea4ba323fe, type: 3}
       propertyPath: m_Name
       value: WhiteLensMirrorIcon
+      objectReference: {fileID: 0}
+    - target: {fileID: 5819441052593812128, guid: a226112e1fce5a54daa927ea4ba323fe, type: 3}
+      propertyPath: compositable
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6435,6 +6455,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2424844851585251521, guid: 7f434605f58f69448973e6736c7c23b0, type: 3}
+      propertyPath: compositable
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4429673793729350202, guid: 7f434605f58f69448973e6736c7c23b0, type: 3}
       propertyPath: m_Name
       value: ReflectMirrorIcon (2)
@@ -8735,7 +8759,7 @@ Transform:
   m_GameObject: {fileID: 1957451711}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -142.317, y: -74.67, z: -0.14804943}
+  m_LocalPosition: {x: -142.734, y: -74.51, z: -0.14804943}
   m_LocalScale: {x: 0.077213705, y: 0.08392923, z: 0.08392923}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8783,7 +8807,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0253a652910a292459cb05bba4670c03, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -9202,7 +9226,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8639402661753825533, guid: 6855bb74f73c683478a9573f7e3b76fb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.01
+      value: -0.93
       objectReference: {fileID: 0}
     - target: {fileID: 8639402661753825533, guid: 6855bb74f73c683478a9573f7e3b76fb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9363,6 +9387,10 @@ PrefabInstance:
     - target: {fileID: 934746288818844034, guid: 239d42d2088061b4f95f2490e1387155, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1004419716678243246, guid: 239d42d2088061b4f95f2490e1387155, type: 3}
+      propertyPath: compositable
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5301233494177397210, guid: 239d42d2088061b4f95f2490e1387155, type: 3}
       propertyPath: isCanDrag
