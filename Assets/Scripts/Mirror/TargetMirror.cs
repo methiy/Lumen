@@ -48,7 +48,7 @@ public class TargetMirror : BaseMirror
         int[] dy = { 1, 0, -1, 0 };
 
         Vector2 direction=new Vector2(dx[index],dy[index]).normalized;
-            index^=2;
+
         
         float lineOffset=1.1f;
         RaycastHit2D hit = Physics2D.Raycast(endPosition+lineOffset*direction, direction, MAX_LENGTH, layerMasks);
