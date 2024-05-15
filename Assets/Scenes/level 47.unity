@@ -2783,6 +2783,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2424844851585251521, guid: 7f434605f58f69448973e6736c7c23b0, type: 3}
+      propertyPath: compositable
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4429673793729350202, guid: 7f434605f58f69448973e6736c7c23b0, type: 3}
       propertyPath: m_Name
       value: ReflectMirrorIcon
@@ -3401,6 +3405,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2424844851585251521, guid: 7f434605f58f69448973e6736c7c23b0, type: 3}
+      propertyPath: compositable
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4429673793729350202, guid: 7f434605f58f69448973e6736c7c23b0, type: 3}
       propertyPath: m_Name
       value: ReflectMirrorIcon (1)
@@ -6583,6 +6591,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2424844851585251521, guid: 7f434605f58f69448973e6736c7c23b0, type: 3}
+      propertyPath: compositable
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4429673793729350202, guid: 7f434605f58f69448973e6736c7c23b0, type: 3}
       propertyPath: m_Name
       value: ReflectMirrorIcon (2)
@@ -8394,6 +8406,10 @@ PrefabInstance:
     - target: {fileID: 7581059273182339666, guid: a4d0283f47977fd40bbde8ff092275a7, type: 3}
       propertyPath: m_Name
       value: DispersingMirrorIcon
+      objectReference: {fileID: 0}
+    - target: {fileID: 8496830615524659369, guid: a4d0283f47977fd40bbde8ff092275a7, type: 3}
+      propertyPath: compositable
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

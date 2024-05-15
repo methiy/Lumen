@@ -1935,7 +1935,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 339894609737662576, guid: 6855bb74f73c683478a9573f7e3b76fb, type: 3}
       propertyPath: layerMasks.m_Bits
-      value: 0
+      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 1815808737760085752, guid: 6855bb74f73c683478a9573f7e3b76fb, type: 3}
       propertyPath: m_Name
@@ -4120,7 +4120,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 339894609737662576, guid: 6855bb74f73c683478a9573f7e3b76fb, type: 3}
       propertyPath: layerMasks.m_Bits
-      value: 0
+      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 1815808737760085752, guid: 6855bb74f73c683478a9573f7e3b76fb, type: 3}
       propertyPath: m_Name
@@ -7144,7 +7144,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 339894609737662576, guid: 6855bb74f73c683478a9573f7e3b76fb, type: 3}
       propertyPath: layerMasks.m_Bits
-      value: 0
+      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 1815808737760085752, guid: 6855bb74f73c683478a9573f7e3b76fb, type: 3}
       propertyPath: m_Name
@@ -8293,7 +8293,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2644054096729351482, guid: da66979bc2cbf5a4db93cf6d3f9735e8, type: 3}
       propertyPath: layerMasks.m_Bits
-      value: 384
+      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 2644054096729351482, guid: da66979bc2cbf5a4db93cf6d3f9735e8, type: 3}
       propertyPath: ClapboardLayerMask.m_Bits

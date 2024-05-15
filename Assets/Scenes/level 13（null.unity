@@ -7376,6 +7376,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7842397801628519441, guid: 8113c602fddfa1a4ea4edabeb54bcd76, type: 3}
+      propertyPath: gameObjec
+      value: 
+      objectReference: {fileID: 474084490}
+    - target: {fileID: 7842397801628519441, guid: 8113c602fddfa1a4ea4edabeb54bcd76, type: 3}
+      propertyPath: gameObject
+      value: 
+      objectReference: {fileID: 567471467}
+    - target: {fileID: 7842397801628519441, guid: 8113c602fddfa1a4ea4edabeb54bcd76, type: 3}
+      propertyPath: targetAmount
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8718299764757284281, guid: 8113c602fddfa1a4ea4edabeb54bcd76, type: 3}
       propertyPath: m_Name
       value: VictoryManager
@@ -7763,7 +7775,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2644054096729351482, guid: da66979bc2cbf5a4db93cf6d3f9735e8, type: 3}
       propertyPath: layerMasks.m_Bits
-      value: 384
+      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 2644054096729351482, guid: da66979bc2cbf5a4db93cf6d3f9735e8, type: 3}
       propertyPath: ClapboardLayerMask.m_Bits
