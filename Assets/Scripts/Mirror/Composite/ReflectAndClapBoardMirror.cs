@@ -23,11 +23,13 @@ public class ReflectAndClapBoardMirror : BaseMirror
     private void OnEnable()
     {
         mainLaser.OnChangeMirror+=ClearLine;
-        mainLaser.UpdateMainLaser();
+        mainLaser.ClearAllMirror();
+        mainLaser.RestartLaser();
     }
     private void OnDisable()
     {
-        mainLaser.UpdateMainLaser();
+        mainLaser.ClearAllMirror();
+        mainLaser.RestartLaser();
         mainLaser.OnChangeMirror-=ClearLine;
     }
     
@@ -130,7 +132,7 @@ public class ReflectAndClapBoardMirror : BaseMirror
                 }  
             }
     }
-    private float rotationDuration = 0.25f; // 旋转持续时间
+    [SerializeField]private float rotationDuration = 0.1f; // 旋转持续时间
     private bool isRotating = false; // 是否正在旋转
 
     // 开始旋转的方法
@@ -139,11 +141,9 @@ public class ReflectAndClapBoardMirror : BaseMirror
         // 如果当前没有旋转过程，则启动新的旋转
         if (!isRotating)
         {
+            mainLaser.ClearAllMirror();
             float rotationIncrement = 90f;
             StartCoroutine(RotateObject(rotationIncrement));
-            curRotation+=1;
-            curRotation%=4;
-            mainLaser.UpdateMainLaser();
         }
     }
 
@@ -175,5 +175,9 @@ public class ReflectAndClapBoardMirror : BaseMirror
         transform.rotation = endRotation;
 
         isRotating = false; // 设置旋转状态为false
+
+        curRotation+=1;
+        curRotation%=4;
+        mainLaser.RestartLaser();
     }   
 }

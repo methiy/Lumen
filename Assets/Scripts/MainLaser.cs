@@ -16,9 +16,11 @@ public class MainLaser : MonoBehaviour
         Ray(transform.position, new Vector2(transform.position.x + 1, transform.position.y), 1, Color.white);
     }
 
-    public void UpdateMainLaser(){
+    public void ClearAllMirror(){
         OnChangeMirror?.Invoke();
         ClearLine();
+    }
+    public void RestartLaser(){
         Ray(transform.position, new Vector2(transform.position.x + 1, transform.position.y), 1, Color.white);
     }
 

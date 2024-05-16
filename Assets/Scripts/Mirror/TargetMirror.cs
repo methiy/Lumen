@@ -25,11 +25,13 @@ public class TargetMirror : BaseMirror
     private void OnEnable()
     {
         mainLaser.OnChangeMirror+=ClearLine;
-        mainLaser.UpdateMainLaser();
+        mainLaser.ClearAllMirror();
+        mainLaser.RestartLaser();
     }
     private void OnDisable()
     {
-        mainLaser.UpdateMainLaser();
+        mainLaser.ClearAllMirror();
+        mainLaser.RestartLaser();
         mainLaser.OnChangeMirror-=ClearLine;
     }
 
