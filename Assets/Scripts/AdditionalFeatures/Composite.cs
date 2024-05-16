@@ -133,6 +133,7 @@ public class Composite : MonoBehaviour
         if (hit.collider != null&&hit.collider.gameObject != gameObject)
         {
             Drag firstDrag = hit.collider.gameObject.GetComponent<Drag>();
+            //is a mirror?
             Drag secondDrag = GetComponent<Drag>();
             MirrorType firstMirror=MirrorType.BaseMirror,secondMirror=MirrorType.BaseMirror;
             if (firstDrag != null && firstDrag.mirrorSO != null) {
@@ -143,6 +144,18 @@ public class Composite : MonoBehaviour
             }
             mirrorResult = FindTargetMirror(firstMirror, secondMirror);
             result=true;
+
+            //is a Mirror Icon?
+            if(mirrorResult==null){
+                MirrorVisual secondMirrorVisual=GetComponent<MirrorVisual>();
+                if (firstDrag != null && firstDrag.mirrorSO != null) {
+                    firstMirror = firstDrag.mirrorSO.mirrorType;
+                }
+                if (secondMirrorVisual != null && secondMirrorVisual.mirrorSO != null) {
+                    secondMirror = secondMirrorVisual.mirrorSO.mirrorType;
+                }
+                mirrorResult = FindTargetMirror(firstMirror, secondMirror);
+            }
             
         }else{
             hits = Physics2D.RaycastAll(position,Vector3.forward,mirrorLayerMask);
@@ -150,6 +163,7 @@ public class Composite : MonoBehaviour
             if (hit.collider != null &&  hit.collider.gameObject != gameObject)
             {
                 Drag firstDrag = hit.collider.gameObject.GetComponent<Drag>();
+                //is a Mirror?
                 Drag secondDrag = GetComponent<Drag>();
                 MirrorType firstMirror=MirrorType.BaseMirror,secondMirror=MirrorType.BaseMirror;
                 if (firstDrag != null && firstDrag.mirrorSO != null) {
@@ -160,10 +174,22 @@ public class Composite : MonoBehaviour
                 }
                 mirrorResult = FindTargetMirror(firstMirror, secondMirror);
                 result=true;
+                //is a MirrorIcon?
+                if(mirrorResult==null){
+                    MirrorVisual secondMirrorVisual=GetComponent<MirrorVisual>();
+                    if (firstDrag != null && firstDrag.mirrorSO != null) {
+                        firstMirror = firstDrag.mirrorSO.mirrorType;
+                    }
+                    if (secondMirrorVisual != null && secondMirrorVisual.mirrorSO != null) {
+                        secondMirror = secondMirrorVisual.mirrorSO.mirrorType;
+                    }
+                    mirrorResult = FindTargetMirror(firstMirror, secondMirror);
+                }
             }else{
                 result = false;
             }
         }
+
         if(result&&mirrorResult!=null)  Destroy(hit.collider.gameObject);
         return result;
     }
