@@ -70,16 +70,17 @@ public class MirrorVisual:MonoBehaviour{
             }
 
         }else if(mirrorSO.isHaveIcon && detection.IconPositionPlaceable(targetPosition,out location)){
-            if(composite!=null && composite.HasMirror(location)){
-                targetMirror = composite.CompositeResult();
-                if(targetMirror!=null){
-                    isPlay=true;
-                    transform.position=location;
-                    Instantiate(targetMirror.mirrorPrefab,location,targetMirror.mirrorPrefab.transform.rotation);
-                }else{
-                    transform.position=prePosition;    
-                }
-            }else if(composite!=null && composite.HasMirrorIcon(location, mirrorSO.mirrorType)){
+            // if(composite!=null && composite.HasMirror(location)){
+            //     targetMirror = composite.CompositeResult();
+            //     if(targetMirror!=null){
+            //         isPlay=true;
+            //         transform.position=location;
+            //         Instantiate(targetMirror.mirrorPrefab,location,targetMirror.mirrorPrefab.transform.rotation);
+            //     }else{
+            //         transform.position=prePosition;    
+            //     }
+            // }else 
+            if(composite!=null && composite.HasMirrorIcon(location, mirrorSO.mirrorType)){
                 transform.position=prePosition;    
             }else{
                 isIcon=true;
