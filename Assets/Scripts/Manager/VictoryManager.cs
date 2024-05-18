@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Rendering.Universal;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class VictoryManager : MonoBehaviour
 {
@@ -25,7 +26,7 @@ public class VictoryManager : MonoBehaviour
     private void Update()
     {
         if(!hasVictory && UpdateAmount() && UpdateLensMirrorAmount()){
-            Victory();
+            CompleteTheLevel();
         }
     }
 
@@ -87,9 +88,13 @@ public class VictoryManager : MonoBehaviour
         return false;
     }
 
-    private void Victory(){
+    private void CompleteTheLevel(){
         hasVictory = true;
         gameObjec.SetActive(false);
-        gameObject.SetActive(true); 
+        gameObject.SetActive(true);
+        if(LevelSelection.Instance!=null)
+            LevelSelection.Instance.setLevelStatus(SceneManager.GetActiveScene().name);
+        else
+            Debug.LogError("Instance is null");
     }
 }
