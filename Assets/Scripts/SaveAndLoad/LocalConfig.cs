@@ -1,22 +1,22 @@
-// ÓÃÓÚÎÄ¼ş¶ÁĞ´
+// ç”¨äºæ–‡ä»¶è¯»å†™
 using System.IO;
-// ÓÃÓÚjsonĞòÁĞ»¯ºÍ·´ĞòÁĞ»¯
+// ç”¨äºjsonåºåˆ—åŒ–å’Œååºåˆ—åŒ–
 using Newtonsoft.Json;
-// Application.persistentDataPathÅäÖÃÔÚÕâÀï
+// Application.persistentDataPathé…ç½®åœ¨è¿™é‡Œ
 using UnityEngine;
-// ĞŞ¸Ä0£ºÊ¹ÓÃ×ÖµäÃüÃû¿Õ¼ä
+// ä¿®æ”¹0ï¼šä½¿ç”¨å­—å…¸å‘½åç©ºé—´
 using System.Collections.Generic;
 
 public class LocalConfig
 {
 
-    // ĞŞ¸Ä1£ºÔö¼ÓusersData»º´æÊı¾İ
+    // ä¿®æ”¹1ï¼šå¢åŠ usersDataç¼“å­˜æ•°æ®
     public static Dictionary<string, UserData> usersData = new Dictionary<string, UserData>();
 
-    // ¼ÓÃÜ1£ºÑ¡ÔñÒ»Ğ©ÓÃÓÚÒà»ò²Ù×÷µÄ×Ö·û£¨×¢Òâ±£ÃÜ£©
+    // åŠ å¯†1ï¼šé€‰æ‹©ä¸€äº›ç”¨äºäº¦æˆ–æ“ä½œçš„å­—ç¬¦ï¼ˆæ³¨æ„ä¿å¯†ï¼‰
     public static char[] keyChars = {'a', 'b', 'c', 'd', 'e'};
 
-    // ¼ÓÃÜ2£º ¼ÓÃÜ·½·¨
+    // åŠ å¯†2ï¼š åŠ å¯†æ–¹æ³•
     public static string Encrypt(string data)
     {
         char [] dataChars = data.ToCharArray();
@@ -24,38 +24,38 @@ public class LocalConfig
         {
             char dataChar = dataChars[i];
             char keyChar = keyChars[i % keyChars.Length];
-            // ÖØµã£º Í¨¹ıÒà»òµÃµ½ĞÂµÄ×Ö·û
+            // é‡ç‚¹ï¼š é€šè¿‡äº¦æˆ–å¾—åˆ°æ–°çš„å­—ç¬¦
             char newChar = (char)(dataChar ^ keyChar);
             dataChars[i] = newChar;
         }
         return new string(dataChars);
     }
 
-    // ¼ÓÃÜ3£º ½âÃÜ·½·¨
+    // åŠ å¯†3ï¼š è§£å¯†æ–¹æ³•
     public static string Decrypt(string data)
     {
         return Encrypt(data);
     }
 
-    // ±£´æÓÃ»§Êı¾İÎÄ±¾
+    // ä¿å­˜ç”¨æˆ·æ•°æ®æ–‡æœ¬
     public static void SaveUserData(UserData userData)
     {
-        // ÔÚpersistentDataPathÏÂ´´½¨Ò»¸ö/usersÎÄ¼ş¼Ğ£¬·½±ã¹ÜÀí
+        // åœ¨persistentDataPathä¸‹åˆ›å»ºä¸€ä¸ª/usersæ–‡ä»¶å¤¹ï¼Œæ–¹ä¾¿ç®¡ç†
         if(!File.Exists(Application.persistentDataPath + "/users"))
         {
             System.IO.Directory.CreateDirectory(Application.persistentDataPath + "/users");
         }
 
-        // ĞŞ¸Ä2£º±£´æ»º´æÊı¾İ
+        // ä¿®æ”¹2ï¼šä¿å­˜ç¼“å­˜æ•°æ®
         usersData[userData.name] = userData;
 
-        // ×ª»»ÓÃ»§Êı¾İÎªJSON×Ö·û´®
+        // è½¬æ¢ç”¨æˆ·æ•°æ®ä¸ºJSONå­—ç¬¦ä¸²
         string jsonData = JsonConvert.SerializeObject(userData);
-#if UNITY_EDITOR
-        // ¼ÓÃÜ4
+// #if UNITY_EDITOR
+        // åŠ å¯†4
         jsonData = Encrypt(jsonData);
-#endif
-        // ½«JSON×Ö·û´®Ğ´ÈëÎÄ¼şÖĞ£¨ÎÄ¼şÃûÎªuserData.name£©
+// #endif
+        // å°†JSONå­—ç¬¦ä¸²å†™å…¥æ–‡ä»¶ä¸­ï¼ˆæ–‡ä»¶åä¸ºuserData.nameï¼‰
         File.WriteAllText(Application.persistentDataPath + string.Format("/users/{0}.json", userData.name), jsonData);
         
         PrintUserData(userData);
@@ -65,7 +65,7 @@ public class LocalConfig
         Debug.Log("UserData Name: " + data.name);
         Debug.Log("UserData Current Level: " + data.currentLevel);
 
-        // Êä³ö LevelStatus µÄÃ¿¸ö¼üÖµ¶Ô
+        // è¾“å‡º LevelStatus çš„æ¯ä¸ªé”®å€¼å¯¹
         foreach (var kvp in data.LevelStatus)
         {
             Debug.Log("Level: " + kvp.Key + ", Unlocked: " + kvp.Value);
@@ -73,26 +73,26 @@ public class LocalConfig
     }
 
 
-    // ¶ÁÈ¡ÓÃ»§Êı¾İµ½ÄÚ´æ
+    // è¯»å–ç”¨æˆ·æ•°æ®åˆ°å†…å­˜
     public static UserData LoadUserData(string userName)
     {
-        // ĞŞ¸Ä3£º ÂÊÏÈ´Ó»º´æÖĞÈ¡Êı¾İ£¬¶ø²»ÊÇ´ÓÎÄ±¾ÎÄ¼şÖĞ¶ÁÈ¡
+        // ä¿®æ”¹3ï¼š ç‡å…ˆä»ç¼“å­˜ä¸­å–æ•°æ®ï¼Œè€Œä¸æ˜¯ä»æ–‡æœ¬æ–‡ä»¶ä¸­è¯»å–
         if(usersData.ContainsKey(userName))
         {
             return usersData[userName];
         }
 
         string path = Application.persistentDataPath + string.Format("/users/{0}.json", userName);
-        // ¼ì²éÓÃ»§ÅäÖÃÎÄ¼şÊÇ·ñ´æÔÚ
+        // æ£€æŸ¥ç”¨æˆ·é…ç½®æ–‡ä»¶æ˜¯å¦å­˜åœ¨
         if(File.Exists(path))
         {
-            // ´ÓÎÄ±¾ÎÄ¼şÖĞ¼ÓÔØJSON×Ö·û´®
+            // ä»æ–‡æœ¬æ–‡ä»¶ä¸­åŠ è½½JSONå­—ç¬¦ä¸²
             string jsonData = File.ReadAllText(path);
-#if UNITY_EDITOR
-            // ¼ÓÃÜ5
+// #if UNITY_EDITOR
+            // åŠ å¯†5
             jsonData = Decrypt(jsonData);
-#endif
-            // ½«JSON×Ö·û´®×ª»»ÎªÓÃ»§ÄÚ´æÊı¾İ
+// #endif
+            // å°†JSONå­—ç¬¦ä¸²è½¬æ¢ä¸ºç”¨æˆ·å†…å­˜æ•°æ®
             UserData userData = JsonConvert.DeserializeObject<UserData>(jsonData);
             return userData;
         }

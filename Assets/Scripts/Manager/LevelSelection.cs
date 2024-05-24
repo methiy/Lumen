@@ -20,7 +20,8 @@ public class LevelSelection : MonoBehaviour
             data = LocalConfig.LoadUserData("user");
             if (data == null){
                 data = new UserData();
-            } 
+            }
+            LocalConfig.SaveUserData(data);
             // GetLevelStatus();
         }
         else
