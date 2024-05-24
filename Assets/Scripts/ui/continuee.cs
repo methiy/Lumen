@@ -4,9 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class Choose : MonoBehaviour {
-
-	// Use this for initialization
+public class continuee : MonoBehaviour
+{
 	void Start () {
         this.GetComponent<Button>().onClick.AddListener(OnClick);
        
@@ -14,8 +13,8 @@ public class Choose : MonoBehaviour {
     IEnumerator LoadSceneAfterDelay()
     {
         yield return new WaitForSeconds(0.8f);
-        SceneManager.LoadScene("shipin");
 
+        SceneManager.LoadScene(LocalConfig.LoadUserData("user").currentLevel);
     }
 
     void OnClick()
@@ -23,10 +22,4 @@ public class Choose : MonoBehaviour {
         StartCoroutine(LoadSceneAfterDelay());
         
     }
-
-    // Update is called once per frame
-    void Update () {
-
-    }
 }
-
